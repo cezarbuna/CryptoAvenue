@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace CryptoAvenue.Domain.Models
 {
-    internal class Wallet
+    public class Wallet : Entity
     {
+        public Coin Coin { get; set; }
+        public User User { get; set; }
+        public double CoinAmount { get; set; }
     }
 }

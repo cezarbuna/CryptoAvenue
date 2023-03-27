@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace CryptoAvenue.Domain.Models
 {
-    internal class Coin
+    public class Coin : Entity
     {
+        public string Name { get; set; }
+        public string Abbreviation { get; set; }
+        public double ValueInEur { get; set; }
+        public double ValueInUsd { get; set; }
     }
 }

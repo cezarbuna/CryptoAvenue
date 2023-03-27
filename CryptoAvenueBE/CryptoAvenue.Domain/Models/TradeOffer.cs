@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CryptoAvenue.Domain.Models
 {
     public class TradeOffer : Entity
-    {
+    { 
         public User Sender { get; set; }
         public User Recipient { get; set; }
         public Coin SentCoin { get; set; }

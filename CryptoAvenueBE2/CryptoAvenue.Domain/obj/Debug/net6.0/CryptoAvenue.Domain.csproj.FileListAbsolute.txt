@@ -1,0 +1,12 @@
+C:\Users\win 10\OneDrive\Desktop\LicenseProject\LicenseProject\CryptoAvenueBE2\CryptoAvenue.Domain\bin\Debug\net6.0\CryptoAvenue.Domain.deps.json
+C:\Users\win 10\OneDrive\Desktop\LicenseProject\LicenseProject\CryptoAvenueBE2\CryptoAvenue.Domain\bin\Debug\net6.0\CryptoAvenue.Domain.dll
+C:\Users\win 10\OneDrive\Desktop\LicenseProject\LicenseProject\CryptoAvenueBE2\CryptoAvenue.Domain\bin\Debug\net6.0\CryptoAvenue.Domain.pdb
+C:\Users\win 10\OneDrive\Desktop\LicenseProject\LicenseProject\CryptoAvenueBE2\CryptoAvenue.Domain\obj\Debug\net6.0\CryptoAvenue.Domain.csproj.AssemblyReference.cache
+C:\Users\win 10\OneDrive\Desktop\LicenseProject\LicenseProject\CryptoAvenueBE2\CryptoAvenue.Domain\obj\Debug\net6.0\CryptoAvenue.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\win 10\OneDrive\Desktop\LicenseProject\LicenseProject\CryptoAvenueBE2\CryptoAvenue.Domain\obj\Debug\net6.0\CryptoAvenue.Domain.AssemblyInfoInputs.cache
+C:\Users\win 10\OneDrive\Desktop\LicenseProject\LicenseProject\CryptoAvenueBE2\CryptoAvenue.Domain\obj\Debug\net6.0\CryptoAvenue.Domain.AssemblyInfo.cs
+C:\Users\win 10\OneDrive\Desktop\LicenseProject\LicenseProject\CryptoAvenueBE2\CryptoAvenue.Domain\obj\Debug\net6.0\CryptoAvenue.Domain.csproj.CoreCompileInputs.cache
+C:\Users\win 10\OneDrive\Desktop\LicenseProject\LicenseProject\CryptoAvenueBE2\CryptoAvenue.Domain\obj\Debug\net6.0\CryptoAvenue.Domain.dll
+C:\Users\win 10\OneDrive\Desktop\LicenseProject\LicenseProject\CryptoAvenueBE2\CryptoAvenue.Domain\obj\Debug\net6.0\refint\CryptoAvenue.Domain.dll
+C:\Users\win 10\OneDrive\Desktop\LicenseProject\LicenseProject\CryptoAvenueBE2\CryptoAvenue.Domain\obj\Debug\net6.0\CryptoAvenue.Domain.pdb
+C:\Users\win 10\OneDrive\Desktop\LicenseProject\LicenseProject\CryptoAvenueBE2\CryptoAvenue.Domain\obj\Debug\net6.0\ref\CryptoAvenue.Domain.dll

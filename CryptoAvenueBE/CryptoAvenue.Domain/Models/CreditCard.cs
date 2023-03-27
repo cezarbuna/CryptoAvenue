@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace CryptoAvenue.Domain.Models
 {
-    internal class CreditCard
+    public class CreditCard : Entity
     {
+        public User User { get; set; }
+        public string CardNumber { get; set; }
+        public DateOnly ExpirationDate { get; set; }
+        public int Cvv { get; set; }
     }
 }
