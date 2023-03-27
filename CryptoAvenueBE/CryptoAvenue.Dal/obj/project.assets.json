@@ -982,6 +982,16 @@
             "rid": "win"
           }
         }
+      },
+      "CryptoAvenue.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/CryptoAvenue.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CryptoAvenue.Domain.dll": {}
+        }
       }
     }
   },
@@ -3370,10 +3380,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "CryptoAvenue.Domain/1.0.0": {
+      "type": "project",
+      "path": "../CryptoAvenue.Domain/CryptoAvenue.Domain.csproj",
+      "msbuildProject": "../CryptoAvenue.Domain/CryptoAvenue.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "CryptoAvenue.Domain >= 1.0.0",
       "MediatR >= 12.0.1",
       "MediatR.Extensions.Microsoft.DependencyInjection >= 11.1.0",
       "Microsoft.EntityFrameworkCore >= 7.0.4",
@@ -3413,7 +3429,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\win 10\\OneDrive\\Desktop\\LicenseProject\\LicenseProject\\CryptoAvenueBE\\CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj": {
+              "projectPath": "C:\\Users\\win 10\\OneDrive\\Desktop\\LicenseProject\\LicenseProject\\CryptoAvenueBE\\CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
