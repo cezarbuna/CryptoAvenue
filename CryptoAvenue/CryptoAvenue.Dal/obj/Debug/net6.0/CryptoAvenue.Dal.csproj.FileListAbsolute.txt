@@ -1,0 +1,17 @@
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Dal\bin\Debug\net6.0\CryptoAvenue.Dal.deps.json
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Dal\bin\Debug\net6.0\CryptoAvenue.Dal.dll
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Dal\bin\Debug\net6.0\CryptoAvenue.Dal.pdb
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Dal\obj\Debug\net6.0\CryptoAvenue.Dal.csproj.AssemblyReference.cache
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Dal\obj\Debug\net6.0\CryptoAvenue.Dal.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Dal\obj\Debug\net6.0\CryptoAvenue.Dal.AssemblyInfoInputs.cache
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Dal\obj\Debug\net6.0\CryptoAvenue.Dal.AssemblyInfo.cs
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Dal\obj\Debug\net6.0\CryptoAvenue.Dal.csproj.CoreCompileInputs.cache
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Dal\obj\Debug\net6.0\CryptoAvenue.Dal.dll
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Dal\obj\Debug\net6.0\refint\CryptoAvenue.Dal.dll
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Dal\obj\Debug\net6.0\CryptoAvenue.Dal.pdb
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Dal\obj\Debug\net6.0\ref\CryptoAvenue.Dal.dll
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Dal\bin\Debug\net6.0\CryptoAvenue.Dal.runtimeconfig.json
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Dal\obj\Debug\net6.0\CryptoAvenue.Dal.genruntimeconfig.cache
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Dal\bin\Debug\net6.0\CryptoAvenue.Domain.dll
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Dal\bin\Debug\net6.0\CryptoAvenue.Domain.pdb
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Dal\obj\Debug\net6.0\CryptoAvenue.Dal.csproj.CopyComplete
