@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "QEhnahEn56qBbg9BR88zzbBzz3C32tWuYw5j8ABf2eh41uEHiwK6Bydszgwyg5Zb4DBmp0PkYFM5Aqw7bvoA9A==",
+  "dgSpecHash": "mNiXOH+98iXGhDE3n2u8BBwjf3lG/+gJ06CVRyRlbFq1AeCqXdr/huc/LQlnVWPfHeLyOTI+cqhvJpSPOUXRKw==",
   "success": true,
   "projectFilePath": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Dal\\CryptoAvenue.Dal.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\win 10\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\win 10\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\win 10\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\win 10\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

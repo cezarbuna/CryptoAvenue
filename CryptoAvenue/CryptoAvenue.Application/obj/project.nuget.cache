@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "hM2YDaPXTub/exxVfScq26o4KvaObORV7m835sI1PP2Vy0wHL4BK8XcN92v4emJI/lh9iCw+0DIZwkqf2GEUIQ==",
+  "dgSpecHash": "YdJwG1Hnk75g89MjdCeKobksdwxOnSKaXQz5ZP4pWa5rqS/M/AakXt4y+HKh2DtGaNDo8RgWNR94VAIbag0uYA==",
   "success": true,
   "projectFilePath": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\CryptoAvenue.Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\win 10\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\win 10\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\win 10\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\win 10\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\win 10\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.21\\microsoft.aspnetcore.authentication.jwtbearer.6.0.21.nupkg.sha512",
     "C:\\Users\\win 10\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\win 10\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\win 10\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.1\\microsoft.data.sqlclient.5.1.1.nupkg.sha512",

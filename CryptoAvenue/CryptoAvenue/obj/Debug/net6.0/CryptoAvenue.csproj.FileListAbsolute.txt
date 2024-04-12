@@ -91,3 +91,4 @@ D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\bin\Debug\net6.0\Microsoft.E
 D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
 D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\bin\Debug\net6.0\Microsoft.Extensions.Hosting.Abstractions.dll
 D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\bin\Debug\net6.0\AutoMapper.dll
