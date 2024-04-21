@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YdJwG1Hnk75g89MjdCeKobksdwxOnSKaXQz5ZP4pWa5rqS/M/AakXt4y+HKh2DtGaNDo8RgWNR94VAIbag0uYA==",
+  "dgSpecHash": "vK5ylGdc/zSo0uMLNeN9uioCiYD3Zv3+RY7Dd+8jUz8o2JyDsMC97SowKqIc79tuM5Hh/ydPHnijPfJAzdTT2w==",
   "success": true,
   "projectFilePath": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\CryptoAvenue.Application.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,8 @@
     "C:\\Users\\win 10\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\win 10\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\win 10\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\win 10\\.nuget\\packages\\mediatr\\11.1.0\\mediatr.11.1.0.nupkg.sha512",
+    "C:\\Users\\win 10\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
     "C:\\Users\\win 10\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.21\\microsoft.aspnetcore.authentication.jwtbearer.6.0.21.nupkg.sha512",
     "C:\\Users\\win 10\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\win 10\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

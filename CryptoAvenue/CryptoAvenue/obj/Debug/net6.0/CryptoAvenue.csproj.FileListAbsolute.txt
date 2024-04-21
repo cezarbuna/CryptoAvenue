@@ -92,3 +92,7 @@ D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\bin\Debug\net6.0\Microsoft.E
 D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\bin\Debug\net6.0\Microsoft.Extensions.Hosting.Abstractions.dll
 D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
 D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\bin\Debug\net6.0\AutoMapper.dll
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\bin\Debug\net6.0\MediatR.dll
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\bin\Debug\net6.0\MediatR.Contracts.dll
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll

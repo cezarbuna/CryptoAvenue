@@ -1,5 +1,6 @@
 ﻿using CryptoAvenue.Domain.IRepositories;
 using CryptoAvenue.Domain.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,49 +12,61 @@ namespace CryptoAvenue.Application.Repositories
 {
     public abstract class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class, IEntity
     {
-        public bool Any(Expression<Func<TEntity, bool>> predicate)
+        private readonly CryptoAvenueDbContext context;
+        private readonly DbSet<TEntity> dbSet;
+
+        protected GenericRepository(CryptoAvenueDbContext context)
         {
-            throw new NotImplementedException();
+            this.context = context;
+            this.dbSet = context.Set<TEntity>();
+        }
+
+        public async Task<bool> Any(Expression<Func<TEntity, bool>> predicate)
+        {
+            return await dbSet.AnyAsync(predicate);
         }
 
         public void Delete(TEntity entity)
         {
-            throw new NotImplementedException();
+            dbSet.Remove(entity);
         }
 
-        public IEnumerable<TEntity> FindAll(Expression<Func<TEntity, bool>>? predicate = null)
+        public async Task<IEnumerable<TEntity>> FindAll(Expression<Func<TEntity, bool>>? predicate = null)
         {
-            throw new NotImplementedException();
+            if (predicate == null)
+                return await dbSet.ToListAsync();
+
+            return await dbSet.Where(predicate).ToListAsync();
         }
 
-        public TEntity GetEntityBy(Expression<Func<TEntity, bool>> predicate)
+        public async Task<TEntity> GetEntityBy(Expression<Func<TEntity, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return await dbSet.SingleOrDefaultAsync(predicate);
         }
 
-        public TEntity GetEntityByID(Guid id)
+        public async Task<TEntity> GetEntityByID(Guid id)
         {
-            throw new NotImplementedException();
+            return await dbSet.SingleOrDefaultAsync(x => x.Id == id);
         }
 
-        public TEntity GetFirstEntityBy(Expression<Func<TEntity, bool>> predicate)
+        public async Task<TEntity> GetFirstEntityBy(Expression<Func<TEntity, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return await dbSet.FirstOrDefaultAsync(predicate);
         }
 
-        public void Insert(TEntity entity)
+        public async Task Insert(TEntity entity)
         {
-            throw new NotImplementedException();
+            await dbSet.AddAsync(entity);
         }
 
-        public void SaveChanges()
+        public async Task SaveChanges()
         {
-            throw new NotImplementedException();
+            await context.SaveChangesAsync();
         }
 
-        public void Update(TEntity entity)
+        public async Task Update(TEntity entity)
         {
-            throw new NotImplementedException();
+            dbSet.Update(entity);
         }
     }
 }

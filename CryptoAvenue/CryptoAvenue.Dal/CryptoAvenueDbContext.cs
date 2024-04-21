@@ -11,6 +11,7 @@ namespace CryptoAvenue.Application
     public class CryptoAvenueDbContext : DbContext
     {
         public DbSet<Coin> Coins { get; set; }
+        public DbSet<User> Users { get; set; }
         public CryptoAvenueDbContext(DbContextOptions options) : base(options)
         {
 

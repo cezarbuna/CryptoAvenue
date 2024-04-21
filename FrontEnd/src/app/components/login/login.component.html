@@ -1,0 +1,22 @@
+<div class="card-container">
+  <p-card header="Log in" subheader="Acces your account" [style]="{ width: '360px' }">
+    <ng-template pTemplate="header">
+    </ng-template>
+    <ng-template pTemplate="content">
+      <form [formGroup]="loginForm"></form>
+      <span class="p-float-label">
+        <input pInputText id="email" [(ngModel)]="emailValue" (keydown.enter)="validateEmail()"/>
+        <label for="email">Email</label>
+      </span>
+      <p-message *ngIf="invalidEmail" severity="error"  text="Invalid Email"></p-message>
+      <span class="p-float-label">
+        <input pInputText id="password" class="p-password-mask" [(ngModel)]="emailValue" (keydown.enter)="validateEmail()"/>
+        <label for="email">Password</label>
+      </span>
+      <p-button label="Next" class="centered-items" type="submit"></p-button>
+    </ng-template>
+    <ng-template pTemplate="footer">
+<!--      <p-button label="Log in" icon="pi pi-check" [raised]="true" class="centered-items"></p-button>-->
+    </ng-template>
+  </p-card>
+</div>

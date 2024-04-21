@@ -14,11 +14,13 @@ namespace CryptoAvenue.Dal.Profiles
         public UserProfile()
         {
             CreateMap<User, UserGetDto>()
+                .ForMember(d => d.Id, opt => opt.MapFrom(u => u.Id))
                 .ForMember(d => d.Username, opt => opt.MapFrom(u => u.Username))
                 .ForMember(d => d.Email, opt => opt.MapFrom(u => u.Email))
                 .ForMember(d => d.Age, opt => opt.MapFrom(u => u.Age));
             CreateMap<UserGetDto, User>()
                 .ForMember(d => d.Username, opt => opt.MapFrom(u => u.Username))
+                .ForMember(d => d.Id, opt => opt.MapFrom(u => u.Id))
                 .ForMember(d => d.Email, opt => opt.MapFrom(u => u.Email))
                 .ForMember(d => d.Age, opt => opt.MapFrom(u => u.Age));
             CreateMap<User, UserPostDto>()

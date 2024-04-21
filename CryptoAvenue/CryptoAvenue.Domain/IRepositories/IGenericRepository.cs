@@ -10,15 +10,15 @@ namespace CryptoAvenue.Domain.IRepositories
 {
     public interface IGenericRepository <T> where T : IEntity
     {
-        IEnumerable<T> FindAll(Expression<Func<T, bool>>? predicate = null);
+        Task<IEnumerable<T>> FindAll(Expression<Func<T, bool>>? predicate = null);
         //IEnumerable<T> GetAll();
-        T GetEntityByID(Guid id);
-        bool Any(Expression<Func<T, bool>> predicate);
-        T GetEntityBy(Expression<Func<T, bool>> predicate);
-        T GetFirstEntityBy(Expression<Func<T, bool>> predicate);
-        void Insert(T entity);
+        Task<T> GetEntityByID(Guid id);
+        Task<bool> Any(Expression<Func<T, bool>> predicate);
+        Task<T> GetEntityBy(Expression<Func<T, bool>> predicate);
+        Task<T> GetFirstEntityBy(Expression<Func<T, bool>> predicate);
+        Task Insert(T entity);
         void Delete(T entity);
-        void Update(T entity);
-        void SaveChanges();
+        Task Update(T entity);
+        Task SaveChanges();
     }
 }
