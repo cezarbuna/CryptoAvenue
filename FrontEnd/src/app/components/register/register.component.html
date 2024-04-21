@@ -1,0 +1,43 @@
+<div class="card-container">
+  <p-card header="Register" subheader="Create a new account" [style]="{ width: '360px' }">
+    <ng-template pTemplate="header">
+    </ng-template>
+    <ng-template pTemplate="content">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="separator" [formGroup]="registerForm">
+        <span class="p-float-label">
+          <input pInputText id="email" formControlName="email"/>
+          <label for="email">Email</label>
+        </span>
+          <p-message *ngIf="getErrorMessage('email')" severity="error" text="Invalid Email"></p-message>
+        </div>
+        <div class="separator" [formGroup]="registerForm">
+        <span class="p-float-label">
+          <input pInputText id="username" formControlName="username"/>
+          <label for="username">Username</label>
+        </span>
+          <p-message *ngIf="getErrorMessage('username')" severity="error" text="Invalid Username"></p-message>
+        </div>
+        <div class="separator" [formGroup]="registerForm">
+        <span class="p-float-label">
+        <input pInputText id="age" formControlName="age"/>
+        <label for="age">Age</label>
+      </span>
+          <p-message *ngIf="getErrorMessage('age')" severity="error" text="You must be over 18 years old"></p-message>
+        </div>
+        <div class="separator" [formGroup]="registerForm">
+        <span class="p-float-label">
+        <input pInputText id="password" class="p-password-mask" formControlName="password"/>
+        <label for="password">Password</label>
+      </span>
+          <p-message *ngIf="getErrorMessage('password')" severity="error" text="Invalid Password"></p-message>
+        </div>
+        <p-button label="Register" class="centered-items" type="submit"></p-button>
+      </form>
+
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <!--      <p-button label="Log in" icon="pi pi-check" [raised]="true" class="centered-items"></p-button>-->
+    </ng-template>
+  </p-card>
+</div>

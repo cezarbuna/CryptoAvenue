@@ -4,6 +4,9 @@ import {MenuItem} from "primeng/api";
 import {MenubarModule} from "primeng/menubar";
 import {NgClass, NgForOf, NgOptimizedImage} from "@angular/common";
 import {CustomMenuItem} from "../../interfaces/CustomMenuItem";
+import {ButtonModule} from "primeng/button";
+import {UserServiceService} from "../../services/user-service.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
@@ -13,15 +16,23 @@ import {CustomMenuItem} from "../../interfaces/CustomMenuItem";
     MenubarModule,
     NgOptimizedImage,
     NgClass,
-    NgForOf
+    NgForOf,
+    ButtonModule
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent implements OnInit {
+
+  constructor(private router: Router) {}
   items: CustomMenuItem[] | undefined;
 
   activeItem: CustomMenuItem | undefined;
+
+  logOut(): void {
+    localStorage.removeItem('token');
+    this.router.navigate(['/']);
+  }
 
   ngOnInit() {
     // this.items = [
@@ -36,7 +47,7 @@ export class NavbarComponent implements OnInit {
       { label: 'Markets', },
       { label: 'Edit', },
       { label: 'Login', routerLink: 'login' },
-      { label: 'Register', rightAligned: true }
+      { label: 'Register', routerLink: 'register', rightAligned: true }
     ];
 
     this.activeItem = this.items[0];

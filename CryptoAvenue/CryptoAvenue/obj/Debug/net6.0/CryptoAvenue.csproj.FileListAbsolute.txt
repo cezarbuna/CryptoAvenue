@@ -19,7 +19,6 @@ D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\obj\Debug\net6.0\CryptoAvenu
 D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\obj\Debug\net6.0\staticwebassets.build.json
 D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\obj\Debug\net6.0\staticwebassets.development.json
 D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\obj\Debug\net6.0\scopedcss\bundle\CryptoAvenue.styles.css
-D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\obj\Debug\net6.0\CryptoAvenue.csproj.CopyComplete
 D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\obj\Debug\net6.0\CryptoAvenue.dll
 D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\obj\Debug\net6.0\refint\CryptoAvenue.dll
 D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\obj\Debug\net6.0\CryptoAvenue.pdb
@@ -96,3 +95,10 @@ D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\bin\Debug\net6.0\Microsoft.A
 D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\bin\Debug\net6.0\MediatR.dll
 D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\bin\Debug\net6.0\MediatR.Contracts.dll
 D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\bin\Debug\net6.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\obj\Debug\net6.0\CryptoAvenue.sourcelink.json
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\obj\Debug\net6.0\staticwebassets\msbuild.CryptoAvenue.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\obj\Debug\net6.0\staticwebassets\msbuild.build.CryptoAvenue.props
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.CryptoAvenue.props
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.CryptoAvenue.props
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue\obj\Debug\net6.0\CryptoAv.3121B15E.Up2Date

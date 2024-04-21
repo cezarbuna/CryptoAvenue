@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {CardModule} from "primeng/card";
 import {ButtonModule} from "primeng/button";
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
@@ -28,10 +28,11 @@ import {MessageModule} from "primeng/message";
 export class LoginComponent implements OnInit {
   constructor(
     private userService: UserServiceService,
-    private router: Router,) {
+    private router: Router,
+    private cdr: ChangeDetectorRef,) {
   }
-  value: any;
-  emailValue: string = '';
+  invalidCredentials: boolean = false;
+  isEmailCorrect: boolean = false;
   invalidEmail: boolean = false;
   loginForm: FormGroup =  new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -44,8 +45,13 @@ export class LoginComponent implements OnInit {
   validateEmail(): void {
     this.userService.validateEmail(this.loginForm?.value.email).subscribe(res => {
       console.log(res);
-      if(res == false)
+      if(res == false){
         this.invalidEmail = true;
+      }
+      else{
+        this.isEmailCorrect = true;
+        this.cdr.detectChanges();
+      }
     }, error => {
       console.log(error);
       }
@@ -53,7 +59,21 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void{
-
+    if(this.loginForm.valid){
+      console.log(this.loginForm.value);
+      this.userService.loginUser(this.loginForm.value).subscribe({
+        next: (loginResponse) => {
+          window.alert("User logged in successfully");
+          console.log(loginResponse);
+          localStorage.setItem('token', loginResponse.token);
+          this.router.navigate(['/']);
+        },
+        error: error => {
+          this.invalidCredentials = true;
+          console.log(error);
+        }
+      })
+    }
   }
 
 }

@@ -12,3 +12,4 @@ D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Domain\obj\Debug\net6.0\Cryp
 D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Domain\obj\Debug\net6.0\ref\CryptoAvenue.Domain.dll
 D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Domain\bin\Debug\net6.0\CryptoAvenue.Domain.runtimeconfig.json
 D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Domain\obj\Debug\net6.0\CryptoAvenue.Domain.genruntimeconfig.cache
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Domain\obj\Debug\net6.0\CryptoAvenue.Domain.sourcelink.json

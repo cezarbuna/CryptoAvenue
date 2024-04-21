@@ -3,6 +3,7 @@ using CryptoAvenue.Application.UserApp.UserCommands;
 using CryptoAvenue.Application.UserApp.UserQuery;
 using CryptoAvenue.Dal.Dtos.UserDtos;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -60,6 +61,7 @@ namespace CryptoAvenue.Controllers
 
             return Ok(result);
         }
+        [Authorize]
         [HttpDelete]
         [Route("delete-user/{userId}")]
         public async Task<IActionResult> DeleteUser(Guid userId)

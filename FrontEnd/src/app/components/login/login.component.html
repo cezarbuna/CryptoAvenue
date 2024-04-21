@@ -3,20 +3,27 @@
     <ng-template pTemplate="header">
     </ng-template>
     <ng-template pTemplate="content">
-      <form [formGroup]="loginForm"></form>
-      <span class="p-float-label">
-        <input pInputText id="email" [(ngModel)]="emailValue" (keydown.enter)="validateEmail()"/>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="separator">
+        <span class="p-float-label">
+        <input pInputText id="email" formControlName="email" (keydown.enter)="validateEmail()"/>
         <label for="email">Email</label>
       </span>
-      <p-message *ngIf="invalidEmail" severity="error"  text="Invalid Email"></p-message>
-      <span class="p-float-label">
-        <input pInputText id="password" class="p-password-mask" [(ngModel)]="emailValue" (keydown.enter)="validateEmail()"/>
-        <label for="email">Password</label>
+          <p-message *ngIf="invalidEmail" severity="error" text="Invalid Email"></p-message>
+        </div>
+        <div class="separator" *ngIf="isEmailCorrect">
+        <span class="p-float-label">
+        <input pInputText id="password" class="p-password-mask" formControlName="password"/>
+        <label for="password">Password</label>
       </span>
-      <p-button label="Next" class="centered-items" type="submit"></p-button>
+        </div>
+        <p-button *ngIf="!isEmailCorrect" label="Next" class="centered-items" (click)="validateEmail()"></p-button>
+        <p-button *ngIf="isEmailCorrect" label="Log in" class="centered-items" type="submit"></p-button>
+      </form>
+      <p-message *ngIf="invalidCredentials" severity="error" text="Invalid credentials. Please try again."></p-message>
     </ng-template>
     <ng-template pTemplate="footer">
-<!--      <p-button label="Log in" icon="pi pi-check" [raised]="true" class="centered-items"></p-button>-->
+      <!--      <p-button label="Log in" icon="pi pi-check" [raised]="true" class="centered-items"></p-button>-->
     </ng-template>
   </p-card>
 </div>

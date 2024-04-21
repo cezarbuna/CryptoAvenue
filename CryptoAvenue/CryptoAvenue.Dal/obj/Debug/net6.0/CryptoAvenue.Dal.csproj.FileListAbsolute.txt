@@ -14,4 +14,5 @@ D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Dal\bin\Debug\net6.0\CryptoA
 D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Dal\obj\Debug\net6.0\CryptoAvenue.Dal.genruntimeconfig.cache
 D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Dal\bin\Debug\net6.0\CryptoAvenue.Domain.dll
 D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Dal\bin\Debug\net6.0\CryptoAvenue.Domain.pdb
-D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Dal\obj\Debug\net6.0\CryptoAvenue.Dal.csproj.CopyComplete
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Dal\obj\Debug\net6.0\CryptoAvenue.Dal.sourcelink.json
+D:\Desktop\LicenseProject\CryptoAvenue\CryptoAvenue.Dal\obj\Debug\net6.0\CryptoAv.48F8998E.Up2Date
