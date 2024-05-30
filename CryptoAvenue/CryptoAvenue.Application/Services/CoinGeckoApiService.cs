@@ -23,7 +23,7 @@ namespace CryptoAvenue.Application.Services
         {
             _httpClient.DefaultRequestHeaders.Add("User-Agent", "CryptoAvenue");
 
-            var requestUrl = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur";
+            var requestUrl = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd";
 
             var response = await _httpClient.GetAsync(requestUrl);
 

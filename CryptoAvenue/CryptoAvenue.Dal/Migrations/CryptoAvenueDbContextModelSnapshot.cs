@@ -84,6 +84,15 @@ namespace CryptoAvenue.Dal.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Quantity")
+                        .HasColumnType("float");
+
+                    b.Property<double>("Total")
+                        .HasColumnType("float");
+
                     b.Property<DateTime>("TransactionDate")
                         .HasColumnType("datetime2");
 

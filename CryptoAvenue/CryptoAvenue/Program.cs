@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using CryptoAvenue.Dal.Repositories;
+using CryptoAvenue.Application.WalletApp.WalletCommands;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -52,8 +53,10 @@ builder.Services.AddHttpClient<ICoinGeckoApiService, CoinGeckoApiService>();
 
 builder.Services.AddScoped<ICoinRepository, CoinRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-//builder.Services.AddScoped<IWalletRepository, WalletRepository>();
+builder.Services.AddScoped<IWalletRepository, WalletRepository>();
 builder.Services.AddScoped<ICryptoUpdateService, CryptoUpdateService>();
+builder.Services.AddScoped<IWalletCoinRepository, WalletCoinRepository>();
+builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
 
 builder.Services.AddHostedService<TimedCryptoUpdateService>();
 
@@ -62,6 +65,7 @@ builder.Services.AddDbContext<CryptoAvenueDbContext>(options =>
         .GetConnectionString(@"Server = DESKTOP - DLVFJ7V\SQLEXPRESS; Database = CryptoAvenueDb; Trusted_Connection = True; TrustServerCertificate = True; MultipleActiveResultSets = True;")));
 
 builder.Services.AddMediatR(typeof(CreateUserCommand));
+builder.Services.AddMediatR(typeof(CreateWalletCommand));
 
 builder.Services.AddMediatR(typeof(Program));
 builder.Services.AddAutoMapper(typeof(Program));

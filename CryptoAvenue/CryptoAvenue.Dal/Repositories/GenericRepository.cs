@@ -21,9 +21,9 @@ namespace CryptoAvenue.Application.Repositories
             this.dbSet = context.Set<TEntity>();
         }
 
-        public async Task<bool> Any(Expression<Func<TEntity, bool>> predicate)
+        public Boolean Any(Expression<Func<TEntity, bool>> predicate)
         {
-            return await dbSet.AnyAsync(predicate);
+            return dbSet.Any(predicate);
         }
 
         public void Delete(TEntity entity)

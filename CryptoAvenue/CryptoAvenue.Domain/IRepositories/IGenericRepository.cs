@@ -13,7 +13,7 @@ namespace CryptoAvenue.Domain.IRepositories
         Task<IEnumerable<T>> FindAll(Expression<Func<T, bool>>? predicate = null);
         //IEnumerable<T> GetAll();
         Task<T> GetEntityByID(Guid id);
-        Task<bool> Any(Expression<Func<T, bool>> predicate);
+        Boolean Any(Expression<Func<T, bool>> predicate);
         Task<T> GetEntityBy(Expression<Func<T, bool>> predicate);
         Task<T> GetFirstEntityBy(Expression<Func<T, bool>> predicate);
         Task Insert(T entity);
