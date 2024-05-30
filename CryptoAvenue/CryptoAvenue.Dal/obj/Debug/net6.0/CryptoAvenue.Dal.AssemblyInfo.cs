@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CryptoAvenue.Dal")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+353b8d8c9b1b0e44509c4d7d981e8f43ad291fdd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6dd8d74b6404615b302e0553225ba980d42e7fcc")]
 [assembly: System.Reflection.AssemblyProductAttribute("CryptoAvenue.Dal")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CryptoAvenue.Dal")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -3,40 +3,56 @@
   "WorkspaceRootPath": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1C22AEFE-5598-457E-83C6-A5572A76CF83}|CryptoAvenue.Application\\CryptoAvenue.Application.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.application\\walletapp\\walletcommands\\createwalletcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C22AEFE-5598-457E-83C6-A5572A76CF83}|CryptoAvenue.Application\\CryptoAvenue.Application.csproj|solutionrelative:cryptoavenue.application\\walletapp\\walletcommands\\createwalletcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Dal\\Migrations\\20240530103227_addedTransactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CryptoAvenue.Dal\\Migrations\\20240530103227_addedTransactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18F64AE9-5178-4000-B5AC-D948773902EE}|CryptoAvenue.Dal\\CryptoAvenue.Dal.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.dal\\cryptoavenuedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18F64AE9-5178-4000-B5AC-D948773902EE}|CryptoAvenue.Dal\\CryptoAvenue.Dal.csproj|solutionrelative:cryptoavenue.dal\\cryptoavenuedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.domain\\models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|solutionrelative:cryptoavenue.domain\\models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Dal\\Migrations\\20240530092439_addedwalletcoins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CryptoAvenue.Dal\\Migrations\\20240530092439_addedwalletcoins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.domain\\models\\walletcoin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|solutionrelative:cryptoavenue.domain\\models\\walletcoin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.domain\\models\\wallet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|solutionrelative:cryptoavenue.domain\\models\\wallet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C22AEFE-5598-457E-83C6-A5572A76CF83}|CryptoAvenue.Application\\CryptoAvenue.Application.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.application\\userapp\\usercommands\\createusercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C22AEFE-5598-457E-83C6-A5572A76CF83}|CryptoAvenue.Application\\CryptoAvenue.Application.csproj|solutionrelative:cryptoavenue.application\\userapp\\usercommands\\createusercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.domain\\models\\coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|solutionrelative:cryptoavenue.domain\\models\\coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C22AEFE-5598-457E-83C6-A5572A76CF83}|CryptoAvenue.Application\\CryptoAvenue.Application.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.application\\walletapp\\walletqueryhandlers\\getwalletbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C22AEFE-5598-457E-83C6-A5572A76CF83}|CryptoAvenue.Application\\CryptoAvenue.Application.csproj|solutionrelative:cryptoavenue.application\\walletapp\\walletqueryhandlers\\getwalletbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4E45B24B-AAFF-48CC-9032-853CDEFA0B2E}|CryptoAvenue\\CryptoAvenue.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E45B24B-AAFF-48CC-9032-853CDEFA0B2E}|CryptoAvenue\\CryptoAvenue.csproj|solutionrelative:cryptoavenue\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C22AEFE-5598-457E-83C6-A5572A76CF83}|CryptoAvenue.Application\\CryptoAvenue.Application.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.application\\userapp\\userqueryhandler\\getuserbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C22AEFE-5598-457E-83C6-A5572A76CF83}|CryptoAvenue.Application\\CryptoAvenue.Application.csproj|solutionrelative:cryptoavenue.application\\userapp\\userqueryhandler\\getuserbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C22AEFE-5598-457E-83C6-A5572A76CF83}|CryptoAvenue.Application\\CryptoAvenue.Application.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.application\\walletapp\\walletqueries\\getwalletbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C22AEFE-5598-457E-83C6-A5572A76CF83}|CryptoAvenue.Application\\CryptoAvenue.Application.csproj|solutionrelative:cryptoavenue.application\\walletapp\\walletqueries\\getwalletbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1C22AEFE-5598-457E-83C6-A5572A76CF83}|CryptoAvenue.Application\\CryptoAvenue.Application.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.application\\userapp\\userquery\\getuserbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C22AEFE-5598-457E-83C6-A5572A76CF83}|CryptoAvenue.Application\\CryptoAvenue.Application.csproj|solutionrelative:cryptoavenue.application\\userapp\\userquery\\getuserbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.domain\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|solutionrelative:cryptoavenue.domain\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.domain\\models\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|solutionrelative:cryptoavenue.domain\\models\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.domain\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|solutionrelative:cryptoavenue.domain\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C22AEFE-5598-457E-83C6-A5572A76CF83}|CryptoAvenue.Application\\CryptoAvenue.Application.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.application\\userapp\\usercommands\\createusercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C22AEFE-5598-457E-83C6-A5572A76CF83}|CryptoAvenue.Application\\CryptoAvenue.Application.csproj|solutionrelative:cryptoavenue.application\\userapp\\usercommands\\createusercommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C22AEFE-5598-457E-83C6-A5572A76CF83}|CryptoAvenue.Application\\CryptoAvenue.Application.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.application\\userapp\\userqueryhandler\\getuserbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C22AEFE-5598-457E-83C6-A5572A76CF83}|CryptoAvenue.Application\\CryptoAvenue.Application.csproj|solutionrelative:cryptoavenue.application\\userapp\\userqueryhandler\\getuserbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C22AEFE-5598-457E-83C6-A5572A76CF83}|CryptoAvenue.Application\\CryptoAvenue.Application.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.application\\userapp\\userquery\\getuserbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C22AEFE-5598-457E-83C6-A5572A76CF83}|CryptoAvenue.Application\\CryptoAvenue.Application.csproj|solutionrelative:cryptoavenue.application\\userapp\\userquery\\getuserbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1C22AEFE-5598-457E-83C6-A5572A76CF83}|CryptoAvenue.Application\\CryptoAvenue.Application.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.application\\services\\coingeckoapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -47,32 +63,12 @@
       "RelativeMoniker": "D:0:0:{1C22AEFE-5598-457E-83C6-A5572A76CF83}|CryptoAvenue.Application\\CryptoAvenue.Application.csproj|solutionrelative:cryptoavenue.application\\services\\cryptoupdateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Dal\\Migrations\\20240530083427_addedWallets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CryptoAvenue.Dal\\Migrations\\20240530083427_addedWallets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18F64AE9-5178-4000-B5AC-D948773902EE}|CryptoAvenue.Dal\\CryptoAvenue.Dal.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.dal\\cryptoavenuedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18F64AE9-5178-4000-B5AC-D948773902EE}|CryptoAvenue.Dal\\CryptoAvenue.Dal.csproj|solutionrelative:cryptoavenue.dal\\cryptoavenuedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{18F64AE9-5178-4000-B5AC-D948773902EE}|CryptoAvenue.Dal\\CryptoAvenue.Dal.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.dal\\repositories\\walletrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{18F64AE9-5178-4000-B5AC-D948773902EE}|CryptoAvenue.Dal\\CryptoAvenue.Dal.csproj|solutionrelative:cryptoavenue.dal\\repositories\\walletrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4E45B24B-AAFF-48CC-9032-853CDEFA0B2E}|CryptoAvenue\\CryptoAvenue.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4E45B24B-AAFF-48CC-9032-853CDEFA0B2E}|CryptoAvenue\\CryptoAvenue.csproj|solutionrelative:cryptoavenue\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{18F64AE9-5178-4000-B5AC-D948773902EE}|CryptoAvenue.Dal\\CryptoAvenue.Dal.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.dal\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{18F64AE9-5178-4000-B5AC-D948773902EE}|CryptoAvenue.Dal\\CryptoAvenue.Dal.csproj|solutionrelative:cryptoavenue.dal\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{18F64AE9-5178-4000-B5AC-D948773902EE}|CryptoAvenue.Dal\\CryptoAvenue.Dal.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.dal\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{18F64AE9-5178-4000-B5AC-D948773902EE}|CryptoAvenue.Dal\\CryptoAvenue.Dal.csproj|solutionrelative:cryptoavenue.dal\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.domain\\irepositories\\iwalletrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|solutionrelative:cryptoavenue.domain\\irepositories\\iwalletrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.domain\\irepositories\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -87,24 +83,12 @@
       "RelativeMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|solutionrelative:cryptoavenue.domain\\irepositories\\icoinrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.domain\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|solutionrelative:cryptoavenue.domain\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1C22AEFE-5598-457E-83C6-A5572A76CF83}|CryptoAvenue.Application\\CryptoAvenue.Application.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.application\\userapp\\usercommandhandler\\loginusercommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C22AEFE-5598-457E-83C6-A5572A76CF83}|CryptoAvenue.Application\\CryptoAvenue.Application.csproj|solutionrelative:cryptoavenue.application\\userapp\\usercommandhandler\\loginusercommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1C22AEFE-5598-457E-83C6-A5572A76CF83}|CryptoAvenue.Application\\CryptoAvenue.Application.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.application\\services\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C22AEFE-5598-457E-83C6-A5572A76CF83}|CryptoAvenue.Application\\CryptoAvenue.Application.csproj|solutionrelative:cryptoavenue.application\\services\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.domain\\models\\coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|solutionrelative:cryptoavenue.domain\\models\\coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.domain\\models\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|solutionrelative:cryptoavenue.domain\\models\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4E45B24B-AAFF-48CC-9032-853CDEFA0B2E}|CryptoAvenue\\CryptoAvenue.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -167,10 +151,6 @@
       "RelativeMoniker": "D:0:0:{4E45B24B-AAFF-48CC-9032-853CDEFA0B2E}|CryptoAvenue\\CryptoAvenue.csproj|solutionrelative:cryptoavenue\\profiles\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.domain\\models\\ientity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5B350025-1E98-4AE0-B1F4-17E43EAEFA84}|CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj|solutionrelative:cryptoavenue.domain\\models\\ientity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{18F64AE9-5178-4000-B5AC-D948773902EE}|CryptoAvenue.Dal\\CryptoAvenue.Dal.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue.dal\\migrations\\20240303094038_update1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{18F64AE9-5178-4000-B5AC-D948773902EE}|CryptoAvenue.Dal\\CryptoAvenue.Dal.csproj|solutionrelative:cryptoavenue.dal\\migrations\\20240303094038_update1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -217,6 +197,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{4E45B24B-AAFF-48CC-9032-853CDEFA0B2E}|CryptoAvenue\\CryptoAvenue.csproj|d:\\desktop\\licenseproject\\cryptoavenue\\cryptoavenue\\services\\iservicelifetime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4E45B24B-AAFF-48CC-9032-853CDEFA0B2E}|CryptoAvenue\\CryptoAvenue.csproj|solutionrelative:cryptoavenue\\services\\iservicelifetime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Domain\\Models\\BaseEntity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CryptoAvenue.Domain\\Models\\BaseEntity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Domain\\Models\\User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CryptoAvenue.Domain\\Models\\User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Domain\\Models\\IEntity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CryptoAvenue.Domain\\Models\\IEntity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -231,79 +223,79 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CreateWalletCommand.cs",
-              "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\WalletApp\\WalletCommands\\CreateWalletCommand.cs",
-              "RelativeDocumentMoniker": "CryptoAvenue.Application\\WalletApp\\WalletCommands\\CreateWalletCommand.cs",
-              "ToolTip": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\WalletApp\\WalletCommands\\CreateWalletCommand.cs*",
-              "RelativeToolTip": "CryptoAvenue.Application\\WalletApp\\WalletCommands\\CreateWalletCommand.cs*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAwAAAA",
+              "Title": "20240530103227_addedTransactions.cs",
+              "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Dal\\Migrations\\20240530103227_addedTransactions.cs",
+              "RelativeDocumentMoniker": "CryptoAvenue.Dal\\Migrations\\20240530103227_addedTransactions.cs",
+              "ToolTip": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Dal\\Migrations\\20240530103227_addedTransactions.cs",
+              "RelativeToolTip": "CryptoAvenue.Dal\\Migrations\\20240530103227_addedTransactions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T08:49:12.272Z",
+              "WhenOpened": "2024-05-30T10:32:27.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Transaction.cs",
+              "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Domain\\Models\\Transaction.cs",
+              "RelativeDocumentMoniker": "CryptoAvenue.Domain\\Models\\Transaction.cs",
+              "ToolTip": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Domain\\Models\\Transaction.cs",
+              "RelativeToolTip": "CryptoAvenue.Domain\\Models\\Transaction.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T09:25:21.543Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "GetWalletByIdQueryHandler.cs",
-              "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\WalletApp\\WalletQueryHandlers\\GetWalletByIdQueryHandler.cs",
-              "RelativeDocumentMoniker": "CryptoAvenue.Application\\WalletApp\\WalletQueryHandlers\\GetWalletByIdQueryHandler.cs",
-              "ToolTip": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\WalletApp\\WalletQueryHandlers\\GetWalletByIdQueryHandler.cs",
-              "RelativeToolTip": "CryptoAvenue.Application\\WalletApp\\WalletQueryHandlers\\GetWalletByIdQueryHandler.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAJAAAA",
+              "Title": "20240530092439_addedwalletcoins.cs",
+              "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Dal\\Migrations\\20240530092439_addedwalletcoins.cs",
+              "RelativeDocumentMoniker": "CryptoAvenue.Dal\\Migrations\\20240530092439_addedwalletcoins.cs",
+              "ToolTip": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Dal\\Migrations\\20240530092439_addedwalletcoins.cs",
+              "RelativeToolTip": "CryptoAvenue.Dal\\Migrations\\20240530092439_addedwalletcoins.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T08:46:42.913Z",
+              "WhenOpened": "2024-05-30T09:24:39.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WalletCoin.cs",
+              "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Domain\\Models\\WalletCoin.cs",
+              "RelativeDocumentMoniker": "CryptoAvenue.Domain\\Models\\WalletCoin.cs",
+              "ToolTip": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Domain\\Models\\WalletCoin.cs",
+              "RelativeToolTip": "CryptoAvenue.Domain\\Models\\WalletCoin.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T09:21:36.957Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "GetWalletByIdQuery.cs",
-              "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\WalletApp\\WalletQueries\\GetWalletByIdQuery.cs",
-              "RelativeDocumentMoniker": "CryptoAvenue.Application\\WalletApp\\WalletQueries\\GetWalletByIdQuery.cs",
-              "ToolTip": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\WalletApp\\WalletQueries\\GetWalletByIdQuery.cs",
-              "RelativeToolTip": "CryptoAvenue.Application\\WalletApp\\WalletQueries\\GetWalletByIdQuery.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T08:46:05.764Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "20240530083427_addedWallets.cs",
-              "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Dal\\Migrations\\20240530083427_addedWallets.cs",
-              "RelativeDocumentMoniker": "CryptoAvenue.Dal\\Migrations\\20240530083427_addedWallets.cs",
-              "ToolTip": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Dal\\Migrations\\20240530083427_addedWallets.cs",
-              "RelativeToolTip": "CryptoAvenue.Dal\\Migrations\\20240530083427_addedWallets.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T08:34:27.314Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "WalletRepository.cs",
-              "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Dal\\Repositories\\WalletRepository.cs",
-              "RelativeDocumentMoniker": "CryptoAvenue.Dal\\Repositories\\WalletRepository.cs",
-              "ToolTip": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Dal\\Repositories\\WalletRepository.cs",
-              "RelativeToolTip": "CryptoAvenue.Dal\\Repositories\\WalletRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T08:26:01.497Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Wallet.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Domain\\Models\\Wallet.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Domain\\Models\\Wallet.cs",
               "ToolTip": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Domain\\Models\\Wallet.cs",
               "RelativeToolTip": "CryptoAvenue.Domain\\Models\\Wallet.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAvAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T08:22:02.141Z",
+              "WhenOpened": "2024-05-30T09:18:15.28Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CryptoAvenueDbContext.cs",
+              "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Dal\\CryptoAvenueDbContext.cs",
+              "RelativeDocumentMoniker": "CryptoAvenue.Dal\\CryptoAvenueDbContext.cs",
+              "ToolTip": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Dal\\CryptoAvenueDbContext.cs",
+              "RelativeToolTip": "CryptoAvenue.Dal\\CryptoAvenueDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T09:17:16.619Z",
               "EditorCaption": ""
             },
             {
@@ -321,20 +313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "CryptoAvenueDbContext.cs",
-              "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Dal\\CryptoAvenueDbContext.cs",
-              "RelativeDocumentMoniker": "CryptoAvenue.Dal\\CryptoAvenueDbContext.cs",
-              "ToolTip": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Dal\\CryptoAvenueDbContext.cs",
-              "RelativeToolTip": "CryptoAvenue.Dal\\CryptoAvenueDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-03T09:35:30.214Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "LoginResponse.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Domain\\Models\\LoginResponse.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Domain\\Models\\LoginResponse.cs",
@@ -347,19 +326,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Domain\\IRepositories\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "CryptoAvenue.Domain\\IRepositories\\IUserRepository.cs",
-              "ToolTip": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Domain\\IRepositories\\IUserRepository.cs",
-              "RelativeToolTip": "CryptoAvenue.Domain\\IRepositories\\IUserRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T11:03:44.357Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 16,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Dal\\Repositories\\UserRepository.cs",
@@ -368,12 +334,11 @@
               "RelativeToolTip": "CryptoAvenue.Dal\\Repositories\\UserRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAuwA4AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T11:04:54.081Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-14T11:04:54.081Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "CryptoUpdateService.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\Services\\CryptoUpdateService.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Application\\Services\\CryptoUpdateService.cs",
@@ -381,12 +346,11 @@
               "RelativeToolTip": "CryptoAvenue.Application\\Services\\CryptoUpdateService.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABgAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-03T09:44:21.449Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-03T09:44:21.449Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "GetUserByIdQuery.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\UserApp\\UserQuery\\GetUserByIdQuery.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Application\\UserApp\\UserQuery\\GetUserByIdQuery.cs",
@@ -394,12 +358,11 @@
               "RelativeToolTip": "CryptoAvenue.Application\\UserApp\\UserQuery\\GetUserByIdQuery.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T11:45:51.2Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-14T11:45:51.2Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "CreateUserCommand.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\UserApp\\UserCommands\\CreateUserCommand.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Application\\UserApp\\UserCommands\\CreateUserCommand.cs",
@@ -407,12 +370,11 @@
               "RelativeToolTip": "CryptoAvenue.Application\\UserApp\\UserCommands\\CreateUserCommand.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T11:13:49.103Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-14T11:13:49.103Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 19,
               "Title": "ICoinRepository.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Domain\\IRepositories\\ICoinRepository.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Domain\\IRepositories\\ICoinRepository.cs",
@@ -420,12 +382,11 @@
               "RelativeToolTip": "CryptoAvenue.Domain\\IRepositories\\ICoinRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-03T07:20:25.148Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-03T07:20:25.148Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "GetUserByIdQueryHandler.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\UserApp\\UserQueryHandler\\GetUserByIdQueryHandler.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Application\\UserApp\\UserQueryHandler\\GetUserByIdQueryHandler.cs",
@@ -433,12 +394,11 @@
               "RelativeToolTip": "CryptoAvenue.Application\\UserApp\\UserQueryHandler\\GetUserByIdQueryHandler.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T11:46:24.31Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-14T11:46:24.31Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 49,
               "Title": "BaseEntity.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Domain\\Models\\BaseEntity.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Domain\\Models\\BaseEntity.cs",
@@ -446,12 +406,11 @@
               "RelativeToolTip": "CryptoAvenue.Domain\\Models\\BaseEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-02T14:45:26.771Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-02T14:45:26.771Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 6,
               "Title": "Coin.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Domain\\Models\\Coin.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Domain\\Models\\Coin.cs",
@@ -464,7 +423,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 50,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Domain\\Models\\User.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Domain\\Models\\User.cs",
@@ -472,12 +431,11 @@
               "RelativeToolTip": "CryptoAvenue.Domain\\Models\\User.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T10:05:51.131Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-17T10:05:51.131Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 28,
               "Title": "DeleteUserCommandHandler.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\UserApp\\UserCommandHandler\\DeleteUserCommandHandler.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Application\\UserApp\\UserCommandHandler\\DeleteUserCommandHandler.cs",
@@ -489,7 +447,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "CoinGeckoApiService.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\Services\\CoinGeckoApiService.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Application\\Services\\CoinGeckoApiService.cs",
@@ -497,12 +455,11 @@
               "RelativeToolTip": "CryptoAvenue.Application\\Services\\CoinGeckoApiService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-03T09:48:36.649Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-03T09:48:36.649Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 27,
               "Title": "CreateUserCommandHandler.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\UserApp\\UserCommandHandler\\CreateUserCommandHandler.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Application\\UserApp\\UserCommandHandler\\CreateUserCommandHandler.cs",
@@ -514,16 +471,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "IWalletRepository.cs",
-              "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Domain\\IRepositories\\IWalletRepository.cs",
-              "RelativeDocumentMoniker": "CryptoAvenue.Domain\\IRepositories\\IWalletRepository.cs",
-              "ToolTip": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Domain\\IRepositories\\IWalletRepository.cs",
-              "RelativeToolTip": "CryptoAvenue.Domain\\IRepositories\\IWalletRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue\\Program.cs",
+              "RelativeDocumentMoniker": "CryptoAvenue\\Program.cs",
+              "ToolTip": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue\\Program.cs",
+              "RelativeToolTip": "CryptoAvenue\\Program.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAawDYAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T08:24:11.355Z",
+              "WhenOpened": "2024-03-02T14:40:53.498Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Domain\\IRepositories\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "CryptoAvenue.Domain\\IRepositories\\IUserRepository.cs",
+              "ToolTip": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Domain\\IRepositories\\IUserRepository.cs",
+              "RelativeToolTip": "CryptoAvenue.Domain\\IRepositories\\IUserRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-14T11:03:44.357Z"
             },
             {
               "$type": "Document",
@@ -535,25 +504,11 @@
               "RelativeToolTip": "CryptoAvenue.Dal\\Repositories\\GenericRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-03T09:43:54.806Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-03T09:43:54.806Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue\\Program.cs",
-              "RelativeDocumentMoniker": "CryptoAvenue\\Program.cs",
-              "ToolTip": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue\\Program.cs",
-              "RelativeToolTip": "CryptoAvenue\\Program.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAuwDQAAAA+AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-02T14:40:53.498Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 26,
               "Title": "ValidateUserEmailQuery.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\UserApp\\UserQuery\\ValidateUserEmailQuery.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Application\\UserApp\\UserQuery\\ValidateUserEmailQuery.cs",
@@ -565,7 +520,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 17,
               "Title": "IGenericRepository.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Domain\\IRepositories\\IGenericRepository.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Domain\\IRepositories\\IGenericRepository.cs",
@@ -573,12 +528,11 @@
               "RelativeToolTip": "CryptoAvenue.Domain\\IRepositories\\IGenericRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAuwBAAAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-03T07:21:36.349Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-03T07:21:36.349Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 25,
               "Title": "ValidateUserEmailQueryHandler.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\UserApp\\UserQueryHandler\\ValidateUserEmailQueryHandler.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Application\\UserApp\\UserQueryHandler\\ValidateUserEmailQueryHandler.cs",
@@ -590,7 +544,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 21,
               "Title": "JwtTokenService.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\Services\\JwtTokenService.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Application\\Services\\JwtTokenService.cs",
@@ -598,12 +552,11 @@
               "RelativeToolTip": "CryptoAvenue.Application\\Services\\JwtTokenService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAuwAsAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T15:24:55.662Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-21T15:24:55.662Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 20,
               "Title": "LoginUserCommandHandler.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\UserApp\\UserCommandHandler\\LoginUserCommandHandler.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Application\\UserApp\\UserCommandHandler\\LoginUserCommandHandler.cs",
@@ -611,12 +564,11 @@
               "RelativeToolTip": "CryptoAvenue.Application\\UserApp\\UserCommandHandler\\LoginUserCommandHandler.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAuwBIAAABkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T15:13:22.701Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-21T15:13:22.701Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 22,
               "Title": "UsersController.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "CryptoAvenue\\Controllers\\UsersController.cs",
@@ -624,12 +576,11 @@
               "RelativeToolTip": "CryptoAvenue\\Controllers\\UsersController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-14T11:36:01.06Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-14T11:36:01.06Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 24,
               "Title": "AuthController.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "CryptoAvenue\\Controllers\\AuthController.cs",
@@ -641,7 +592,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 23,
               "Title": "LoginUser.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\UserApp\\UserCommands\\LoginUser.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Application\\UserApp\\UserCommands\\LoginUser.cs",
@@ -653,7 +604,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 29,
               "Title": "DeleteUserCommand.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\UserApp\\UserCommands\\DeleteUserCommand.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Application\\UserApp\\UserCommands\\DeleteUserCommand.cs",
@@ -665,7 +616,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 30,
               "Title": "TimedCryptoUpdateService.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\Services\\TimedCryptoUpdateService.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Application\\Services\\TimedCryptoUpdateService.cs",
@@ -677,7 +628,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 31,
               "Title": "ICoinGeckoApiService.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\Services\\ICoinGeckoApiService.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Application\\Services\\ICoinGeckoApiService.cs",
@@ -689,7 +640,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 32,
               "Title": "UserPostDto.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue\\Dtos\\UserDtos\\UserPostDto.cs",
               "RelativeDocumentMoniker": "CryptoAvenue\\Dtos\\UserDtos\\UserPostDto.cs",
@@ -701,7 +652,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 33,
               "Title": "ICryptoUpdateService.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\Services\\ICryptoUpdateService.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Application\\Services\\ICryptoUpdateService.cs",
@@ -713,7 +664,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 34,
               "Title": "CoinRepository.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Dal\\Repositories\\CoinRepository.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Dal\\Repositories\\CoinRepository.cs",
@@ -725,7 +676,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 35,
               "Title": "UserGetDto.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue\\Dtos\\UserDtos\\UserGetDto.cs",
               "RelativeDocumentMoniker": "CryptoAvenue\\Dtos\\UserDtos\\UserGetDto.cs",
@@ -737,7 +688,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 36,
               "Title": "UserProfile.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue\\Profiles\\UserProfile.cs",
               "RelativeDocumentMoniker": "CryptoAvenue\\Profiles\\UserProfile.cs",
@@ -749,7 +700,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 51,
               "Title": "IEntity.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Domain\\Models\\IEntity.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Domain\\Models\\IEntity.cs",
@@ -761,7 +712,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 37,
               "Title": "20240303094038_update1.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Dal\\Migrations\\20240303094038_update1.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Dal\\Migrations\\20240303094038_update1.cs",
@@ -773,7 +724,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 38,
               "Title": "20240303093938_initialMigration.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Dal\\Migrations\\20240303093938_initialMigration.cs",
               "RelativeDocumentMoniker": "CryptoAvenue.Dal\\Migrations\\20240303093938_initialMigration.cs",
@@ -785,7 +736,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 39,
               "Title": "MyMiddleware.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue\\Middleware\\MyMiddleware.cs",
               "RelativeDocumentMoniker": "CryptoAvenue\\Middleware\\MyMiddleware.cs",
@@ -797,7 +748,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 40,
               "Title": "CryptoAvenue.Domain.csproj",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj",
               "RelativeDocumentMoniker": "CryptoAvenue.Domain\\CryptoAvenue.Domain.csproj",
@@ -809,7 +760,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 41,
               "Title": "SingletonService.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue\\Services\\SingletonService.cs",
               "RelativeDocumentMoniker": "CryptoAvenue\\Services\\SingletonService.cs",
@@ -821,7 +772,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 42,
               "Title": "TransientService.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue\\Services\\TransientService.cs",
               "RelativeDocumentMoniker": "CryptoAvenue\\Services\\TransientService.cs",
@@ -833,7 +784,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 43,
               "Title": "ScopedService.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue\\Services\\ScopedService.cs",
               "RelativeDocumentMoniker": "CryptoAvenue\\Services\\ScopedService.cs",
@@ -845,7 +796,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 44,
               "Title": "ServiceLifetime.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue\\Services\\ServiceLifetime.cs",
               "RelativeDocumentMoniker": "CryptoAvenue\\Services\\ServiceLifetime.cs",
@@ -857,7 +808,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 45,
               "Title": "ITransientService.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue\\Services\\ITransientService.cs",
               "RelativeDocumentMoniker": "CryptoAvenue\\Services\\ITransientService.cs",
@@ -869,7 +820,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 46,
               "Title": "ISingletonService.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue\\Services\\ISingletonService.cs",
               "RelativeDocumentMoniker": "CryptoAvenue\\Services\\ISingletonService.cs",
@@ -881,7 +832,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 47,
               "Title": "IScopedService.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue\\Services\\IScopedService.cs",
               "RelativeDocumentMoniker": "CryptoAvenue\\Services\\IScopedService.cs",
@@ -893,7 +844,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 48,
               "Title": "IServiceLifetime.cs",
               "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue\\Services\\IServiceLifetime.cs",
               "RelativeDocumentMoniker": "CryptoAvenue\\Services\\IServiceLifetime.cs",

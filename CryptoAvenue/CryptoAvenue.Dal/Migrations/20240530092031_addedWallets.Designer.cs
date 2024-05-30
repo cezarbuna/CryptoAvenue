@@ -4,6 +4,7 @@ using CryptoAvenue.Application;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CryptoAvenue.Dal.Migrations
 {
     [DbContext(typeof(CryptoAvenueDbContext))]
-    partial class CryptoAvenueDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240530092031_addedWallets")]
+    partial class addedWallets
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -74,35 +77,6 @@ namespace CryptoAvenue.Dal.Migrations
                     b.ToTable("Coins");
                 });
 
-            modelBuilder.Entity("CryptoAvenue.Domain.Models.Transaction", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("CoinId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("TransactionDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("TransactionType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("WalletId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CoinId");
-
-                    b.HasIndex("WalletId");
-
-                    b.ToTable("Transactions");
-                });
-
             modelBuilder.Entity("CryptoAvenue.Domain.Models.User", b =>
                 {
                     b.Property<Guid>("Id")
@@ -148,50 +122,6 @@ namespace CryptoAvenue.Dal.Migrations
                     b.ToTable("Wallets");
                 });
 
-            modelBuilder.Entity("CryptoAvenue.Domain.Models.WalletCoin", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("CoinId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<double>("Quantity")
-                        .HasColumnType("float");
-
-                    b.Property<Guid>("WalletId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CoinId");
-
-                    b.HasIndex("WalletId");
-
-                    b.ToTable("WalletCoins");
-                });
-
-            modelBuilder.Entity("CryptoAvenue.Domain.Models.Transaction", b =>
-                {
-                    b.HasOne("CryptoAvenue.Domain.Models.Coin", "Coin")
-                        .WithMany()
-                        .HasForeignKey("CoinId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CryptoAvenue.Domain.Models.Wallet", "Wallet")
-                        .WithMany()
-                        .HasForeignKey("WalletId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Coin");
-
-                    b.Navigation("Wallet");
-                });
-
             modelBuilder.Entity("CryptoAvenue.Domain.Models.Wallet", b =>
                 {
                     b.HasOne("CryptoAvenue.Domain.Models.User", "User")
@@ -201,25 +131,6 @@ namespace CryptoAvenue.Dal.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("CryptoAvenue.Domain.Models.WalletCoin", b =>
-                {
-                    b.HasOne("CryptoAvenue.Domain.Models.Coin", "Coin")
-                        .WithMany()
-                        .HasForeignKey("CoinId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CryptoAvenue.Domain.Models.Wallet", "Wallet")
-                        .WithMany()
-                        .HasForeignKey("WalletId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Coin");
-
-                    b.Navigation("Wallet");
                 });
 #pragma warning restore 612, 618
         }
