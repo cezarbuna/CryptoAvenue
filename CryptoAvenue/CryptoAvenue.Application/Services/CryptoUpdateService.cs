@@ -53,6 +53,7 @@ namespace CryptoAvenue.Application.Services
                 _logger.LogInformation("Beggining database update.");
                 _dbContext.Coins.Update(coin);
                 await _dbContext.SaveChangesAsync();
+                //_dbContext.SaveChanges();
                 _logger.LogInformation("Database updated successfully.");
             }
             _logger.LogInformation("All Database updated successfully.");
