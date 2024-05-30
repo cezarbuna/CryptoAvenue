@@ -62,7 +62,7 @@ builder.Services.AddHostedService<TimedCryptoUpdateService>();
 
 builder.Services.AddDbContext<CryptoAvenueDbContext>(options =>
         options.UseSqlServer(builder.Configuration
-        .GetConnectionString(@"Server = DESKTOP - DLVFJ7V\SQLEXPRESS; Database = CryptoAvenueDb; Trusted_Connection = True; TrustServerCertificate = True; MultipleActiveResultSets = True;")));
+        .GetConnectionString(@"Server=DESKTOP-DLVFJ7V\SQLEXPRESS;Database=CryptoAvenueDb2;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=True;")));
 
 builder.Services.AddMediatR(typeof(CreateUserCommand));
 builder.Services.AddMediatR(typeof(CreateWalletCommand));

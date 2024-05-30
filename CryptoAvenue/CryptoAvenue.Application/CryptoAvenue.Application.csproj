@@ -31,7 +31,6 @@
   <ItemGroup>
     <Folder Include="TransactionApp\TransactionQueryHandlers\" />
     <Folder Include="TransactionApp\TransactionQueries\" />
-    <Folder Include="TransactionApp\TransactionCommandHandlers\" />
   </ItemGroup>
 
 </Project>

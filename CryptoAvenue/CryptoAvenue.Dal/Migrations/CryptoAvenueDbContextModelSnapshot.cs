@@ -80,17 +80,24 @@ namespace CryptoAvenue.Dal.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("CoinId")
+                    b.Property<string>("SourceCoinId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<double>("Price")
+                    b.Property<double>("SourcePrice")
                         .HasColumnType("float");
 
-                    b.Property<double>("Quantity")
+                    b.Property<double>("SourceQuantity")
                         .HasColumnType("float");
 
-                    b.Property<double>("Total")
+                    b.Property<string>("TargetCoinId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<double>("TargetPrice")
+                        .HasColumnType("float");
+
+                    b.Property<double>("TargetQuantity")
                         .HasColumnType("float");
 
                     b.Property<DateTime>("TransactionDate")
@@ -105,7 +112,9 @@ namespace CryptoAvenue.Dal.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CoinId");
+                    b.HasIndex("SourceCoinId");
+
+                    b.HasIndex("TargetCoinId");
 
                     b.HasIndex("WalletId");
 
@@ -184,19 +193,27 @@ namespace CryptoAvenue.Dal.Migrations
 
             modelBuilder.Entity("CryptoAvenue.Domain.Models.Transaction", b =>
                 {
-                    b.HasOne("CryptoAvenue.Domain.Models.Coin", "Coin")
+                    b.HasOne("CryptoAvenue.Domain.Models.Coin", "SourceCoin")
                         .WithMany()
-                        .HasForeignKey("CoinId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasForeignKey("SourceCoinId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("CryptoAvenue.Domain.Models.Coin", "TargetCoin")
+                        .WithMany()
+                        .HasForeignKey("TargetCoinId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("CryptoAvenue.Domain.Models.Wallet", "Wallet")
-                        .WithMany()
+                        .WithMany("Transactions")
                         .HasForeignKey("WalletId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Coin");
+                    b.Navigation("SourceCoin");
+
+                    b.Navigation("TargetCoin");
 
                     b.Navigation("Wallet");
                 });
@@ -229,6 +246,11 @@ namespace CryptoAvenue.Dal.Migrations
                     b.Navigation("Coin");
 
                     b.Navigation("Wallet");
+                });
+
+            modelBuilder.Entity("CryptoAvenue.Domain.Models.Wallet", b =>
+                {
+                    b.Navigation("Transactions");
                 });
 #pragma warning restore 612, 618
         }

@@ -24,4 +24,8 @@
     <ProjectReference Include="..\CryptoAvenue.Domain\CryptoAvenue.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

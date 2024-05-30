@@ -1,5 +1,6 @@
 ﻿using CryptoAvenue.Domain.IRepositories;
 using CryptoAvenue.Domain.Models;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +13,13 @@ namespace CryptoAvenue.Application.Services
     {
         private readonly CryptoAvenueDbContext _dbContext;
         private readonly ICoinGeckoApiService _coinGeckoApiService;
+        private readonly ILogger<CryptoUpdateService> _logger;
 
-        public CryptoUpdateService(CryptoAvenueDbContext dbContext, ICoinGeckoApiService coinGeckoApiService)
+        public CryptoUpdateService(CryptoAvenueDbContext dbContext, ICoinGeckoApiService coinGeckoApiService, ILogger<CryptoUpdateService> logger)
         {
             _dbContext = dbContext;
             _coinGeckoApiService = coinGeckoApiService;
+            _logger = logger;
         }
 
         public async Task UpdateCryptoCurrenciesAsync()
@@ -47,9 +50,12 @@ namespace CryptoAvenue.Application.Services
             }
             foreach (var coin in coins)
             {
+                _logger.LogInformation("Beggining database update.");
                 _dbContext.Coins.Update(coin);
                 await _dbContext.SaveChangesAsync();
+                _logger.LogInformation("Database updated successfully.");
             }
+            _logger.LogInformation("All Database updated successfully.");
         }
     }
 }

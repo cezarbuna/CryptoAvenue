@@ -1,10 +1,5 @@
 ﻿using CryptoAvenue.Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CryptoAvenue.Application
 {
@@ -15,16 +10,38 @@ namespace CryptoAvenue.Application
         public DbSet<Wallet> Wallets { get; set; }
         public DbSet<WalletCoin> WalletCoins { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
+
         public CryptoAvenueDbContext(DbContextOptions options) : base(options)
         {
-
         }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
-                .UseSqlServer(@"Server=DESKTOP-DLVFJ7V\SQLEXPRESS;Database=CryptoAvenueDb;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=True;",
+                .UseSqlServer(@"Server=DESKTOP-DLVFJ7V\SQLEXPRESS;Database=CryptoAvenueDb2;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=True;",
                 b => b.MigrationsAssembly("CryptoAvenue.Dal"))
                 .EnableSensitiveDataLogging();
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Transaction>()
+            .HasOne(t => t.SourceCoin)
+            .WithMany()
+            .HasForeignKey(t => t.SourceCoinId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Transaction>()
+                .HasOne(t => t.TargetCoin)
+                .WithMany()
+                .HasForeignKey(t => t.TargetCoinId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Transaction>()
+                .HasOne(t => t.Wallet)
+                .WithMany(w => w.Transactions)
+                .HasForeignKey(t => t.WalletId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

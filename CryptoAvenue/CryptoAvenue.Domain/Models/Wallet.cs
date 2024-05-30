@@ -11,6 +11,6 @@ namespace CryptoAvenue.Domain.Models
         public User User { get; set; }
         public Guid UserId { get; set; }
         public double Balance { get; set; }
-        
+        public ICollection<Transaction> Transactions { get; set; } = new List<Transaction>(); // navigation property
     }
 }
