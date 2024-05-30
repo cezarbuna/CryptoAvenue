@@ -52,6 +52,7 @@ builder.Services.AddHttpClient<ICoinGeckoApiService, CoinGeckoApiService>();
 
 builder.Services.AddScoped<ICoinRepository, CoinRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IWalletRepository, WalletRepository>();
 builder.Services.AddScoped<ICryptoUpdateService, CryptoUpdateService>();
 
 builder.Services.AddHostedService<TimedCryptoUpdateService>();
