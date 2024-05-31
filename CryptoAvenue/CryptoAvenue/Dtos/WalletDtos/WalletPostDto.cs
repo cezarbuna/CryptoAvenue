@@ -6,5 +6,7 @@ namespace CryptoAvenue.Dtos.WalletDtos
     {
         [Required]
         public Guid UserId { get; set; }
+        [Required]
+        public double Quantity { get; set; }
     }
 }

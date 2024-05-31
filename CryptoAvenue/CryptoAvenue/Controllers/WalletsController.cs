@@ -30,7 +30,8 @@ namespace CryptoAvenue.Controllers
 
             var command = new CreateWalletCommand
             {
-                UserId = walletDto.UserId
+                UserId = walletDto.UserId,
+                Quantity = walletDto.Quantity
             };
 
             var result = await _mediator.Send(command);

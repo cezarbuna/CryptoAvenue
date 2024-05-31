@@ -11,6 +11,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using CryptoAvenue.Dal.Repositories;
 using CryptoAvenue.Application.WalletApp.WalletCommands;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -63,6 +64,13 @@ builder.Services.AddHostedService<TimedCryptoUpdateService>();
 builder.Services.AddDbContext<CryptoAvenueDbContext>(options =>
         options.UseSqlServer(builder.Configuration
         .GetConnectionString(@"Server=DESKTOP-DLVFJ7V\SQLEXPRESS;Database=CryptoAvenueDb2;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=True;")));
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+        options.JsonSerializerOptions.MaxDepth = 64; // Increase if necessary
+    });
+
 
 builder.Services.AddMediatR(typeof(CreateUserCommand));
 builder.Services.AddMediatR(typeof(CreateWalletCommand));

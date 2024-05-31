@@ -11,5 +11,6 @@ namespace CryptoAvenue.Application.WalletApp.WalletCommands
     public class CreateWalletCommand : IRequest<Wallet>
     {
         public Guid UserId { get; set; }
+        public double Quantity { get; set; }
     }
 }
