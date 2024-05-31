@@ -38,6 +38,37 @@ namespace CryptoAvenue.Controllers
 
             return CreatedAtAction(nameof(GetWalletById), new { walletId = result.Id }, result);
         }
+        [HttpPost]
+        [Route("withdraw/{userId}/{quantity}")]
+        public async Task<IActionResult> Withdraw( Guid userId, double quantity)
+        {
+
+            var command = new WithdrawCommand
+            {
+                UserId = userId,
+                Quantity = quantity
+            };
+
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
+        [HttpPost]
+        [Route("trade/{userId}/{sourceCoinId}/{sourceQuantity}/{targetCoinId}/{targetQuantity}")]
+        public async Task<IActionResult> Trade(Guid userId, string sourceCoinId, double sourceQuantity, string targetCoinId, double targetQuantity)
+        {
+            var command = new TradeCommand
+            {
+                UserId = userId,
+                SourceCoinId = sourceCoinId,
+                SourceQuantity = sourceQuantity,
+                TargetCoinId = targetCoinId,
+                TargetQuantity = targetQuantity
+            };
+            var result = await _mediator.Send(command);
+
+            return Ok(result);
+        }
         [HttpGet]
         [Route("get-wallet-by-id/{walletId}")]
         public async Task<IActionResult> GetWalletById(Guid walletId)

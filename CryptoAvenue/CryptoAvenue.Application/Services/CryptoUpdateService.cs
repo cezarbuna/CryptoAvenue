@@ -50,11 +50,11 @@ namespace CryptoAvenue.Application.Services
             }
             foreach (var coin in coins)
             {
-                _logger.LogInformation("Beggining database update.");
                 _dbContext.Coins.Update(coin);
                 await _dbContext.SaveChangesAsync();
-                //_dbContext.SaveChanges();
-                _logger.LogInformation("Database updated successfully.");
+
+                //also update user's portfolios
+
             }
             _logger.LogInformation("All Database updated successfully.");
         }
