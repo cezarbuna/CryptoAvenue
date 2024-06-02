@@ -1,0 +1,14 @@
+.container {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+}
+
+#payment-form {
+  display: none;
+  margin-top: 20px;
+}
+
+#submit-button {
+  margin-top: 20px;
+}

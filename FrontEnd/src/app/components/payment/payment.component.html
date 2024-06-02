@@ -1,0 +1,7 @@
+<div class="container">
+  <button id="pay-button" (click)="initializePayment()">Pay</button>
+  <div id="payment-form" *ngIf="clientSecret">
+    <div id="payment-element"></div>
+    <button id="submit-button" (click)="submitPayment()">Submit Payment</button>
+  </div>
+</div>

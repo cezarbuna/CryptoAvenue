@@ -1,0 +1,13 @@
+.user-menu {
+  position: relative;
+}
+
+.account-details {
+  padding: 10px;
+  width: 200px;
+}
+
+.email {
+  font-weight: bold;
+  margin-bottom: 10px;
+}

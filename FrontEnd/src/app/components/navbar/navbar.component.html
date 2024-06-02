@@ -1,19 +1,16 @@
-<!--<div class="card">-->
-<!--  <p-menubar [model]="items">-->
-<!--    <ng-template pTemplate="start">-->
-
-<!--    </ng-template>-->
-<!--    <ng-template pTemplate="end">-->
-
-<!--    </ng-template>-->
-<!--  </p-menubar>-->
-<!--</div>-->
-
 <div class="card">
   <p-menubar [model]="items">
     <ng-template pTemplate="end">
+<!--      <div class="user-menu" pTooltip="Account">-->
+<!--        <p-button icon="pi pi-user" label="" (click)="showAccountMenu($event)"></p-button>-->
+<!--        <p-overlayPanel #accountMenu [dismissable]="true">-->
+<!--          <div class="account-details">-->
+<!--            <div class="email">{{ userEmail }}</div>-->
+<!--            <p-menu [model]="accountItems"></p-menu>-->
+<!--          </div>-->
+<!--        </p-overlayPanel>-->
+<!--      </div>-->
       <p-button label="Logout" (click)="logOut()"></p-button>
     </ng-template>
   </p-menubar>
 </div>
-

@@ -1,0 +1,9 @@
+{
+  "/api": {
+    "target": "http://localhost:7008",
+    "secure": false,
+    "headers": {
+      "Content-Security-Policy": "default-src 'self'; script-src 'self' https://js.stripe.com; connect-src 'self' https://api.stripe.com https://q.stripe.com; frame-src 'self' https://js.stripe.com; style-src 'self' 'unsafe-inline';"
+    }
+  }
+}

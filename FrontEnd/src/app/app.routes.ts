@@ -4,10 +4,15 @@ import {LoginComponent} from "./components/login/login.component";
 import {RegisterComponent} from "./components/register/register.component";
 import {AuthGuard} from "./guards/auth-guard";
 import {MarketsComponent} from "./components/markets/markets.component";
+import {DepositComponent} from "./components/deposit/deposit.component";
+import {PaymentComponent} from "./components/payment/payment.component";
 
 export const routes: Routes = [
   {path: 'home', component: HomeComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
   { path: 'markets', component: MarketsComponent },
+  { path: 'deposit', component: DepositComponent },
+  { path: 'payment', component: PaymentComponent },
+
 ];

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ueOefxF++2WTis96Pd3VyS1t7UeubHCEiFfswZxzrn7k262602H8ZQq2Sg9V2F8ausIhwCWnfLMPD8gmFdQn1A==",
+  "dgSpecHash": "yeRQcQa6iJBodeXt/wuLiHO6P6IEFd86hY9bkSJd7zMmOW63vGs9HE1yH54V/db5SmEM3AVQrDWr2zuZOqG8Cw==",
   "success": true,
   "projectFilePath": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue\\CryptoAvenue.csproj",
   "expectedPackageFiles": [
@@ -52,6 +52,7 @@
     "C:\\Users\\win 10\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\win 10\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\win 10\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\win 10\\.nuget\\packages\\stripe.net\\44.10.0\\stripe.net.44.10.0.nupkg.sha512",
     "C:\\Users\\win 10\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\win 10\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\win 10\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",

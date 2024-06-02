@@ -14,12 +14,16 @@ namespace CryptoAvenue.Application.Services
         private readonly CryptoAvenueDbContext _dbContext;
         private readonly ICoinGeckoApiService _coinGeckoApiService;
         private readonly ILogger<CryptoUpdateService> _logger;
+        private readonly IWalletRepository _walletRepository;
+        private readonly IWalletCoinRepository _walletCoinRepository;
 
-        public CryptoUpdateService(CryptoAvenueDbContext dbContext, ICoinGeckoApiService coinGeckoApiService, ILogger<CryptoUpdateService> logger)
+        public CryptoUpdateService(CryptoAvenueDbContext dbContext, ICoinGeckoApiService coinGeckoApiService, ILogger<CryptoUpdateService> logger, IWalletRepository walletRepository, IWalletCoinRepository walletCoinRepository)
         {
             _dbContext = dbContext;
             _coinGeckoApiService = coinGeckoApiService;
             _logger = logger;
+            _walletRepository = walletRepository;
+            _walletCoinRepository = walletCoinRepository;
         }
 
         public async Task UpdateCryptoCurrenciesAsync()
@@ -52,9 +56,29 @@ namespace CryptoAvenue.Application.Services
             {
                 _dbContext.Coins.Update(coin);
                 await _dbContext.SaveChangesAsync();
+            }
 
-                //also update user's portfolios
+            var wallets = await _walletRepository.FindAll();
+            foreach (var wallet in wallets)
+            {
+                var walletsCoins = await _walletCoinRepository.FindAll(x => x.WalletId == wallet.Id);
+                double totalBalance = 0;
+                foreach (var walletCoin in walletsCoins)
+                {
+                    var updatedCoin = coins.FirstOrDefault(x => x.Id == walletCoin.CoinId);
+                    if(updatedCoin != null)
+                    {
+                        totalBalance += walletCoin.Quantity * updatedCoin.CurrentPrice;
+                        walletCoin.Quantity *= updatedCoin.CurrentPrice;
+                        await _walletCoinRepository.Update(walletCoin);
+                    }
+                }
+                await _walletCoinRepository.SaveChanges();
 
+                //also update wallet
+                wallet.Balance = totalBalance;
+                await _walletRepository.Update(wallet);
+                await _walletRepository.SaveChanges();
             }
             _logger.LogInformation("All Database updated successfully.");
         }
