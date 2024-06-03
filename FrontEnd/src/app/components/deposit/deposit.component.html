@@ -1,2 +1,29 @@
-<h2>Deposit Fiat currency</h2>
-<p-button label="Proceed to Payment" (click)="deposit()"></p-button>
+<div class="card flex justify-content-center">
+  <p-card header="Deposit FIAT" subheader="Add Money To Your Account" [style]="{ width: '360px' }">
+    <ng-template pTemplate="header">
+    </ng-template>
+    <ng-template pTemplate="content">
+      <form [formGroup]="depositForm" (ngSubmit)="onSubmit()">
+        <div class="separator">
+          <p-dropdown
+            [options]="currencies"
+            optionLabel="name"
+            placeholder="Select a Currency" />
+        </div>
+        <div class="separator">
+          <span class="p-float-label">
+            <input pInputText id="quantity" formControlName="quantity"/>
+            <label for="quantity">Amount</label>
+          </span>
+          <p-message *ngIf="getErrorMessage('amount')" severity="error" text="You must deposit at least 200 Euros"></p-message>
+        </div>
+        <p-button label="Deposit" class="centered-items" type="submit"></p-button>
+
+      </form>
+
+    </ng-template>
+    <ng-template pTemplate="footer">
+
+    </ng-template>
+  </p-card>
+</div>

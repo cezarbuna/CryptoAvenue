@@ -96,6 +96,12 @@ app.UseAuthorization();
 
 app.UseAuthorization();
 
+app.Use(async (context, next) =>
+{
+    context.Response.Headers.Add("Content-Security-Policy", "default-src 'self'; script-src 'self' https://js.stripe.com; connect-src 'self' https://api.stripe.com https://q.stripe.com; frame-src 'self' https://js.stripe.com; style-src 'self' 'unsafe-inline';");
+    await next();
+});
+
 app.MapControllers();
 
 app.Run();

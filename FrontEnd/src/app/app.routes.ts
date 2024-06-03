@@ -10,7 +10,7 @@ import {PaymentComponent} from "./components/payment/payment.component";
 export const routes: Routes = [
   {path: 'home', component: HomeComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
+  { path: 'register', component: RegisterComponent, },
   { path: 'markets', component: MarketsComponent },
   { path: 'deposit', component: DepositComponent },
   { path: 'payment', component: PaymentComponent },
