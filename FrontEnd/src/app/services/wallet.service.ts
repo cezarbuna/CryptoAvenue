@@ -19,4 +19,7 @@ export class WalletService {
   withdraw(userId: string, quantity: number): Observable<Wallet> {
     return this.httpClient.patch<Wallet>(`https://localhost:7008/api/Wallets/withdraw/${userId}/${quantity}`, {});
   }
+  trade(userId: string, sourceCoinId: string, sourceQuantity: number, targetCoinId: string, targetQuantity: number): Observable<Wallet> {
+    return this.httpClient.post<Wallet>(`https://localhost:7008/api/Wallets/trade/${userId}/${sourceCoinId}/${sourceQuantity}/${targetCoinId}/${targetQuantity}`, {})
+  }
 }

@@ -60,9 +60,35 @@ namespace CryptoAvenue.Controllers
         [Route("get-available-quantity/{coinId}/{userId}")]
         public async Task<IActionResult> GetAvailableQuantity(string coinId, Guid userId)
         {
-            var wallet = await _dbContext.Wallets.SingleOrDefaultAsync(x => x.UserId==userId);
-            var quantity =  _dbContext.WalletCoins.SingleOrDefault(x => x.WalletId == wallet.Id && x.CoinId == coinId).Quantity;
-            return Ok(quantity);
+            if (!coinId.Contains("["))
+            {
+                var wallet = await _dbContext.Wallets.SingleOrDefaultAsync(x => x.UserId == userId);
+                var quantity = _dbContext.WalletCoins.SingleOrDefault(x => x.WalletId == wallet.Id && x.CoinId == coinId).Quantity;
+                if(quantity != null)
+                    return Ok(quantity);
+                return BadRequest();
+            }
+            return BadRequest();
+        }
+        [HttpGet]
+        [Route("predict-amount-source-to-target/{userId}/{sourceAmount}/{sourceCoinId}/{targetCoinId}")]
+        public async Task<IActionResult> PredictPrice( Guid userId, double sourceAmount, string sourceCoinId, string targetCoinId)
+        {
+            if(sourceAmount == null)
+            {
+                return Ok(0);
+            }
+            var sourceCoin = await _dbContext.Coins.SingleOrDefaultAsync(x => x.Id == sourceCoinId);
+            var targetCoin = await _dbContext.Coins.SingleOrDefaultAsync(x => x.Id == targetCoinId);
+            if(sourceCoin != null && targetCoin != null)
+            {
+                var wallet = await _dbContext.Wallets.SingleOrDefaultAsync(x => x.UserId == userId);
+                var sourcePrice = sourceAmount * sourceCoin.CurrentPrice;
+                var result = sourcePrice / targetCoin.CurrentPrice;
+                return Ok(result);
+            }
+
+            return BadRequest();
         }
     }
 }

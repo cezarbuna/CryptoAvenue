@@ -3,18 +3,36 @@
     <ng-template pTemplate="header">
     </ng-template>
     <ng-template pTemplate="content">
-      <form [formGroup]="tradeForm">
+      <form [formGroup]="tradeForm" (ngSubmit)="trade()">
         <div class="separator">
           <p-dropdown
+            formControlName="sourceCoin"
             [options]="sourceCoins"
             optionLabel="label"
-            placeholder="Select a Currency"></p-dropdown>
+            placeholder="Select a Currency"
+            (onChange)="onCoinChange($event.value)"></p-dropdown>
         </div>
         <div class="separator">
           <span class="p-float-label">
-            <input pInputText id="quantity" formControlName="quantity" />
-            <label for="quantity">Quantity</label>
+            <input pInputText id="sourceQuantity" formControlName="sourceQuantity" />
+            <label for="sourceQuantity">Amount</label>
           </span>
+          <span *ngIf="availableQuantityAsString !== null">Available: {{ availableQuantityAsString }}</span>
+        </div>
+        <div class="separator" *ngIf="firstCoinSelected">
+          <p-dropdown
+            formControlName="coin"
+            [options]="targetCoins"
+            optionLabel="label"
+            placeholder="Select a Currency"
+            (onChange)="onCoinChange2($event.value)"/>
+        </div>
+        <div class="separator" *ngIf="firstCoinSelected">
+          <span class="p-float-label">
+            <input pInputText id="targetQuantity" formControlName="targetQuantity" />
+            <label for="targetQuantity">Amount</label>
+          </span>
+          <span *ngIf="maximumQuantityAsString !== null">Maximum: {{ maximumQuantityAsString }}</span>
         </div>
         <p-button label="Trade" class="centered-items" type="submit"></p-button>
       </form>
