@@ -6,6 +6,8 @@ import {AuthGuard} from "./guards/auth-guard";
 import {MarketsComponent} from "./components/markets/markets.component";
 import {DepositComponent} from "./components/deposit/deposit.component";
 import {PaymentComponent} from "./components/payment/payment.component";
+import {WithdrawComponent} from "./components/withdraw/withdraw.component";
+import {TradeComponent} from "./components/trade/trade.component";
 
 export const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -14,5 +16,7 @@ export const routes: Routes = [
   { path: 'markets', component: MarketsComponent },
   { path: 'deposit', component: DepositComponent },
   { path: 'payment', component: PaymentComponent },
+  { path: 'withdraw', component: WithdrawComponent },
+  { path: 'trade', component: TradeComponent },
 
 ];

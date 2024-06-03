@@ -13,4 +13,10 @@ export class WalletService {
   deposit(depositModel: DepositModel): Observable<Wallet> {
     return this.httpClient.post<Wallet>(`https://localhost:7008/api/Wallets`, depositModel);
   }
+  getWalletByUserId(userId: string | null): Observable<Wallet> {
+    return this.httpClient.get<Wallet>(`https://localhost:7008/api/Wallets/get-wallet-by-user-id/${userId}`);
+  }
+  withdraw(userId: string, quantity: number): Observable<Wallet> {
+    return this.httpClient.patch<Wallet>(`https://localhost:7008/api/Wallets/withdraw/${userId}/${quantity}`, {});
+  }
 }

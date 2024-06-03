@@ -1,1 +1,29 @@
-<p>withdraw works!</p>
+<div class="card flex justify-content-center">
+  <p-card header="Withdraw" subheader="Withdraw money from account" [style]="{ width: '360px' }">
+    <ng-template pTemplate="header">
+    </ng-template>
+    <ng-template pTemplate="content">
+      <form [formGroup]="withdrawForm" (ngSubmit)="onSubmit()">
+        <div class="separator">
+          <p-dropdown
+            [options]="currencies"
+            optionLabel="name"
+            placeholder="Select a Currency" />
+        </div>
+        <div class="separator">
+          <span class="p-float-label">
+            <input pInputText id="quantity" formControlName="quantity"/>
+            <label for="quantity">Amount</label>
+          </span>
+          <p-message *ngIf="getErrorMessage('quantity')" severity="error" text="Maximum withdrawal amount is"></p-message>
+        </div>
+        <p-button label="Withdraw" class="centered-items" type="submit"></p-button>
+
+      </form>
+
+    </ng-template>
+    <ng-template pTemplate="footer">
+
+    </ng-template>
+  </p-card>
+</div>

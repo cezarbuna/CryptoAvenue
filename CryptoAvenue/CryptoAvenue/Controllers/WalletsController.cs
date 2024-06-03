@@ -38,7 +38,7 @@ namespace CryptoAvenue.Controllers
 
             return CreatedAtAction(nameof(GetWalletById), new { walletId = result.Id }, result);
         }
-        [HttpPost]
+        [HttpPatch]
         [Route("withdraw/{userId}/{quantity}")]
         public async Task<IActionResult> Withdraw( Guid userId, double quantity)
         {
@@ -74,6 +74,17 @@ namespace CryptoAvenue.Controllers
         public async Task<IActionResult> GetWalletById(Guid walletId)
         {
             var query = new GetWalletByIdQuery { WalletId = walletId };
+            var result = await _mediator.Send(query);
+            if (result == null)
+                return NotFound();
+
+            return Ok(result);
+        }
+        [HttpGet]
+        [Route("get-wallet-by-user-id/{userId}")]
+        public async Task<IActionResult> GetWalletByUserId(Guid userId)
+        {
+            var query = new GetWalletByUserIdQuery { UserId = userId };
             var result = await _mediator.Send(query);
             if (result == null)
                 return NotFound();

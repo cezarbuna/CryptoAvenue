@@ -48,7 +48,7 @@ export class NavbarComponent implements OnInit {
       { label: 'Portfolio', routerLink: 'portfolio'},
       { label: 'Deposit', routerLink: 'deposit'},
       { label: 'Withdraw', routerLink: 'withdraw'},
-      { label: 'Exchange', routerLink: 'trade'},
+      { label: 'Trade', routerLink: 'trade'},
     ];
     this.activeItem = this.items[0]
   }

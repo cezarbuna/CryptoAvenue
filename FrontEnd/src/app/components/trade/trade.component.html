@@ -1,0 +1,25 @@
+<div class="card flex justify-content-center">
+  <p-card header="Trade" subheader="Trade" [style]="{ width: '360px' }">
+    <ng-template pTemplate="header">
+    </ng-template>
+    <ng-template pTemplate="content">
+      <form [formGroup]="tradeForm">
+        <div class="separator">
+          <p-dropdown
+            [options]="sourceCoins"
+            optionLabel="label"
+            placeholder="Select a Currency"></p-dropdown>
+        </div>
+        <div class="separator">
+          <span class="p-float-label">
+            <input pInputText id="quantity" formControlName="quantity" />
+            <label for="quantity">Quantity</label>
+          </span>
+        </div>
+        <p-button label="Trade" class="centered-items" type="submit"></p-button>
+      </form>
+    </ng-template>
+    <ng-template pTemplate="footer">
+    </ng-template>
+  </p-card>
+</div>
