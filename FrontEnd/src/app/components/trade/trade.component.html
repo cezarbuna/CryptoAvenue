@@ -10,7 +10,14 @@
             [options]="sourceCoins"
             optionLabel="label"
             placeholder="Select a Currency"
-            (onChange)="onCoinChange($event.value)"></p-dropdown>
+            (onChange)="onCoinChange($event.value)">
+            <ng-template let-coin pTemplate="item">
+              <div class="coin-item">
+                <img [src]="coin.imageUrl" alt="{{coin.label}}" width="20" class="coin-icon">
+                <span>{{coin.label}}</span>
+              </div>
+            </ng-template>
+          </p-dropdown>
         </div>
         <div class="separator">
           <span class="p-float-label">
@@ -25,7 +32,14 @@
             [options]="targetCoins"
             optionLabel="label"
             placeholder="Select a Currency"
-            (onChange)="onCoinChange2($event.value)"/>
+            (onChange)="onCoinChange2($event.value)">
+            <ng-template let-coin pTemplate="item">
+              <div class="coin-item">
+                <img [src]="coin.imageUrl" alt="{{coin.label}}" width="20" class="coin-icon">
+                <span>{{coin.label}}</span>
+              </div>
+            </ng-template>
+          </p-dropdown>
         </div>
         <div class="separator" *ngIf="firstCoinSelected">
           <span class="p-float-label">

@@ -13,3 +13,11 @@
 .separator{
   margin-top: 10px;
 }
+.coin-item {
+  display: flex;
+  align-items: center;
+}
+
+.coin-icon {
+  margin-right: 10px; /* Adjust the value to increase or decrease spacing */
+}

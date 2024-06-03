@@ -4,7 +4,7 @@ import {CardModule} from "primeng/card";
 import {DropdownModule} from "primeng/dropdown";
 import {InputTextModule} from "primeng/inputtext";
 import {MessageModule} from "primeng/message";
-import {NgIf} from "@angular/common";
+import {NgIf, NgOptimizedImage} from "@angular/common";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {SharedModule} from "primeng/api";
 import {UserServiceService} from "../../services/user-service.service";
@@ -18,16 +18,17 @@ import {Router} from "@angular/router";
 @Component({
   selector: 'app-trade',
   standalone: true,
-    imports: [
-        ButtonModule,
-        CardModule,
-        DropdownModule,
-        InputTextModule,
-        MessageModule,
-        NgIf,
-        ReactiveFormsModule,
-        SharedModule
-    ],
+  imports: [
+    ButtonModule,
+    CardModule,
+    DropdownModule,
+    InputTextModule,
+    MessageModule,
+    NgIf,
+    ReactiveFormsModule,
+    SharedModule,
+    NgOptimizedImage
+  ],
   templateUrl: './trade.component.html',
   styleUrl: './trade.component.css'
 })
