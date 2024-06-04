@@ -5,13 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using System.Transactions;
 
 namespace CryptoAvenue.Application.TransactionApp.TransactionCommands
 {
-    public class RevertTransactionCommand : IRequest<Transaction>
+    public class DeleteTransactionCommand : IRequest<Transaction>
     {
         public Guid TransactionId { get; set; }
-        public double TargetAmount { get; set; } // for failsafe reasons
     }
 }

@@ -4,6 +4,7 @@ using CryptoAvenue.Domain.IRepositories;
 using CryptoAvenue.Domain.Models;
 using CryptoAvenue.Dtos.CoinDtos;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,21 +17,21 @@ namespace CryptoAvenue.Application.WalletApp.WalletCommandHandlers
     {
         private readonly IWalletRepository _walletRepository;
         private readonly IWalletCoinRepository _walletCoinRepository;
-        private readonly ICoinGeckoApiService _coinGeckoApiService;
+        private readonly CryptoAvenueDbContext _dbContext;
         private readonly ITransactionRepository _transactionRepository;
 
-        public TradeCommandHandler(IWalletRepository walletRepository, IWalletCoinRepository walletCoinRepository, ICoinGeckoApiService coinGeckoApiService, ITransactionRepository transactionRepository)
+        public TradeCommandHandler(IWalletRepository walletRepository, IWalletCoinRepository walletCoinRepository, CryptoAvenueDbContext dbContext, ITransactionRepository transactionRepository)
         {
             _walletRepository = walletRepository;
             _walletCoinRepository = walletCoinRepository;
-            _coinGeckoApiService = coinGeckoApiService;
+            _dbContext = dbContext;
             _transactionRepository = transactionRepository;
         }
 
         public async Task<Wallet> Handle(TradeCommand request, CancellationToken cancellationToken)
         {
-            var sourceCoin = _coinGeckoApiService.GetLatestCryptoDataAsync().Result.SingleOrDefault(x => x.Id == request.SourceCoinId);
-            var targetCoin = _coinGeckoApiService.GetLatestCryptoDataAsync().Result.SingleOrDefault(x => x.Id == request.TargetCoinId);
+            var sourceCoin = await _dbContext.Coins.SingleOrDefaultAsync(x => x.Id == request.SourceCoinId);
+            var targetCoin = await _dbContext.Coins.SingleOrDefaultAsync(x => x.Id == request.TargetCoinId);
 
             var wallet = await _walletRepository.GetEntityBy(x => x.UserId == request.UserId);
             var sourceCoinWallet = await _walletCoinRepository.GetEntityBy(x => x.CoinId == request.SourceCoinId && x.WalletId == wallet.Id);
@@ -68,14 +69,14 @@ namespace CryptoAvenue.Application.WalletApp.WalletCommandHandlers
             await _walletCoinRepository.SaveChanges();
             return wallet;
         }
-        public async Task<Transaction> CreateTransaction(Wallet wallet, CoinGetDto sourceCoin,CoinGetDto targetCoin, double sourceQuantity, double targetQuantity)
+        public async Task<Transaction> CreateTransaction(Wallet wallet, Coin sourceCoin,Coin targetCoin, double sourceQuantity, double targetQuantity)
         {
             var transaction = new Transaction
             {
                 SourceCoinId = sourceCoin.Id,
                 TargetCoinId = targetCoin.Id,
-                SourcePrice = sourceCoin.Current_Price,
-                TargetPrice = targetCoin.Current_Price,
+                SourcePrice = sourceCoin.CurrentPrice,
+                TargetPrice = targetCoin.CurrentPrice,
                 SourceQuantity = sourceQuantity,
                 TargetQuantity = targetQuantity,
                 TransactionType = "TRADE",
