@@ -19,5 +19,6 @@ export const routes: Routes = [
   { path: 'payment', component: PaymentComponent },
   { path: 'withdraw', component: WithdrawComponent },
   { path: 'trade', component: TradeComponent },
-  { path: 'transactions', component: TransactionsComponent}
+  { path: 'transactions', component: TransactionsComponent},
+  { path: 'coin-detail/:coinId'}
 ];

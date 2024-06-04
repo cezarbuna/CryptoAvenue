@@ -1,1 +1,63 @@
-<p>markets works!</p>
+<div class="card" style="max-width: 80%; margin: auto;">
+  <p-table [value]="coins" [paginator]="true" [rows]="10" [tableStyle]="{'min-width': '60rem'}" (onRowSelect)="onRowSelect($event)">
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="name" style="width:20%">
+          Name <p-sortIcon field="name"></p-sortIcon>
+        </th>
+        <th pSortableColumn="symbol" style="width:15%">
+          Symbol <p-sortIcon field="symbol"></p-sortIcon>
+        </th>
+        <th pSortableColumn="currentPrice" style="width:15%">
+          Current Price <p-sortIcon field="currentPrice"></p-sortIcon>
+        </th>
+        <th pSortableColumn="marketCap" style="width:15%">
+          Market Cap <p-sortIcon field="marketCap"></p-sortIcon>
+        </th>
+        <th pSortableColumn="marketCapRank" style="width:15%">
+          Market Cap Rank <p-sortIcon field="marketCapRank"></p-sortIcon>
+        </th>
+        <th pSortableColumn="high24h" style="width:15%">
+          High 24h <p-sortIcon field="high24h"></p-sortIcon>
+        </th>
+        <th pSortableColumn="low24h" style="width:15%">
+          Low 24h <p-sortIcon field="low24h"></p-sortIcon>
+        </th>
+        <th pSortableColumn="priceChange24h" style="width:15%">
+          Price Change 24h <p-sortIcon field="priceChange24h"></p-sortIcon>
+        </th>
+        <th pSortableColumn="priceChangePercentage24h" style="width:15%">
+          Price Change % 24h <p-sortIcon field="priceChangePercentage24h"></p-sortIcon>
+        </th>
+        <th pSortableColumn="marketCapChange24h" style="width:15%">
+          Market Cap Change 24h <p-sortIcon field="marketCapChange24h"></p-sortIcon>
+        </th>
+        <th pSortableColumn="marketCapChangePercentage24h" style="width:15%">
+          Market Cap Change % 24h <p-sortIcon field="marketCapChangePercentage24h"></p-sortIcon>
+        </th>
+        <th pSortableColumn="ath" style="width:15%">
+          All Time High <p-sortIcon field="ath"></p-sortIcon>
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-coin>
+      <tr (click)="onRowSelect(coin)">
+        <td>
+          <img [src]="coin.imageUrl" alt="{{coin.name}}" style="width: 20px; height: 20px; margin-right: 8px;">
+          {{ coin.name }}
+        </td>
+        <td>{{ coin.symbol }}</td>
+        <td>{{ coin.currentPrice }}</td>
+        <td>{{ coin.marketCap }}</td>
+        <td>{{ coin.marketCapRank }}</td>
+        <td>{{ coin.high24h }}</td>
+        <td>{{ coin.low24h }}</td>
+        <td>{{ coin.priceChange24h }}</td>
+        <td>{{ coin.priceChangePercentage24h }}</td>
+        <td>{{ coin.marketCapChange24h }}</td>
+        <td>{{ coin.marketCapChangePercentage24h }}</td>
+        <td>{{ coin.ath }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
