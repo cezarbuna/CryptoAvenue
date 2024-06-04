@@ -1,13 +1,28 @@
-.user-menu {
-  position: relative;
+/*.navbar{*/
+/*  background-color: #042620;*/
+/*  color: white;*/
+/*}*/
+.navbar ::ng-deep .p-menubar{
+  background-color: #042620;
+  color: white;
+  border: none;
+}
+.navbar ::ng-deep .p-menubar .p-menuitem-link,
+ .navbar ::ng-deep .p-menubar .p-menuitem-link .p-menuitem-text {
+   color: white !important; /* Ensure menu item text color is white */
+ }
+
+.navbar ::ng-deep .p-menubar .p-menuitem-link:hover,
+.navbar ::ng-deep .p-menubar .p-menuitem-link:focus,
+.navbar ::ng-deep .p-menubar .p-menuitem-link:active {
+  background-color: #303f9f; /* Optional: darker background on hover */
+  color: white !important; /* Ensure text color remains white on hover */
 }
 
-.account-details {
-  padding: 10px;
-  width: 200px;
+.navbar ::ng-deep .p-button {
+  color: white !important; /* Ensure button text color is white */
 }
 
-.email {
-  font-weight: bold;
-  margin-bottom: 10px;
+.navbar ::ng-deep .p-button .pi {
+  color: white !important; /* Ensure button icon color is white */
 }

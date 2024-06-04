@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CryptoAvenue")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c0f8f44f625d03ba58271db24351d1984c2aa57b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+49ba0f0f22b770ce6660dd0eadfb1f9639c19f49")]
 [assembly: System.Reflection.AssemblyProductAttribute("CryptoAvenue")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CryptoAvenue")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -21,3 +21,13 @@
 .coin-icon {
   margin-right: 10px; /* Adjust the value to increase or decrease spacing */
 }
+
+.selected-coin {
+  display: flex;
+  align-items: center;
+  margin-top: 5px; /* Adjust as needed */
+}
+
+.selected-coin .coin-icon {
+  margin-right: 10px; /* Adjust the value to increase or decrease spacing */
+}

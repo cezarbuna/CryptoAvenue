@@ -1,16 +1,15 @@
-<div class="card">
-  <p-menubar [model]="items">
+<div class="card navbar">
+  <p-menubar [model]="itemsWhenLoggedIn" *ngIf="isLoggedInVariable">
+    <ng-template pTemplate="start">
+      <p>Crypto Avenue</p>
+    </ng-template>
     <ng-template pTemplate="end">
-<!--      <div class="user-menu" pTooltip="Account">-->
-<!--        <p-button icon="pi pi-user" label="" (click)="showAccountMenu($event)"></p-button>-->
-<!--        <p-overlayPanel #accountMenu [dismissable]="true">-->
-<!--          <div class="account-details">-->
-<!--            <div class="email">{{ userEmail }}</div>-->
-<!--            <p-menu [model]="accountItems"></p-menu>-->
-<!--          </div>-->
-<!--        </p-overlayPanel>-->
-<!--      </div>-->
-      <p-button label="Logout" (click)="logOut()"></p-button>
+      <p-button *ngIf="isLoggedInVariable" label="Logout" (click)="logOut()"></p-button>
+    </ng-template>
+  </p-menubar>
+  <p-menubar [model]="items" *ngIf="!isLoggedInVariable">
+    <ng-template pTemplate="start">
+      <p>Crypto Avenue</p>
     </ng-template>
   </p-menubar>
 </div>

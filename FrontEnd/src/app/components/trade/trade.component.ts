@@ -43,6 +43,7 @@ export class TradeComponent implements OnInit{
     targetQuantity: new FormControl('', [Validators.required, Validators.min(0.01)]),
     userId: new FormControl(localStorage.getItem('userId')),
   });
+  selectedSourceCoin: CoinOption | undefined;
   selectedTargetCoin: CoinOption | undefined;
   sourceCoins: CoinOption[] = [];
   targetCoins: CoinOption[] = [];
@@ -105,7 +106,7 @@ export class TradeComponent implements OnInit{
         this.availableQuantity = res;
         this.availableQuantityAsString = this.availableQuantity.toFixed(2);
         this.firstCoinSelected = true;
-        this.selectedTargetCoin = coin;
+        this.selectedSourceCoin = coin;
         this.tradeForm.get('sourceQuantity')?.setValidators([Validators.max(res)]);
         this.coinsService.getAllCoins().subscribe(
           res => {
@@ -124,6 +125,7 @@ export class TradeComponent implements OnInit{
     const userId = localStorage.getItem('userId') || '';
     // this.tradeForm.get('targetCoin')?.setValue(coin.value);
     this.targetCoinId = coin.value;
+    this.selectedTargetCoin = coin;
     if(this.availableQuantity != null){
       this.coinsService.predictAmount(
         userId,

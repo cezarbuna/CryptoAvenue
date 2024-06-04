@@ -28,9 +28,4 @@
     <ProjectReference Include="..\CryptoAvenue.Domain\CryptoAvenue.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="TransactionApp\TransactionQueryHandlers\" />
-    <Folder Include="TransactionApp\TransactionQueries\" />
-  </ItemGroup>
-
 </Project>
