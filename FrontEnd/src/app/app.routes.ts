@@ -9,6 +9,7 @@ import {PaymentComponent} from "./components/payment/payment.component";
 import {WithdrawComponent} from "./components/withdraw/withdraw.component";
 import {TradeComponent} from "./components/trade/trade.component";
 import {TransactionsComponent} from "./components/transactions/transactions.component";
+import {CoinDetailComponent} from "./components/coin-detail/coin-detail.component";
 
 export const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -20,5 +21,5 @@ export const routes: Routes = [
   { path: 'withdraw', component: WithdrawComponent },
   { path: 'trade', component: TradeComponent },
   { path: 'transactions', component: TransactionsComponent},
-  { path: 'coin-detail/:coinId'}
+  { path: 'coin-detail/:coinId', component: CoinDetailComponent },
 ];

@@ -13,10 +13,10 @@
         public double Total_Volume { get; set; }
         public double High_24h { get; set; }
         public double Low_24h { get; set; }
-        public double Price_Change24h { get; set; }
-        public double Price_Change_Percentage24h { get; set; }
+        public double Price_Change_24h { get; set; }
+        public double Price_Change_Percentage_24h { get; set; }
         public double Market_Cap_Change_24h { get; set; }
-        public double Market_Cap_Change_Percentage24h { get; set; }
+        public double Market_Cap_Change_Percentage_24h { get; set; }
         public double Circulating_Supply { get; set; }
         public double? Total_Supply { get; set; }
         public double? Max_Supply { get; set; }

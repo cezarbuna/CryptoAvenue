@@ -42,10 +42,10 @@ namespace CryptoAvenue.Application.TransactionApp.TransactionCommandHandlers
                     MarketCapRank = crypto.Market_Cap_Rank,
                     High24h = crypto.High_24h,
                     Low24h = crypto.Low_24h,
-                    PriceChange24h = crypto.Price_Change24h,
-                    PriceChangePercentage24h = crypto.Price_Change_Percentage24h,
+                    PriceChange24h = crypto.Price_Change_24h,
+                    PriceChangePercentage24h = crypto.Price_Change_Percentage_24h,
                     MarketCapChange24h = crypto.Market_Cap_Change_24h,
-                    MarketCapChangePercentage24h = crypto.Market_Cap_Change_Percentage24h,
+                    MarketCapChangePercentage24h = crypto.Market_Cap_Change_Percentage_24h,
                     Ath = crypto.Ath
                 };
                 var price = coin.CurrentPrice;
