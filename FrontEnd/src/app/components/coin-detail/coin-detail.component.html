@@ -1,3 +1,4 @@
 <div class="card">
+  <p-dropdown [options]="timeframes" [(ngModel)]="selectedTimeframe" (onChange)="onTimeframeChange()"></p-dropdown>
   <p-chart type="line" [data]="data" [options]="options"></p-chart>
 </div>

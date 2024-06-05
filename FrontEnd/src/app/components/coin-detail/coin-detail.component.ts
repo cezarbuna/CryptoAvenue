@@ -1,36 +1,49 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
-import {CoinsService} from "../../services/coins.service";
-import {ChartModule} from "primeng/chart";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from "@angular/router";
+import { CoinsService } from "../../services/coins.service";
+import { ChartModule } from "primeng/chart";
+import { DropdownModule } from "primeng/dropdown";
 import 'chartjs-adapter-date-fns';
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-coin-detail',
   standalone: true,
   imports: [
-    ChartModule
+    ChartModule,
+    DropdownModule,
+    FormsModule
   ],
   templateUrl: './coin-detail.component.html',
-  styleUrl: './coin-detail.component.css'
+  styleUrls: ['./coin-detail.component.css']
 })
-export class CoinDetailComponent implements OnInit{
+export class CoinDetailComponent implements OnInit {
   data: any;
   options: any;
   coinId: string | undefined;
+  timeframes: any[];
+  selectedTimeframe: string;
 
-  constructor(private router: Router,
-              private route: ActivatedRoute,
-              private coinService: CoinsService) {
+  constructor(private router: Router, private route: ActivatedRoute, private coinService: CoinsService) {
+    this.timeframes = [
+      { label: '1 Day', value: '1' },
+      { label: '1 Month', value: '30' },
+      { label: '3 Months', value: '90' },
+      { label: '1 Year', value: '365' }
+    ];
+    this.selectedTimeframe = '1';
   }
+
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.coinId = params['coinId'];
       this.fetchCoinData();
-    })
+    });
   }
+
   fetchCoinData(): void {
     if (this.coinId) {
-      this.coinService.getCoinMarketChart(this.coinId, 'usd', 1).subscribe(response => {
+      this.coinService.getCoinMarketChart(this.coinId, 'usd', parseInt(this.selectedTimeframe)).subscribe(response => {
         const prices = response.prices.map((p: any) => ({ x: new Date(p[0]), y: p[1] }));
         const marketCaps = response.market_caps.map((m: any) => ({ x: new Date(m[0]), y: m[1] }));
         const volumes = response.total_volumes.map((v: any) => ({ x: new Date(v[0]), y: v[1] }));
@@ -95,7 +108,7 @@ export class CoinDetailComponent implements OnInit{
             x: {
               type: 'time',
               time: {
-                unit: 'hour'
+                unit: 'day'
               },
               ticks: {
                 color: textColorSecondary
@@ -167,4 +180,7 @@ export class CoinDetailComponent implements OnInit{
     chart.update();
   }
 
+  onTimeframeChange(): void {
+    this.fetchCoinData();
+  }
 }
