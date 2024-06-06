@@ -1,0 +1,12 @@
+<div class="chat-container">
+  <h2>Crypto AI Advisor</h2>
+  <form (ngSubmit)="sendQuestion()">
+
+    <p-button label="Ask" type="submit"></p-button>
+  </form>
+  <div *ngIf="chatResponse" class="response-panel">
+    <p-panel header="Response">
+      <p>{{ chatResponse }}</p>
+    </p-panel>
+  </div>
+</div>

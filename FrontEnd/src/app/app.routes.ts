@@ -10,6 +10,7 @@ import {WithdrawComponent} from "./components/withdraw/withdraw.component";
 import {TradeComponent} from "./components/trade/trade.component";
 import {TransactionsComponent} from "./components/transactions/transactions.component";
 import {CoinDetailComponent} from "./components/coin-detail/coin-detail.component";
+import {ChatbotComponent} from "./components/chatbot/chatbot.component";
 
 export const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -22,4 +23,5 @@ export const routes: Routes = [
   { path: 'trade', component: TradeComponent },
   { path: 'transactions', component: TransactionsComponent},
   { path: 'coin-detail/:coinId', component: CoinDetailComponent },
+  { path: 'chatbot', component: ChatbotComponent },
 ];

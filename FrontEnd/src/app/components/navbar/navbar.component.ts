@@ -53,7 +53,8 @@ export class NavbarComponent implements OnInit {
       { label: 'Deposit', routerLink: 'deposit'},
       { label: 'Withdraw', routerLink: 'withdraw'},
       { label: 'Trade', routerLink: 'trade'},
-      { label: 'Transactions', routerLink: 'transactions'}
+      { label: 'Transactions', routerLink: 'transactions'},
+      { label: 'ChatBot', routerLink: 'chatbot'}
     ];
     this.activeItemWhenLoggedIn = this.itemsWhenLoggedIn[0];
     this.items = [
@@ -66,6 +67,7 @@ export class NavbarComponent implements OnInit {
       { label: 'Deposit', routerLink: 'deposit'},
       { label: 'Withdraw', routerLink: 'withdraw'},
       { label: 'Trade', routerLink: 'trade'},
+      { label: 'ChatBot', routerLink: 'chatbot'}
     ];
     this.activeItem = this.items[0];
   }

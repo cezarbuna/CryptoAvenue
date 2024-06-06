@@ -22,4 +22,5 @@ export class WalletService {
   trade(userId: string, sourceCoinId: string, sourceQuantity: number, targetCoinId: string, targetQuantity: number): Observable<Wallet> {
     return this.httpClient.post<Wallet>(`https://localhost:7008/api/Wallets/trade/${userId}/${sourceCoinId}/${sourceQuantity}/${targetCoinId}/${targetQuantity}`, {})
   }
+
 }
