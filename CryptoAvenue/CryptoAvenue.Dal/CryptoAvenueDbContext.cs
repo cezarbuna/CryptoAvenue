@@ -18,7 +18,8 @@ namespace CryptoAvenue.Application
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
-                .UseSqlServer(@"Server=DESKTOP-DLVFJ7V\SQLEXPRESS;Database=CryptoAvenueDb2;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=True;",
+                .UseSqlServer(@"Server=DESKTOP-DLVFJ7V\SQLEXPRESS;Database=CryptoAvenueDb2;
+                Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=True;",
                 b => b.MigrationsAssembly("CryptoAvenue.Dal"))
                 .EnableSensitiveDataLogging();
         }

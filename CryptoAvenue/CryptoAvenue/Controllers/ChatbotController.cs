@@ -2,6 +2,7 @@
 using CryptoAvenue.Application.WalletApp.WalletQueries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace CryptoAvenue.Controllers
 {
@@ -25,7 +26,9 @@ namespace CryptoAvenue.Controllers
         {
             var query = new GetUserPotrfolioQuery { UserId = userId };
             var result = await _mediator.Send(query);
-            return Ok(result);
+
+            var jsonResult = JsonConvert.SerializeObject(result);
+            return Ok(jsonResult);
         }
     }
 }

@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PaymentComponent } from './payment.component';
 
 describe('PaymentComponent', () => {
@@ -11,7 +10,7 @@ describe('PaymentComponent', () => {
       imports: [PaymentComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(PaymentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

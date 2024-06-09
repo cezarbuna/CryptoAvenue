@@ -39,7 +39,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
-        builder => builder.WithOrigins("http://localhost:4200") // Your Angular app's host and port
+        builder => builder.WithOrigins("http://localhost:4200") 
             .AllowAnyHeader()
             .AllowAnyMethod());
 });
@@ -76,6 +76,7 @@ builder.Services.AddMediatR(typeof(CreateUserCommand));
 builder.Services.AddMediatR(typeof(CreateWalletCommand));
 
 builder.Services.AddMediatR(typeof(Program));
+
 builder.Services.AddAutoMapper(typeof(Program));
 
 var app = builder.Build();

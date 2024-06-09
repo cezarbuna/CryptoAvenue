@@ -1,0 +1,54 @@
+<div class="portfolio-container">
+
+  <div class="balance-card">
+    <p-card>
+      <div class="balance-header">
+        <h2>Estimated Balance</h2>
+        <i class="pi pi-eye"></i>
+      </div>
+      <div class="balance-amount">
+        <h1>{{ walletBalance | currency: 'USD' }}</h1>
+        <p>≈ €{{ walletBalance | currency: 'EUR': 'symbol':'1.2-2' }}</p>
+        <p>Today's PnL <span [ngClass]="{'negative': walletBalance < 0, 'positive': walletBalance >= 0}">
+          {{ walletBalance | currency: 'EUR': 'symbol':'1.2-2' }} ({{ walletBalance | percent }})
+        </span></p>
+      </div>
+    </p-card>
+  </div>
+
+  <div class="coins-table">
+    <p-table [value]="portfolioInfo" [paginator]="true" [rows]="10" [responsiveLayout]="'scroll'" [rowHover]="true">
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="name">Coin <p-sortIcon field="name"></p-sortIcon></th>
+          <th pSortableColumn="amount">Amount <p-sortIcon field="amount"></p-sortIcon></th>
+          <th pSortableColumn="currentPrice">Current Price <p-sortIcon field="currentPrice"></p-sortIcon></th>
+          <th pSortableColumn="marketCap">Market Cap <p-sortIcon field="marketCap"></p-sortIcon></th>
+          <th pSortableColumn="priceChangePercentage24h">24h Change <p-sortIcon field="priceChangePercentage24h"></p-sortIcon></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-coin>
+        <tr (click)="onRowSelect(coin.id)">
+          <td>
+            <img [src]="coin.imageUrl" alt="{{coin.name}}" width="30" height="30" class="coin-icon">
+            <span class="coin-name">{{ coin.name }}</span>
+          </td>
+          <td>{{ coin.amount }}</td>
+          <td>{{ coin.currentPrice | currency: 'USD' }}</td>
+          <td>{{ coin.marketCap | number: '1.0-0' }}</td>
+          <td [ngClass]="{'negative': coin.priceChangePercentage24h < 0, 'positive': coin.priceChangePercentage24h >= 0}">
+            {{ coin.priceChangePercentage24h | percent }}
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+
+  <p-button *ngIf="!isChartVisible" (click)="isChartVisible = true">Show Chart</p-button>
+  <p-button *ngIf="isChartVisible" (click)="isChartVisible = false">Hide Chart</p-button>
+  <div class="portfolio-history-chart" *ngIf="isChartVisible">
+    <p-chart type="line" [data]="chartData" [options]="chartOptions" style="width:100%; height:400px;"></p-chart>
+  </div>
+
+
+</div>

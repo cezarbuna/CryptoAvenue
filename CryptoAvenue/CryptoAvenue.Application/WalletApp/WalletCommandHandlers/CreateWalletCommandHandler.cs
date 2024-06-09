@@ -59,6 +59,7 @@ namespace CryptoAvenue.Application.WalletApp.WalletCommandHandlers
             await _walletRepository.SaveChanges();
 
             var walletCoin = await _walletCoinRepository.GetEntityBy(x => x.WalletId == wallet.Id && x.CoinId == usdCoin.Id);
+
             if(walletCoin == null)
             {
                 var newUsdWallet = new WalletCoin
@@ -93,6 +94,7 @@ namespace CryptoAvenue.Application.WalletApp.WalletCommandHandlers
                 TransactionDate = DateTime.Now,
                 WalletId = wallet.Id,
             };
+
             await _transactionRepository.Insert(transaction);
             await _transactionRepository.SaveChanges();
             

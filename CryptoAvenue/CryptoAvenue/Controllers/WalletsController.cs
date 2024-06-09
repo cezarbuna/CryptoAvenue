@@ -91,5 +91,28 @@ namespace CryptoAvenue.Controllers
 
             return Ok(result);
         }
+        [HttpGet]
+        [Route("get-portfolio-information/{walletId}")]
+        public async Task<IActionResult> GetPortfolioInformation(Guid walletId)
+        {
+            var query = new GetPortfolioInformationQuery { WalletId = walletId };
+            var result = await _mediator.Send(query);
+
+            if (result == null)
+                return NotFound();
+
+            return Ok(result);
+        }
+        [HttpGet]
+        [Route("get-portfolio-history/{walletId}/{days}")]
+        public async Task<IActionResult> GetPortfolioHistory(Guid walletId, int days)
+        {
+            var query = new GetPortfolioHistoryQuery { WalletId = walletId, Days = days };
+            var result = await _mediator.Send(query);
+
+            if (result == null)
+                return NotFound();
+            return Ok(result);
+        }
     }
 }

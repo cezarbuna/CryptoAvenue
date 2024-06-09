@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class OpenAiService {
-  private apiKey = 'sk-proj-P5QyRSd3M39b3tn39shiT3BlbkFJHrCUm0T8kjq7XLk8sQDO';
+  private apiKey = 'sk-proj-F5NrMnHT32EADFKvp46XT3BlbkFJ0NiCLCrsxFT6Wu1uStlD';
   private apiUrl = 'https://api.openai.com/v1/chat/completions';
 
   constructor(private http: HttpClient) {}

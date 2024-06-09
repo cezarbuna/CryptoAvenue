@@ -1,9 +1,14 @@
-﻿using CryptoAvenue.Dtos.CoinDtos;
+﻿using CryptoAvenue.Application.CoinDtos;
+using CryptoAvenue.Domain.Models;
+using CryptoAvenue.Dtos.CoinDtos;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 
 namespace CryptoAvenue.Application.Services
@@ -11,12 +16,12 @@ namespace CryptoAvenue.Application.Services
     public class CoinGeckoApiService : ICoinGeckoApiService
     {
         private readonly HttpClient _httpClient;
-        private readonly string _baseUrl;
+        private readonly CryptoAvenueDbContext _dbContext;
 
-        public CoinGeckoApiService(HttpClient httpClient)
+        public CoinGeckoApiService(HttpClient httpClient, CryptoAvenueDbContext dbContext)
         {
             _httpClient = httpClient;
-            _baseUrl = "https://api.coingecko.com/api/v3/";
+            _dbContext = dbContext;
         }
 
         public async Task<IEnumerable<CoinGetDto>> GetLatestCryptoDataAsync()
@@ -38,5 +43,32 @@ namespace CryptoAvenue.Application.Services
                 throw new HttpRequestException($"Error fetching data: {response.ReasonPhrase}");
             }
         }
+        public async Task<List<Coin>> FetchUserCoins(Guid walletId)
+        {
+            var walletCoins =  await _dbContext.WalletCoins.Where(x => x.WalletId == walletId).ToListAsync();
+            var result = new List<Coin>();
+            foreach (var item in walletCoins)
+            {
+                result.Add(_dbContext.Coins.SingleOrDefaultAsync(x => x.Id == item.CoinId).Result);
+            }
+            return result;
+        }
+        public async Task<Dictionary<DateTime, decimal>> FetchCoinHistory(string coinId, string currency, int days)
+        {
+            var url = $"https://api.coingecko.com/api/v3/coins/{coinId}/market_chart?vs_currency={currency}&days={days}";
+            var response = await _httpClient.GetStringAsync(url);
+            var data = JObject.Parse(response);
+
+            var prices = new Dictionary<DateTime, decimal>();
+            foreach (var item in data["prices"])
+            {
+                long timestamp = item[0].ToObject<long>();
+                decimal price = item[1].ToObject<decimal>();
+                var dateTime = DateTimeOffset.FromUnixTimeMilliseconds(timestamp).DateTime;
+                prices[dateTime] = price;
+            }
+            return prices;
+        }
+
     }
 }

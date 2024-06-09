@@ -17,7 +17,8 @@ namespace CryptoAvenue.Application.Services
         private readonly IWalletRepository _walletRepository;
         private readonly IWalletCoinRepository _walletCoinRepository;
 
-        public CryptoUpdateService(CryptoAvenueDbContext dbContext, ICoinGeckoApiService coinGeckoApiService, ILogger<CryptoUpdateService> logger, IWalletRepository walletRepository, IWalletCoinRepository walletCoinRepository)
+        public CryptoUpdateService(CryptoAvenueDbContext dbContext,
+            ICoinGeckoApiService coinGeckoApiService, ILogger<CryptoUpdateService> logger, IWalletRepository walletRepository, IWalletCoinRepository walletCoinRepository)
         {
             _dbContext = dbContext;
             _coinGeckoApiService = coinGeckoApiService;
@@ -30,7 +31,7 @@ namespace CryptoAvenue.Application.Services
         {
             var cryptos = await _coinGeckoApiService.GetLatestCryptoDataAsync();
             var coins = new List<Coin>();
-            //to create mapping later..
+            
             foreach (var crypto in cryptos)
             {
                 var coin = new Coin

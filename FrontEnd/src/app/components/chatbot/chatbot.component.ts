@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { OpenAiService } from "../../services/open-ai.service";
 import { PortfolioService } from "../../services/portfolio.service";
-import { FormsModule } from "@angular/forms";
+import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import { NgIf } from "@angular/common";
 import { ButtonModule } from "primeng/button";
 import { PanelModule } from "primeng/panel";
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import {InputTextModule} from "primeng/inputtext";
 
 @Component({
   selector: 'app-chatbot',
@@ -16,7 +17,9 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     NgIf,
     ButtonModule,
     PanelModule,
-    InputTextareaModule
+    InputTextareaModule,
+    ReactiveFormsModule,
+    InputTextModule
   ],
   templateUrl: './chatbot.component.html',
   styleUrls: ['./chatbot.component.css']
@@ -27,6 +30,11 @@ export class ChatbotComponent implements OnInit {
   portfolioInfo: string = '';
   userId: string | null = null;
 
+  questionForm: FormGroup =  new FormGroup({
+    question: new FormControl('', [Validators.required]),
+  });
+
+
   constructor(private router: Router,
               private openAiService: OpenAiService,
               private portfolioService: PortfolioService) {}
@@ -36,16 +44,18 @@ export class ChatbotComponent implements OnInit {
       this.router.navigate(['home']);
     } else {
       this.userId = localStorage.getItem('userId');
-      // this.getPortfolio();
-      this.portfolioInfo = 'Hello';
+      this.getPortfolio();
+
     }
   }
 
   sendQuestion() {
-    const prompt = `User's portfolio info: ${this.portfolioInfo}\nUser's question: ${this.userQuestion}`;
-    this.openAiService.getChatResponse(prompt).subscribe(response => {
-      this.chatResponse = response;
-    });
+    if(this.questionForm.get('question')?.value != ''){
+      const prompt = `User's portfolio info: ${this.portfolioInfo}\nUser's question: ${this.questionForm.get('question')?.value}`;
+      this.openAiService.getChatResponse(prompt).subscribe(response => {
+        this.chatResponse = response;
+      });
+    }
   }
 
   getPortfolio(): void {
