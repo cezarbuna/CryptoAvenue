@@ -8,6 +8,8 @@ import {Router} from "@angular/router";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {NgIf} from "@angular/common";
 import {MessageModule} from "primeng/message";
+import {AuthService} from "../../services/auth.service";
+import {log} from "@angular-devkit/build-angular/src/builders/ssr-dev-server";
 
 @Component({
   selector: 'app-login',
@@ -28,6 +30,7 @@ import {MessageModule} from "primeng/message";
 export class LoginComponent implements OnInit {
   constructor(
     private userService: UserServiceService,
+    private authService: AuthService,
     private router: Router,
     private cdr: ChangeDetectorRef,) {
   }
@@ -67,6 +70,7 @@ export class LoginComponent implements OnInit {
           console.log(loginResponse);
           localStorage.setItem('token', loginResponse.token);
           localStorage.setItem('userId', loginResponse.userId);
+          this.authService.login(loginResponse.userId, loginResponse.token);
           this.router.navigate(['/']);
         },
         error: error => {

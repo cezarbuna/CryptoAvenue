@@ -4,7 +4,8 @@
       <p>Crypto Avenue</p>
     </ng-template>
     <ng-template pTemplate="end">
-      <p-button *ngIf="isLoggedInVariable" label="Logout" (click)="logOut()"></p-button>
+      <p-button pRipple *ngIf="isLoggedInVariable" label="Logout" (click)="logOut()"></p-button>
+      <p-button pRipple *ngIf="isLoggedInVariable" label="Bag pula" (click)="showMessage()"></p-button>
     </ng-template>
   </p-menubar>
   <p-menubar [model]="items" *ngIf="!isLoggedInVariable">

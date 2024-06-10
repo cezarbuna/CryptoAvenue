@@ -1,16 +1,35 @@
 import { Injectable } from '@angular/core';
 import {JwtHelperService} from "@auth0/angular-jwt";
 import { JwtModule } from '@auth0/angular-jwt';
+import {BehaviorSubject, Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  private loggedInSubject = new BehaviorSubject<boolean>(this.hasToken());
 
-  constructor(public jwtHelper: JwtHelperService) { }
+  loginStatus$ = this.loggedInSubject.asObservable();
 
-  public isTokenExpired(token: string): boolean {
-    console.log('Is token expired:', this.jwtHelper.isTokenExpired(token));
-    return this.jwtHelper.isTokenExpired(token);
+  constructor() {}
+
+  private hasToken(): boolean {
+    return !!localStorage.getItem('token') && !!localStorage.getItem('userId');
+  }
+
+  login(userId: string, token: string): void {
+    localStorage.setItem('token', token);
+    localStorage.setItem('userId', userId);
+    this.loggedInSubject.next(true);  // Notify subscribers about the login status change
+  }
+
+  logout(): void {
+    localStorage.removeItem('token');
+    localStorage.removeItem('userId');
+    this.loggedInSubject.next(false); // Notify subscribers about the logout status change
+  }
+
+  isLoggedIn(): boolean {
+    return this.loggedInSubject.value;
   }
 }
