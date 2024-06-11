@@ -15,7 +15,7 @@ export class ChatgptService {
   getChatResponse(prompt: string): Observable<any> {
     const headers = {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' // Replace YOUR_API_KEY with your actual API key
+      'Authorization': 'Bearer sk-proj-P5QyRSd3M39b3tn39shiT3BlbkFJHrCUm0T8kjq7XLk8sQDO' // Replace YOUR_API_KEY with your actual API key
     };
 
     const body = {

@@ -5,7 +5,7 @@ import {TransactionDto} from "../../models/TransactionDto";
 import {ButtonModule} from "primeng/button";
 import {TagModule} from "primeng/tag";
 import {DataViewModule} from "primeng/dataview";
-import {NgClass, NgForOf} from "@angular/common";
+import {CurrencyPipe, NgClass, NgForOf} from "@angular/common";
 import {error} from "@angular/compiler-cli/src/transformers/util";
 import {ConfirmationService, MessageService} from "primeng/api";
 
@@ -17,7 +17,8 @@ import {ConfirmationService, MessageService} from "primeng/api";
     TagModule,
     DataViewModule,
     NgClass,
-    NgForOf
+    NgForOf,
+    CurrencyPipe
   ],
   providers: [ConfirmationService, MessageService],
   templateUrl: './transactions.component.html',
@@ -75,6 +76,18 @@ export class TransactionsComponent implements OnInit{
           console.log(error);
           window.alert("Error!");
         })
+    }
+  }
+  getSeverity(type: string): string {
+    switch (type) {
+      case 'BUY':
+        return 'success';
+      case 'SELL':
+        return 'warning';
+      case 'TRADE':
+        return 'info';
+      default:
+        return 'info';
     }
   }
 

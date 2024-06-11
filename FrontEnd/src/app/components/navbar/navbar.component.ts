@@ -79,14 +79,8 @@ export class NavbarComponent implements OnInit {
     this.items = [
       { label: 'Home', routerLink: 'home' },
       { label: 'Markets', routerLink: 'markets' },
-      { label: 'Edit' },
       { label: 'Login', routerLink: 'login' },
       { label: 'Register', routerLink: 'register', rightAligned: true },
-      { label: 'Portfolio', routerLink: 'portfolio' },
-      { label: 'Deposit', routerLink: 'deposit' },
-      { label: 'Withdraw', routerLink: 'withdraw' },
-      { label: 'Trade', routerLink: 'trade' },
-      { label: 'ChatBot', routerLink: 'chatbot' }
     ];
     this.activeItem = this.items[0];
   }

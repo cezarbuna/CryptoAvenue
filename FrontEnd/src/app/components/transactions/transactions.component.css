@@ -2,3 +2,54 @@
   margin: auto;
   width: 50%;
 }
+.transactions-container {
+  padding: 1rem;
+}
+
+.transaction-list .p-dataview-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-item {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.transaction-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.transaction-details {
+  display: flex;
+  align-items: center;
+}
+
+.coin-info {
+  display: flex;
+  align-items: center;
+}
+
+.coin-image {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.coin-text h4 {
+  margin: 0;
+}
+
+.transaction-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}

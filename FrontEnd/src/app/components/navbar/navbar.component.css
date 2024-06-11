@@ -1,28 +1,31 @@
-/*.navbar{*/
-/*  background-color: #042620;*/
-/*  color: white;*/
-/*}*/
-.navbar ::ng-deep .p-menubar{
-  background-color: #042620;
-  color: white;
-  border: none;
+.navbar ::ng-deep .p-menubar {
+  background-color: #181a20; /* Dark background color */
+  color: white; /* Default text color */
+  border: none; /* Remove border */
 }
-.navbar ::ng-deep .p-menubar .p-menuitem-link,
- .navbar ::ng-deep .p-menubar .p-menuitem-link .p-menuitem-text {
-   color: white !important; /* Ensure menu item text color is white */
- }
 
+/* Ensure menu item text color is white by default */
+.navbar ::ng-deep .p-menubar .p-menuitem-link,
+.navbar ::ng-deep .p-menubar .p-menuitem-link .p-menuitem-text {
+  color: white !important; /* Keep text white */
+  transition: color 0.3s ease; /* Add smooth transition for color change */
+}
+
+/* Remove background and change text color to green on hover */
 .navbar ::ng-deep .p-menubar .p-menuitem-link:hover,
 .navbar ::ng-deep .p-menubar .p-menuitem-link:focus,
 .navbar ::ng-deep .p-menubar .p-menuitem-link:active {
-  background-color: #303f9f; /* Optional: darker background on hover */
-  color: white !important; /* Ensure text color remains white on hover */
+  background-color: transparent !important; /* Remove background on hover */
+  border: none !important; /* Remove any borders on hover */
+  color: green !important; /* Change text color to green on hover */
 }
 
+/* Ensure button text color is white */
 .navbar ::ng-deep .p-button {
-  color: white !important; /* Ensure button text color is white */
+  color: white !important;
 }
 
+/* Ensure button icon color is white */
 .navbar ::ng-deep .p-button .pi {
-  color: white !important; /* Ensure button icon color is white */
+  color: white !important;
 }
