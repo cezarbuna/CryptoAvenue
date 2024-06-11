@@ -1,11 +1,42 @@
+/* Container for the trade form and image */
+.trade-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 100px auto; /* Center horizontally and add some top margin */
+  padding: 2rem;
+  background-color: #181a20;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 900px; /* Define max-width for the container */
+}
+
+.trade-form-container {
+  flex: 1;
+  max-width: 360px;
+}
+
+.trade-image-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1rem;
+}
+
+.trade-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
 /* General container styling */
 .card-container {
   background-color: #181a20; /* Dark background */
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  max-width: 360px;
-  margin: 100px auto; /* Center horizontally and add some top margin */
 }
 
 .card-header {
@@ -146,4 +177,23 @@ input {
 /* Additional styling for form elements */
 .input-error {
   border-color: #f44336 !important;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .trade-container {
+    flex-direction: column;
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .trade-form-container, .trade-image-container {
+    max-width: none;
+    margin-bottom: 1rem;
+  }
+
+  .trade-image {
+    max-width: 80%;
+    margin: 0 auto;
+  }
 }
