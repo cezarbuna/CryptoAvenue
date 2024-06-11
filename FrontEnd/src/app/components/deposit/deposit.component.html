@@ -1,29 +1,34 @@
-<div class="card flex justify-content-center">
-  <p-card header="Deposit FIAT" subheader="Add Money To Your Account" [style]="{ width: '360px' }">
-    <ng-template pTemplate="header">
-    </ng-template>
-    <ng-template pTemplate="content">
-      <form [formGroup]="depositForm" (ngSubmit)="onSubmit()">
-        <div class="separator">
-          <p-dropdown
-            [options]="currencies"
-            optionLabel="name"
-            placeholder="Select a Currency" />
-        </div>
-        <div class="separator">
-          <span class="p-float-label">
-            <input pInputText id="quantity" formControlName="quantity"/>
-            <label for="quantity">Amount</label>
-          </span>
-          <p-message *ngIf="getErrorMessage('amount')" severity="error" text="You must deposit at least 200 Euros"></p-message>
-        </div>
-        <p-button label="Deposit" class="centered-items" type="submit"></p-button>
-
-      </form>
-
-    </ng-template>
-    <ng-template pTemplate="footer">
-
-    </ng-template>
-  </p-card>
+<div class="card-container">
+  <div class="card-header">
+    <i class="pi pi-wallet card-icon"></i>
+    <div>
+      <h2>Crypto Avenue</h2>
+      <h3>Deposit FIAT</h3>
+    </div>
+  </div>
+  <form [formGroup]="depositForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Currency</label>
+      <div class="custom-dropdown" (click)="toggleDropdown()">
+        <span class="selected-value">
+          <i class="pi" [ngClass]="selectedCurrency?.icon"></i> {{ selectedCurrency?.name || 'Select a Currency' }}
+        </span>
+        <ul class="dropdown-list" *ngIf="dropdownOpen">
+          <li *ngFor="let currency of currencies" (click)="selectCurrency(currency, $event)">
+            <i class="pi" [ngClass]="currency.icon"></i> {{ currency.name }}
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="!selectedCurrency" class="p-error">You must select a currency</div>
+    </div>
+    <div class="form-group">
+      <label for="quantity">Amount</label>
+      <span class="p-float-label">
+        <input pInputText id="quantity" formControlName="quantity" [ngClass]="{'input-error': depositForm.controls['quantity'].invalid && depositForm.controls['quantity'].touched}" />
+<!--        <label for="quantity">Amount</label>-->
+      </span>
+      <div *ngIf="getErrorMessage('quantity')" class="p-error">{{ getErrorMessage('quantity') }}</div>
+    </div>
+    <button pButton type="submit" class="submit-button">Deposit</button>
+  </form>
 </div>

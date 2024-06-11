@@ -1,53 +1,72 @@
-import {Component, OnInit} from '@angular/core';
-import {ButtonModule} from "primeng/button";
-import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {CardModule} from "primeng/card";
-import {DropdownModule} from "primeng/dropdown";
-import {CustomCurrency} from "../../interfaces/CustomCurrency";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {CommonModule} from "@angular/common";
-import {InputTextModule} from "primeng/inputtext";
-import {MessageModule} from "primeng/message";
-import {HttpClient} from "@angular/common/http";
-import {WalletService} from "../../services/wallet.service";
-import {Router} from "@angular/router";
+import { Component, HostListener, OnInit } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { WalletService } from '../../services/wallet.service';
+import { Router } from '@angular/router';
+import { NgClass, NgForOf, NgIf } from "@angular/common";
+import { MessageModule } from "primeng/message";
 
 @Component({
   selector: 'app-deposit',
+  templateUrl: './deposit.component.html',
   standalone: true,
   imports: [
-    ButtonModule,
     ReactiveFormsModule,
-    CardModule,
-    DropdownModule,
-    CommonModule,
-    InputTextModule,
+    NgClass,
     MessageModule,
+    NgIf,
+    NgForOf
   ],
-  templateUrl: './deposit.component.html',
-  styleUrl: './deposit.component.css'
+  styleUrls: ['./deposit.component.css']
 })
-export class DepositComponent implements OnInit{
+export class DepositComponent implements OnInit {
 
-  constructor(private http: HttpClient,
-              private walletService: WalletService,
-              private router: Router) {}
-
-  depositForm: FormGroup =  new FormGroup({
-    // currency: new FormControl('', [Validators.required]),
+  depositForm: FormGroup = new FormGroup({
     quantity: new FormControl('', [Validators.required, Validators.min(200)]),
+    currency: new FormControl('', [Validators.required]),
     userId: new FormControl(localStorage.getItem('userId')),
   });
-  currencies: CustomCurrency[] | undefined;
-  deposit() : void {
 
+  currencies = [
+    { name: 'Euro', icon: 'pi pi-euro' },
+    { name: 'US Dollar', icon: 'pi pi-dollar' }
+  ];
+
+  selectedCurrency: any;
+  dropdownOpen = false;
+
+  constructor(private http: HttpClient, private walletService: WalletService, private router: Router) {}
+
+  ngOnInit(): void {
+    // Pre-select the first currency if needed
+    this.selectedCurrency = this.currencies[1];
   }
+
+  toggleDropdown(): void {
+    this.dropdownOpen = !this.dropdownOpen;
+  }
+
+  selectCurrency(currency: any, event: Event): void {
+    event.stopPropagation(); // Prevent the dropdown from closing immediately
+    this.selectedCurrency = currency;
+    this.depositForm.patchValue({ currency: currency.name });
+    this.dropdownOpen = false;  // Close dropdown after selection
+  }
+
+  // Listen for clicks outside the dropdown to close it
+  @HostListener('document:click', ['$event'])
+  onClickOutside(event: MouseEvent): void {
+    if (this.dropdownOpen && !(event.target as HTMLElement).closest('.custom-dropdown')) {
+      this.dropdownOpen = false;
+    }
+  }
+
   getErrorMessage(controlName: string): string | null {
     const control = this.depositForm.get(controlName);
-
-    if(control && control.touched){
-      if(control.errors?.['required'])
+    if (control && control.touched) {
+      if (control.errors?.['required']) {
         return 'This field is required';
+      }
       if (control.errors?.['min']) {
         return 'The minimum deposit is 200 Euros.';
       }
@@ -55,24 +74,18 @@ export class DepositComponent implements OnInit{
     return null;
   }
 
-  ngOnInit(): void {
-    this.currencies = [
-      { name: 'Euro'},
-      { name: 'US Dollar'},
-    ]
-  }
   onSubmit(): void {
-    if(this.depositForm.valid){
+    if (this.depositForm.valid) {
       this.walletService.deposit(this.depositForm.value).subscribe({
-        next: (user) => {
-          console.log(this.depositForm.value);
-          console.log(user.balance);
-          window.alert("Deposit done successfully");
-          this.router.navigate(['home']);
+        next: () => {
+          window.alert('Deposit done successfully');
+          this.router.navigate(['portfolio']);
+        },
+        error: (err) => {
+          console.error('Deposit error:', err);
         }
-      })
-    }
-    else{
+      });
+    } else {
       this.depositForm.markAsTouched();
     }
   }
