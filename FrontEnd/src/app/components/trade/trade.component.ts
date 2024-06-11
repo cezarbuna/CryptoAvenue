@@ -182,20 +182,39 @@ export class TradeComponent implements OnInit {
         return 'The minimum amount is 0.01';
       }
       if (control.errors?.['max']) {
-        return `The maximum amount is ${this.availableQuantity}`;
+        if (controlName === 'sourceQuantity') {
+          return `You cannot trade more than available: ${this.availableQuantityAsString}`;
+        }
+        if (controlName === 'targetQuantity') {
+          return `You cannot trade more than the maximum: ${this.maximumQuantityAsString}`;
+        }
       }
     }
     return null;
   }
+
   // Submit trade form
   trade(): void {
+    const sourceQuantity = this.tradeForm.get('sourceQuantity')?.value;
+    const targetQuantity = this.tradeForm.get('targetQuantity')?.value;
+
+    // Validate source and target quantities
+    if(this.availableQuantity)
+    if (sourceQuantity > this.availableQuantity) {
+      this.tradeForm.get('sourceQuantity')?.setErrors({ max: true });
+    }
+    if(this.maximumQuantity)
+    if (targetQuantity > this.maximumQuantity) {
+      this.tradeForm.get('targetQuantity')?.setErrors({ max: true });
+    }
+
     if (this.tradeForm.valid) {
       this.walletService.trade(
         this.tradeForm.get('userId')?.value,
         this.tradeForm.get('sourceCoin')?.value,
-        this.tradeForm.get('sourceQuantity')?.value,
+        sourceQuantity,
         this.tradeForm.get('targetCoin')?.value,
-        this.tradeForm.get('targetQuantity')?.value
+        targetQuantity
       ).subscribe(
         res => {
           console.log(res);
@@ -209,4 +228,3 @@ export class TradeComponent implements OnInit {
     }
   }
 }
-

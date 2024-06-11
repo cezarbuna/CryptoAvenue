@@ -25,9 +25,9 @@
       </div>
     </div>
     <div class="form-group">
+      <label for="sourceQuantity">Amount</label>
       <span class="p-float-label">
         <input pInputText id="sourceQuantity" formControlName="sourceQuantity" />
-        <label for="sourceQuantity">Amount</label>
       </span>
       <div *ngIf="availableQuantityAsString !== null">Available: {{ availableQuantityAsString }}</div>
       <div *ngIf="tradeForm.get('sourceQuantity')?.touched && tradeForm.get('sourceQuantity')?.invalid" class="p-error">
@@ -52,9 +52,9 @@
       </div>
     </div>
     <div class="form-group" *ngIf="firstCoinSelected">
+      <label for="targetQuantity">Amount</label>
       <span class="p-float-label">
         <input pInputText id="targetQuantity" formControlName="targetQuantity" />
-        <label for="targetQuantity">Amount</label>
       </span>
       <div *ngIf="maximumQuantityAsString !== null">Maximum: {{ maximumQuantityAsString }}</div>
       <div *ngIf="tradeForm.get('targetQuantity')?.touched && tradeForm.get('targetQuantity')?.invalid" class="p-error">
