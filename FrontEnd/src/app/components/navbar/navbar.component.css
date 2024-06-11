@@ -1,31 +1,49 @@
-.navbar ::ng-deep .p-menubar {
+/* Base navbar styling */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: #181a20; /* Dark background color */
-  color: white; /* Default text color */
-  border: none; /* Remove border */
+  padding: 10px 20px;
+  color: white;
 }
 
-/* Ensure menu item text color is white by default */
-.navbar ::ng-deep .p-menubar .p-menuitem-link,
-.navbar ::ng-deep .p-menubar .p-menuitem-link .p-menuitem-text {
-  color: white !important; /* Keep text white */
-  transition: color 0.3s ease; /* Add smooth transition for color change */
+.navbar .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
 }
 
-/* Remove background and change text color to green on hover */
-.navbar ::ng-deep .p-menubar .p-menuitem-link:hover,
-.navbar ::ng-deep .p-menubar .p-menuitem-link:focus,
-.navbar ::ng-deep .p-menubar .p-menuitem-link:active {
-  background-color: transparent !important; /* Remove background on hover */
-  border: none !important; /* Remove any borders on hover */
-  color: green !important; /* Change text color to green on hover */
+.navbar .nav-links {
+  display: flex;
+  gap: 15px;
 }
 
-/* Ensure button text color is white */
-.navbar ::ng-deep .p-button {
-  color: white !important;
+/* Align items in the left container */
+.navbar .nav-links.left {
+  flex-grow: 1; /* Take available space to push other items to the far end */
+  margin-left: 15px;
 }
 
-/* Ensure button icon color is white */
-.navbar ::ng-deep .p-button .pi {
-  color: white !important;
+/* Right-aligned links */
+.navbar .nav-links.right {
+  margin-left: auto; /* Push the logout button to the far right */
+}
+
+/* Styling for each navigation item */
+.navbar .nav-item {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-item:hover {
+  color: green;
+}
+
+/* Hide the link container if there are no items (for alignment) */
+.navbar .nav-links:empty {
+  display: none;
 }

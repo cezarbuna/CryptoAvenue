@@ -34,19 +34,19 @@ import {RippleModule} from "primeng/ripple";
 })
 export class NavbarComponent implements OnInit {
   isLoggedInVariable: boolean = false;
-  constructor(private router: Router,
-              private authService: AuthService,
-              private messageService: MessageService) {}
 
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private messageService: MessageService
+  ) {}
 
-  items: CustomMenuItem[] | undefined;
-  activeItem: CustomMenuItem | undefined;
-  itemsWhenLoggedIn: CustomMenuItem[] | undefined;
-  activeItemWhenLoggedIn: CustomMenuItem | undefined;
+  ngOnInit() {
+    this.authService.loginStatus$.subscribe(isLoggedIn => {
+      this.isLoggedInVariable = isLoggedIn;
+    });
 
-  showMessage(): void {
-    this.messageService.add({key: 'Logged out successfully!', severity: 'success', summary: 'Logged out successfully'});
-
+    this.isLoggedInVariable = this.authService.isLoggedIn();
   }
 
   logOut(): void {
@@ -54,34 +54,7 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/home']);
   }
 
-  ngOnInit() {
-
-    this.authService.loginStatus$.subscribe(isLoggedIn => {
-      this.isLoggedInVariable = isLoggedIn;
-      this.updateMenuItems();
-    })
-
-    this.updateMenuItems();
-  }
-  private updateMenuItems(): void {
-    this.itemsWhenLoggedIn = [
-      { label: 'Home', routerLink: 'home' },
-      { label: 'Markets', routerLink: 'markets' },
-      { label: 'Portfolio', routerLink: 'portfolio' },
-      { label: 'Deposit', routerLink: 'deposit' },
-      { label: 'Withdraw', routerLink: 'withdraw' },
-      { label: 'Trade', routerLink: 'trade' },
-      { label: 'Transactions', routerLink: 'transactions' },
-      { label: 'ChatBot', routerLink: 'chatbot' }
-    ];
-    this.activeItemWhenLoggedIn = this.itemsWhenLoggedIn[0];
-
-    this.items = [
-      { label: 'Home', routerLink: 'home' },
-      { label: 'Markets', routerLink: 'markets' },
-      { label: 'Login', routerLink: 'login' },
-      { label: 'Register', routerLink: 'register', rightAligned: true },
-    ];
-    this.activeItem = this.items[0];
+  showMessage(): void {
+    this.messageService.add({ severity: 'success', summary: 'Logged out successfully!' });
   }
 }

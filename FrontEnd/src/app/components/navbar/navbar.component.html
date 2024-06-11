@@ -1,16 +1,24 @@
-<div class="card navbar">
-  <p-menubar [model]="itemsWhenLoggedIn" *ngIf="isLoggedInVariable">
-    <ng-template pTemplate="start">
-      <p>Crypto Avenue</p>
-    </ng-template>
-    <ng-template pTemplate="end">
-      <p-button pRipple *ngIf="isLoggedInVariable" label="Logout" (click)="logOut()"></p-button>
-      <p-button pRipple *ngIf="isLoggedInVariable" label="Bag pula" (click)="showMessage()"></p-button>
-    </ng-template>
-  </p-menubar>
-  <p-menubar [model]="items" *ngIf="!isLoggedInVariable">
-    <ng-template pTemplate="start">
-      <p>Crypto Avenue</p>
-    </ng-template>
-  </p-menubar>
+<div class="navbar">
+  <div class="logo">Crypto Avenue</div>
+  <div class="nav-links left" *ngIf="!isLoggedInVariable">
+    <a class="nav-item" routerLink="home">Home</a>
+    <a class="nav-item" routerLink="markets">Markets</a>
+  </div>
+  <div class="nav-links right" *ngIf="!isLoggedInVariable">
+    <a class="nav-item" routerLink="login">Login</a>
+    <a class="nav-item" routerLink="register">Register</a>
+  </div>
+  <div class="nav-links left" *ngIf="isLoggedInVariable">
+    <a class="nav-item" routerLink="home">Home</a>
+    <a class="nav-item" routerLink="markets">Markets</a>
+    <a class="nav-item" routerLink="portfolio">Portfolio</a>
+    <a class="nav-item" routerLink="deposit">Deposit</a>
+    <a class="nav-item" routerLink="withdraw">Withdraw</a>
+    <a class="nav-item" routerLink="trade">Trade</a>
+    <a class="nav-item" routerLink="transactions">Transactions</a>
+    <a class="nav-item" routerLink="chatbot">ChatBot</a>
+  </div>
+  <div class="nav-links right" *ngIf="isLoggedInVariable">
+    <a class="nav-item" (click)="logOut()">Logout</a>
+  </div>
 </div>
