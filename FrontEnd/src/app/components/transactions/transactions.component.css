@@ -17,6 +17,28 @@
   text-transform: uppercase; /* Uppercase heading */
 }
 
+/* Filter container styling */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.filter-container label {
+  margin-right: 1rem;
+  font-size: 1rem;
+  color: white;
+}
+
+.filter-container select {
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: #2c2c2c;
+  color: white;
+  border: none;
+  outline: none;
+}
+
 /* Transaction card styling */
 .transaction-card {
   background-color: #2c2c2c; /* Darker card background */
@@ -85,7 +107,7 @@
   height: 40px;
   margin-right: 1rem;
   border-radius: 50%;
-  background-color: white;
+  background-color: white; /* White background for image */
 }
 
 .coin-info {
@@ -93,16 +115,17 @@
   flex-direction: column;
 }
 
-.coin-quantity, .coin-price {
+.coin-quantity {
   font-size: 1rem;
   color: white;
 }
 
 .coin-price {
+  font-size: 0.875rem;
   color: #b3b3b3; /* Light grey */
 }
 
-/* Actions styling */
+/* Action buttons styling */
 .transaction-actions {
   display: flex;
   justify-content: flex-end;
@@ -110,30 +133,28 @@
 }
 
 .transaction-actions button {
-  background-color: #4CAF50; /* Green button */
-  border: none;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-  font-size: 0.875rem;
   padding: 0.5rem 1rem;
-  transition: background-color 0.3s;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
   display: flex;
   align-items: center;
 }
 
-.transaction-actions button:hover {
-  background-color: #45a049; /* Darker green on hover */
-}
-
-.transaction-actions button:nth-child(2) {
-  background-color: #f44336; /* Red for delete button */
-}
-
-.transaction-actions button:nth-child(2):hover {
-  background-color: #d32f2f; /* Darker red on hover */
-}
-
-.transaction-actions i {
+.transaction-actions button i {
   margin-right: 0.5rem;
+}
+
+.transaction-actions button:hover {
+  opacity: 0.9;
+}
+
+.transaction-actions .revert-button {
+  background-color: #4CAF50; /* Green for revert */
+  color: white;
+}
+
+.transaction-actions .delete-button {
+  background-color: #f44336; /* Red for delete */
+  color: white;
 }

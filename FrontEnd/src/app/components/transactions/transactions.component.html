@@ -1,6 +1,15 @@
 <div class="transactions-container">
   <h2>Transaction History</h2>
-  <div *ngFor="let transaction of transactions" class="transaction-card">
+
+  <!-- Dropdown for filtering transactions -->
+  <div class="filter-container">
+    <label for="transactionFilter">Filter by Type:</label>
+    <select id="transactionFilter" [(ngModel)]="selectedFilter" (change)="filterTransactions()">
+      <option *ngFor="let option of filterOptions" [value]="option">{{ option }}</option>
+    </select>
+  </div>
+
+  <div *ngFor="let transaction of filteredTransactions" class="transaction-card">
     <div class="transaction-header">
       <span class="transaction-date">{{ formatDate(transaction.transactionDate) }} - {{ formatTime(transaction.transactionTime) }}</span>
       <span class="transaction-type" [ngClass]="getSeverity(transaction.transactionType)">
@@ -15,7 +24,7 @@
             Sold: {{ transaction.sourceQuantity }} {{ transaction.sourceCoinId }}
           </div>
           <div class="coin-price">
-             ${{ transaction.sourcePrice.toFixed(2) }}
+            ${{ transaction.sourcePrice.toFixed(2) }}
           </div>
         </div>
       </div>
@@ -26,16 +35,16 @@
             Bought: {{ transaction.targetQuantity }} {{ transaction.targetCoinId }}
           </div>
           <div class="coin-price">
-             ${{ transaction.targetPrice.toFixed(2) }}
+            ${{ transaction.targetPrice.toFixed(2) }}
           </div>
         </div>
       </div>
     </div>
     <div class="transaction-actions">
-      <button (click)="revertTransaction(transaction.transactionId)">
+      <button (click)="revertTransaction(transaction.transactionId)" class="revert-button">
         <i class="pi pi-undo"></i> Revert
       </button>
-      <button (click)="deleteTransaction(transaction.transactionId)">
+      <button (click)="deleteTransaction(transaction.transactionId)" class="delete-button">
         <i class="pi pi-trash"></i> Delete
       </button>
     </div>
