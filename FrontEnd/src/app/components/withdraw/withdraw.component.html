@@ -1,29 +1,38 @@
-<div class="card flex justify-content-center">
-  <p-card header="Withdraw" subheader="Withdraw money from account" [style]="{ width: '360px' }">
-    <ng-template pTemplate="header">
-    </ng-template>
-    <ng-template pTemplate="content">
-      <form [formGroup]="withdrawForm" (ngSubmit)="onSubmit()">
-        <div class="separator">
-          <p-dropdown
-            [options]="currencies"
-            optionLabel="name"
-            placeholder="Select a Currency" />
-        </div>
-        <div class="separator">
-          <span class="p-float-label">
-            <input pInputText id="quantity" formControlName="quantity"/>
-            <label for="quantity">Amount</label>
-          </span>
-          <p-message *ngIf="getErrorMessage('quantity')" severity="error" text="Maximum withdrawal amount is"></p-message>
-        </div>
-        <p-button label="Withdraw" class="centered-items" type="submit"></p-button>
-
-      </form>
-
-    </ng-template>
-    <ng-template pTemplate="footer">
-
-    </ng-template>
-  </p-card>
+<div class="card-container">
+  <div class="card-header">
+    <i class="pi pi-wallet card-icon"></i>
+    <div>
+      <h2>Crypto Avenue</h2>
+      <h3>Withdraw</h3>
+    </div>
+  </div>
+  <form [formGroup]="withdrawForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label >Currency</label>
+      <div class="custom-dropdown" (click)="toggleDropdown()">
+        <span class="selected-value">
+          <i class="pi" [ngClass]="selectedCurrency?.icon"></i> {{ selectedCurrency?.name || 'Select a Currency' }}
+        </span>
+        <ul class="dropdown-list" *ngIf="dropdownOpen">
+          <li *ngFor="let currency of currencies" (click)="selectCurrency(currency)">
+            <i class="pi" [ngClass]="currency.icon"></i> {{ currency.name }}
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="withdrawForm.get('currency')?.touched && !selectedCurrency" class="p-error">
+        You must select a currency
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="quantity">Amount</label>
+      <span class="p-float-label">
+        <input pInputText id="quantity" formControlName="quantity" />
+<!--        <label for="quantity">Amount</label>-->
+      </span>
+      <div *ngIf="getErrorMessage('quantity')" class="p-error">
+        {{ getErrorMessage('quantity') }}
+      </div>
+    </div>
+    <button pButton type="submit" class="submit-button">Withdraw</button>
+  </form>
 </div>
