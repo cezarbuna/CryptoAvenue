@@ -1,55 +1,89 @@
-/*.card-container {*/
-/*  display: flex;*/
-/*  justify-content: center; !* Centers the card horizontally *!*/
-/*  !*align-items: center; !* Centers the card vertically *!*!*/
-/*  margin-top: 60px;*/
-/*  min-height: 100vh; !* At least the height of the viewport *!*/
-/*}*/
-
-/*.centered-items {*/
-/*  margin-top: 15px;*/
-/*  display: flex;*/
-/*  justify-content: center;*/
-/*}*/
-/*.separator{*/
-/*  margin-top: 10px;*/
-/*}*/
-
 .login-container {
   display: flex;
-  width: 80%;
-  height: 80vh; /* Full height */
-  margin-top: 30px;
-  background-color: darkgrey;
-  margin-left: 150px;
-  border-radius: 25px;
-}
-
-.image-container {
-  flex: 1;
-  display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  background-color: #181a20; /* Dark background */
 }
 
-.image-container img {
-  max-width: 100%;
-  height: auto;
+.login-card {
+  background-color: #212529; /* Darker card background */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 350px;
 }
 
-.form-container {
-  flex: 1;
+.login-header {
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 20px;
+  justify-content: center;
+  margin-bottom: 1.5rem;
 }
 
-form {
-  width: 100%;
-  max-width: 300px;
+.login-icon {
+  font-size: 2.5rem;
+  color: #4CAF50; /* Use the same green as in the navbar */
+  margin-right: 0.5rem;
+}
+
+h2 {
+  margin: 0;
+  color: white;
+  font-size: 1.5rem;
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
+  text-align: left;
 }
+
+.form-group label {
+  color: #b0b0b0; /* Lighter text color for labels */
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.p-button {
+  width: 100%;
+  margin-top: 1rem;
+  background-color: #4CAF50 !important; /* Green button color */
+  border: none;
+  font-weight: bold;
+}
+
+.p-button:disabled {
+  background-color: #6c757d !important; /* Gray out the button if disabled */
+}
+
+.create-account-button {
+  background: transparent !important;
+  color: #4CAF50 !important;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.p-error {
+  color: #ff6f61; /* Slightly softer red for error messages */
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+input.p-invalid {
+  border-color: #ff6f61 !important; /* Red border for invalid inputs */
+}
+
+input, .p-inputtext {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: #b0b0b0;
+}
+

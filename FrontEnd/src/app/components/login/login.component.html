@@ -1,67 +1,23 @@
-<!--<div class="card-container">-->
-<!--  <p-card header="Log in" subheader="Acces your account" [style]="{ width: '360px' }">-->
-<!--    <ng-template pTemplate="header">-->
-<!--    </ng-template>-->
-<!--    <ng-template pTemplate="content">-->
-<!--      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">-->
-<!--        <div class="separator">-->
-<!--        <span class="p-float-label">-->
-<!--        <input pInputText id="email" formControlName="email" (keydown.enter)="validateEmail()"/>-->
-<!--        <label for="email">Email</label>-->
-<!--      </span>-->
-<!--          <p-message *ngIf="invalidEmail" severity="error" text="Invalid Email"></p-message>-->
-<!--        </div>-->
-<!--        <div class="separator" *ngIf="isEmailCorrect">-->
-<!--        <span class="p-float-label">-->
-<!--        <input pInputText id="password" class="p-password-mask" formControlName="password"/>-->
-<!--        <label for="password">Password</label>-->
-<!--      </span>-->
-<!--        </div>-->
-<!--        <p-button *ngIf="!isEmailCorrect" label="Next" class="centered-items" (click)="validateEmail()"></p-button>-->
-<!--        <p-button *ngIf="isEmailCorrect" label="Log in" class="centered-items" type="submit"></p-button>-->
-<!--      </form>-->
-<!--      <p-message *ngIf="invalidCredentials" severity="error" text="Invalid credentials. Please try again."></p-message>-->
-<!--    </ng-template>-->
-<!--    <ng-template pTemplate="footer">-->
-
-<!--    </ng-template>-->
-<!--  </p-card>-->
-<!--</div>-->
-
 <div class="login-container">
-  <div class="form-container">
-      <p-card header="Log in" subheader="Acces your account" [style]="{ width: '360px' }">
-        <ng-template pTemplate="header">
-        </ng-template>
-        <ng-template pTemplate="content">
-          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-            <div class="separator">
-            <span class="p-float-label">
-            <input pInputText id="email" formControlName="email" (keydown.enter)="validateEmail()"/>
-            <label for="email">Email</label>
-          </span>
-              <p-message *ngIf="invalidEmail" severity="error" text="Invalid Email"></p-message>
-            </div>
-            <div class="separator" *ngIf="isEmailCorrect">
-            <span class="p-float-label">
-            <input pInputText id="password" class="p-password-mask" formControlName="password"/>
-            <label for="password">Password</label>
-          </span>
-            </div>
-            <p-button *ngIf="!isEmailCorrect" label="Next" class="centered-items" (click)="validateEmail()"></p-button>
-            <p-button *ngIf="isEmailCorrect" label="Log in" class="centered-items" type="submit"></p-button>
-          </form>
-          <p-message *ngIf="invalidCredentials" severity="error" text="Invalid credentials. Please try again."></p-message>
-        </ng-template>
-        <ng-template pTemplate="footer">
-
-        </ng-template>
-      </p-card>
-  </div>
-  <div class="image-container">
-    <img src="assets/login-image.png" alt="Login Image">
+  <div class="login-card">
+    <div class="login-header">
+      <i class="pi pi-bitcoin login-icon"></i>
+      <h2>Crypto Avenue</h2>
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">Email/Phone number</label>
+        <input pInputText id="email" formControlName="email" [ngClass]="{'p-invalid': invalidEmail}" (input)="onEmailInput()" />
+        <div *ngIf="invalidEmail" class="p-error">Invalid Email</div>
+      </div>
+      <div class="form-group" *ngIf="isEmailCorrect">
+        <label for="password">Password</label>
+        <input pInputText id="password" type="password" formControlName="password" />
+        <div *ngIf="invalidCredentials" class="p-error">Invalid Credentials</div>
+      </div>
+      <button pButton type="button" label="Next" (click)="validateEmail()" *ngIf="!isEmailCorrect"></button>
+      <button pButton type="submit" label="Login" *ngIf="isEmailCorrect"></button>
+    </form>
+    <button pButton label="Create an Account" (click)="router.navigate(['/register'])" class="create-account-button"></button>
   </div>
 </div>
-
-
-
