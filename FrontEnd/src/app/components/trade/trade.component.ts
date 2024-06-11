@@ -1,19 +1,15 @@
-import {Component, OnInit} from '@angular/core';
-import {ButtonModule} from "primeng/button";
-import {CardModule} from "primeng/card";
-import {DropdownModule} from "primeng/dropdown";
-import {InputTextModule} from "primeng/inputtext";
-import {MessageModule} from "primeng/message";
-import {NgIf, NgOptimizedImage} from "@angular/common";
-import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {SharedModule} from "primeng/api";
-import {UserServiceService} from "../../services/user-service.service";
-import {CoinsService} from "../../services/coins.service";
-import {Coin} from "../../models/Coin";
-import {CoinOption} from "../../models/CoinOption";
-import {max, min} from "rxjs";
-import {WalletService} from "../../services/wallet.service";
-import {Router} from "@angular/router";
+import { Component, HostListener, OnInit } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CoinsService } from '../../services/coins.service';
+import { WalletService } from '../../services/wallet.service';
+import { CoinOption } from '../../models/CoinOption';
+import { NgClass, NgForOf, NgIf } from '@angular/common';
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
+import { InputTextModule } from 'primeng/inputtext';
+import { MessageModule } from 'primeng/message';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-trade',
@@ -21,28 +17,26 @@ import {Router} from "@angular/router";
   imports: [
     ButtonModule,
     CardModule,
-    DropdownModule,
     InputTextModule,
     MessageModule,
     NgIf,
     ReactiveFormsModule,
-    SharedModule,
+    NgClass,
+    NgForOf,
     NgOptimizedImage
   ],
   templateUrl: './trade.component.html',
-  styleUrl: './trade.component.css'
+  styleUrls: ['./trade.component.css']
 })
-export class TradeComponent implements OnInit{
-  constructor(private coinsService: CoinsService,
-              private walletService: WalletService,
-              private router: Router) {}
-  tradeForm: FormGroup =  new FormGroup({
+export class TradeComponent implements OnInit {
+  tradeForm: FormGroup = new FormGroup({
     sourceCoin: new FormControl(null, Validators.required),
     targetCoin: new FormControl(null, Validators.required),
     sourceQuantity: new FormControl('', [Validators.required, Validators.min(0.01)]),
     targetQuantity: new FormControl('', [Validators.required, Validators.min(0.01)]),
     userId: new FormControl(localStorage.getItem('userId')),
   });
+
   selectedSourceCoin: CoinOption | undefined;
   selectedTargetCoin: CoinOption | undefined;
   sourceCoins: CoinOption[] = [];
@@ -52,11 +46,19 @@ export class TradeComponent implements OnInit{
   maximumQuantity: number | null = null;
   maximumQuantityAsString: string | null = null;
   firstCoinSelected: boolean = false;
-  sourceCoinId: string = '';
-  targetCoinId: string = '';
+  dropdownOpen: { [key: string]: boolean } = { sourceCoin: false, targetCoin: false };
+
+  constructor(
+    private coinsService: CoinsService,
+    private walletService: WalletService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.coinsService.getAllCoinsByUserId(this.tradeForm.value.userId).subscribe(
+    const userId = this.tradeForm.value.userId;
+
+    // Fetch available source coins for the user
+    this.coinsService.getAllCoinsByUserId(userId).subscribe(
       res => {
         this.sourceCoins = res.map(coin => ({
           label: coin.name,
@@ -67,92 +69,144 @@ export class TradeComponent implements OnInit{
       },
       err => console.log(err)
     );
+
+    // Update available quantity when source coin changes
     this.tradeForm.get('sourceCoin')?.valueChanges.subscribe(coinId => {
-      const userId = this.tradeForm.get('userId')?.value;
-      if(coinId && userId){
+      if (coinId && userId) {
         this.coinsService.getAvailableQuantity(coinId, userId).subscribe(
           quantity => {
             this.availableQuantity = quantity;
+            this.availableQuantityAsString = this.availableQuantity.toFixed(2);
+            this.firstCoinSelected = true;
+
+            // Fetch available target coins once a source coin is selected
+            this.coinsService.getAllCoins().subscribe(
+              res => {
+                this.targetCoins = res.map(coin => ({
+                  label: coin.name,
+                  value: coin.id,
+                  imageUrl: coin.imageUrl
+                }));
+              },
+              err => console.log(err)
+            );
           },
           err => console.log(err)
-        )
+        );
       }
     });
 
+    // Predict target quantity based on source quantity and selected coins
     this.tradeForm.get('sourceQuantity')?.valueChanges.subscribe(amount => {
-      if(this.tradeForm.get('sourceQuantity')?.valid){
+      if (this.tradeForm.get('sourceQuantity')?.valid) {
+        this.coinsService.predictAmount(
+          userId,
+          amount,
+          this.tradeForm.get('sourceCoin')?.value,
+          this.tradeForm.get('targetCoin')?.value
+        ).subscribe(res => {
+          this.tradeForm.get('targetQuantity')?.setValue(res.toFixed(2));
+        });
+      }
+    });
+  }
+
+  // Toggle the dropdown open/close state
+  toggleDropdown(type: 'sourceCoin' | 'targetCoin'): void {
+    this.dropdownOpen[type] = !this.dropdownOpen[type];
+  }
+
+  // Select a coin from the dropdown
+  selectCoin(coin: CoinOption, type: 'sourceCoin' | 'targetCoin', event: Event): void {
+    event.stopPropagation(); // Prevent dropdown from closing immediately
+    if (type === 'sourceCoin') {
+      this.selectedSourceCoin = coin;
+      this.tradeForm.patchValue({ sourceCoin: coin.value });
+
+      const userId = this.tradeForm.get('userId')?.value;
+      if (coin.value && userId) {
+        this.coinsService.getAvailableQuantity(coin.value, userId).subscribe(
+          quantity => {
+            this.availableQuantity = quantity;
+            this.availableQuantityAsString = this.availableQuantity.toFixed(2);
+            this.firstCoinSelected = true;
+          },
+          err => console.log(err)
+        );
+      }
+    } else if (type === 'targetCoin') {
+      this.selectedTargetCoin = coin;
+      this.tradeForm.patchValue({ targetCoin: coin.value });
+
+      if (this.availableQuantity != null) {
         this.coinsService.predictAmount(
           this.tradeForm.get('userId')?.value,
-          amount,
-          // this.tradeForm.get('sourceCoin')?.value,
-          this.sourceCoinId,
-          this.targetCoinId).subscribe(res => {
-          console.log('Calculated amount:');
-          console.log(res);
-          this.tradeForm.get('targetQuantity')?.setValue(res.toFixed(2));
-        })
+          this.availableQuantity,
+          this.tradeForm.get('sourceCoin')?.value,
+          this.tradeForm.get('targetCoin')?.value
+        ).subscribe(res => {
+          this.maximumQuantity = res;
+          this.maximumQuantityAsString = this.maximumQuantity.toFixed(2);
+        });
       }
-    });
+    }
 
+    // Close the dropdown after selection
+    this.dropdownOpen[type] = false;
   }
-  onCoinChange(coin: CoinOption): void {
-    const userId = localStorage.getItem('userId') || '';
-    console.log('Coin value:');
-    console.log(coin);
-    // this.tradeForm.get('sourceCoin')?.setValue(coin.value);
-    this.sourceCoinId = coin.value;
-    this.coinsService.getAvailableQuantity(coin.value, userId).subscribe(
-      res => {
-        this.availableQuantity = res;
-        this.availableQuantityAsString = this.availableQuantity.toFixed(2);
-        this.firstCoinSelected = true;
-        this.selectedSourceCoin = coin;
-        this.tradeForm.get('sourceQuantity')?.setValidators([Validators.max(res)]);
-        this.coinsService.getAllCoins().subscribe(
-          res => {
-            this.targetCoins = res.map(coin => ({
-              label: coin.name,
-              value: coin.id,
-              imageUrl: coin.imageUrl
-            }));
-          }
-        )
-      },
-      err => console.log(err)
-    );
-  }
-  onCoinChange2(coin: CoinOption): void {
-    const userId = localStorage.getItem('userId') || '';
-    // this.tradeForm.get('targetCoin')?.setValue(coin.value);
-    this.targetCoinId = coin.value;
-    this.selectedTargetCoin = coin;
-    if(this.availableQuantity != null){
-      this.coinsService.predictAmount(
-        userId,
-        this.availableQuantity,
-        this.sourceCoinId,
-        this.targetCoinId
-      ).subscribe(res => {
-        this.maximumQuantity = res;
-        this.maximumQuantityAsString = this.maximumQuantity.toFixed(2);
-      })
+
+  // Listen for clicks outside the dropdown to close it
+  @HostListener('document:click', ['$event'])
+  onClickOutside(event: MouseEvent): void {
+    const sourceDropdown = (event.target as HTMLElement).closest('.custom-dropdown-source');
+    const targetDropdown = (event.target as HTMLElement).closest('.custom-dropdown-target');
+
+    if (this.dropdownOpen['sourceCoin'] && !sourceDropdown) {
+      this.dropdownOpen['sourceCoin'] = false;
+    }
+
+    if (this.dropdownOpen['targetCoin'] && !targetDropdown) {
+      this.dropdownOpen['targetCoin'] = false;
     }
   }
 
-  trade(): void{
-    // if(this.tradeForm.valid){
+  // Get error message for form control validation
+  getErrorMessage(controlName: string): string | null {
+    const control = this.tradeForm.get(controlName);
+
+    if (control && control.touched) {
+      if (control.errors?.['required']) {
+        return 'This field is required';
+      }
+      if (control.errors?.['min']) {
+        return 'The minimum amount is 0.01';
+      }
+      if (control.errors?.['max']) {
+        return `The maximum amount is ${this.availableQuantity}`;
+      }
+    }
+    return null;
+  }
+  // Submit trade form
+  trade(): void {
+    if (this.tradeForm.valid) {
       this.walletService.trade(
         this.tradeForm.get('userId')?.value,
-        this.sourceCoinId,
+        this.tradeForm.get('sourceCoin')?.value,
         this.tradeForm.get('sourceQuantity')?.value,
-        this.targetCoinId,
-        this.tradeForm.get('targetQuantity')?.value,
-      ).subscribe(res => {
-        console.log(res);
-        window.alert('Deposit successful!');
-        this.router.navigate(['home']);
-      })
-    // }
+        this.tradeForm.get('targetCoin')?.value,
+        this.tradeForm.get('targetQuantity')?.value
+      ).subscribe(
+        res => {
+          console.log(res);
+          window.alert('Trade executed successfully!');
+          this.router.navigate(['portfolio']);
+        },
+        err => console.error('Trade execution error:', err)
+      );
+    } else {
+      this.tradeForm.markAllAsTouched(); // Mark all fields as touched to show validation errors
+    }
   }
-
 }
+

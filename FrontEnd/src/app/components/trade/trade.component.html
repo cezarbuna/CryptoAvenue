@@ -1,57 +1,66 @@
-<div class="card flex justify-content-center">
-  <p-card header="Trade" subheader="Trade" [style]="{ width: '360px' }">
-    <ng-template pTemplate="header">
-    </ng-template>
-    <ng-template pTemplate="content">
-      <form [formGroup]="tradeForm" (ngSubmit)="trade()">
-        <div class="separator">
-          <p-dropdown
-            formControlName="sourceCoin"
-            [options]="sourceCoins"
-            optionLabel="label"
-            placeholder="Select a Currency"
-            (onChange)="onCoinChange($event.value)">
-            <ng-template let-coin pTemplate="item">
-              <div class="coin-item">
-                <img [src]="coin.imageUrl" alt="{{coin.label}}" width="20" class="coin-icon">
-                <span>{{coin.label}}</span>
-              </div>
-            </ng-template>
-          </p-dropdown>
-        </div>
-        <div class="separator">
-          <span class="p-float-label">
-            <input pInputText id="sourceQuantity" formControlName="sourceQuantity" />
-            <label for="sourceQuantity">Amount</label>
-          </span>
-          <span *ngIf="availableQuantityAsString !== null">Available: {{ availableQuantityAsString }}</span>
-        </div>
-        <div class="separator" *ngIf="firstCoinSelected">
-          <p-dropdown
-            formControlName="coin"
-            [options]="targetCoins"
-            optionLabel="label"
-            placeholder="Select a Currency"
-            (onChange)="onCoinChange2($event.value)">
-            <ng-template let-coin pTemplate="item">
-              <div class="coin-item">
-                <img [src]="coin.imageUrl" alt="{{coin.label}}" width="20" class="coin-icon">
-                <span>{{coin.label}}</span>
-              </div>
-            </ng-template>
-          </p-dropdown>
-        </div>
-        <div class="separator" *ngIf="firstCoinSelected">
-          <span class="p-float-label">
-            <input pInputText id="targetQuantity" formControlName="targetQuantity" />
-            <label for="targetQuantity">Amount</label>
-          </span>
-          <span *ngIf="maximumQuantityAsString !== null">Maximum: {{ maximumQuantityAsString }}</span>
-        </div>
-        <p-button label="Trade" class="centered-items" type="submit"></p-button>
-      </form>
-    </ng-template>
-    <ng-template pTemplate="footer">
-    </ng-template>
-  </p-card>
+<div class="card-container">
+  <div class="card-header">
+    <i class="pi pi-chart-line card-icon"></i>
+    <div>
+      <h2>Crypto Avenue</h2>
+      <h3>Trade</h3>
+    </div>
+  </div>
+  <form [formGroup]="tradeForm" (ngSubmit)="trade()">
+    <div class="form-group">
+      <div class="custom-dropdown custom-dropdown-source" (click)="toggleDropdown('sourceCoin')">
+        <span class="selected-value">
+          <img [src]="selectedSourceCoin?.imageUrl" alt="{{ selectedSourceCoin?.label }}" width="20" class="coin-icon">
+          {{ selectedSourceCoin?.label || 'Select a Currency' }}
+        </span>
+        <ul class="dropdown-list" *ngIf="dropdownOpen['sourceCoin']">
+          <li *ngFor="let coin of sourceCoins" (click)="selectCoin(coin, 'sourceCoin', $event)">
+            <img [src]="coin.imageUrl" alt="{{ coin.label }}" width="20" class="coin-icon">
+            {{ coin.label }}
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="tradeForm.get('sourceCoin')?.touched && tradeForm.get('sourceCoin')?.invalid" class="p-error">
+        {{ getErrorMessage('sourceCoin') }}
+      </div>
+    </div>
+    <div class="form-group">
+      <span class="p-float-label">
+        <input pInputText id="sourceQuantity" formControlName="sourceQuantity" />
+        <label for="sourceQuantity">Amount</label>
+      </span>
+      <div *ngIf="availableQuantityAsString !== null">Available: {{ availableQuantityAsString }}</div>
+      <div *ngIf="tradeForm.get('sourceQuantity')?.touched && tradeForm.get('sourceQuantity')?.invalid" class="p-error">
+        {{ getErrorMessage('sourceQuantity') }}
+      </div>
+    </div>
+    <div class="form-group" *ngIf="firstCoinSelected">
+      <div class="custom-dropdown custom-dropdown-target" (click)="toggleDropdown('targetCoin')">
+        <span class="selected-value">
+          <img [src]="selectedTargetCoin?.imageUrl" alt="{{ selectedTargetCoin?.label }}" width="20" class="coin-icon">
+          {{ selectedTargetCoin?.label || 'Select a Currency' }}
+        </span>
+        <ul class="dropdown-list" *ngIf="dropdownOpen['targetCoin']">
+          <li *ngFor="let coin of targetCoins" (click)="selectCoin(coin, 'targetCoin', $event)">
+            <img [src]="coin.imageUrl" alt="{{ coin.label }}" width="20" class="coin-icon">
+            {{ coin.label }}
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="tradeForm.get('targetCoin')?.touched && tradeForm.get('targetCoin')?.invalid" class="p-error">
+        {{ getErrorMessage('targetCoin') }}
+      </div>
+    </div>
+    <div class="form-group" *ngIf="firstCoinSelected">
+      <span class="p-float-label">
+        <input pInputText id="targetQuantity" formControlName="targetQuantity" />
+        <label for="targetQuantity">Amount</label>
+      </span>
+      <div *ngIf="maximumQuantityAsString !== null">Maximum: {{ maximumQuantityAsString }}</div>
+      <div *ngIf="tradeForm.get('targetQuantity')?.touched && tradeForm.get('targetQuantity')?.invalid" class="p-error">
+        {{ getErrorMessage('targetQuantity') }}
+      </div>
+    </div>
+    <button pButton label="Trade" type="submit" class="submit-button"></button>
+  </form>
 </div>
