@@ -1,12 +1,13 @@
 <div class="chat-container">
   <h2>Crypto AI Advisor</h2>
-  <form [formGroup]="questionForm" (ngSubmit)="sendQuestion()">
-    <input pInputText id="email" formControlName="question"/>
-    <p-button label="Ask" type="submit"></p-button>
+  <form [formGroup]="questionForm" (ngSubmit)="sendQuestion()" class="form-group">
+    <input pInputText id="question" formControlName="question" placeholder="Ask a question..." />
+    <button pButton label="Ask" type="submit" class="ask-button"></button>
   </form>
   <div *ngIf="chatResponse" class="response-panel">
-    <p-panel header="Response">
+    <h3>Advisor Says...</h3>
+    <div class="response-content">
       <p>{{ chatResponse }}</p>
-    </p-panel>
+    </div>
   </div>
 </div>
