@@ -1,43 +1,32 @@
-<div class="card-container">
-  <p-card header="Register" subheader="Create a new account" [style]="{ width: '360px' }">
-    <ng-template pTemplate="header">
-    </ng-template>
-    <ng-template pTemplate="content">
-      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-        <div class="separator" [formGroup]="registerForm">
-        <span class="p-float-label">
-          <input pInputText id="email" formControlName="email"/>
-          <label for="email">Email</label>
-        </span>
-          <p-message *ngIf="getErrorMessage('email')" severity="error" text="Invalid Email"></p-message>
-        </div>
-        <div class="separator" [formGroup]="registerForm">
-        <span class="p-float-label">
-          <input pInputText id="username" formControlName="username"/>
-          <label for="username">Username</label>
-        </span>
-          <p-message *ngIf="getErrorMessage('username')" severity="error" text="Invalid Username"></p-message>
-        </div>
-        <div class="separator" [formGroup]="registerForm">
-        <span class="p-float-label">
-        <input pInputText id="age" formControlName="age"/>
+<div class="register-container">
+  <div class="register-card">
+    <div class="register-header">
+      <i class="pi pi-bitcoin register-icon"></i>
+      <h2>Crypto Avenue</h2>
+    </div>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input pInputText id="email" formControlName="email" [ngClass]="{'p-invalid': getErrorMessage('email')}" />
+        <div *ngIf="getErrorMessage('email')" class="p-error">{{ getErrorMessage('email') }}</div>
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input pInputText id="username" formControlName="username" [ngClass]="{'p-invalid': getErrorMessage('username')}" />
+        <div *ngIf="getErrorMessage('username')" class="p-error">{{ getErrorMessage('username') }}</div>
+      </div>
+      <div class="form-group">
         <label for="age">Age</label>
-      </span>
-          <p-message *ngIf="getErrorMessage('age')" severity="error" text="You must be over 18 years old"></p-message>
-        </div>
-        <div class="separator" [formGroup]="registerForm">
-        <span class="p-float-label">
-        <input pInputText id="password" class="p-password-mask" formControlName="password"/>
+        <input pInputText id="age" formControlName="age" type="number" [ngClass]="{'p-invalid': getErrorMessage('age')}" />
+        <div *ngIf="getErrorMessage('age')" class="p-error">{{ getErrorMessage('age') }}</div>
+      </div>
+      <div class="form-group">
         <label for="password">Password</label>
-      </span>
-          <p-message *ngIf="getErrorMessage('password')" severity="error" text="Invalid Password"></p-message>
-        </div>
-        <p-button label="Register" class="centered-items" type="submit"></p-button>
-      </form>
-
-    </ng-template>
-    <ng-template pTemplate="footer">
-      <!--      <p-button label="Log in" icon="pi pi-check" [raised]="true" class="centered-items"></p-button>-->
-    </ng-template>
-  </p-card>
+        <input pInputText id="password" formControlName="password" type="password" [ngClass]="{'p-invalid': getErrorMessage('password')}" />
+        <div *ngIf="getErrorMessage('password')" class="p-error">{{ getErrorMessage('password') }}</div>
+      </div>
+      <button pButton type="submit" label="Register"></button>
+    </form>
+    <a class="login-link" (click)="this.router.navigate(['login'])">Already have an account? Log in</a>
+  </div>
 </div>

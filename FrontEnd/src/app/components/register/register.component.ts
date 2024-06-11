@@ -3,7 +3,7 @@ import {CardModule} from "primeng/card";
 import {ButtonModule} from "primeng/button";
 import {InputTextModule} from "primeng/inputtext";
 import {MessageModule} from "primeng/message";
-import {NgIf} from "@angular/common";
+import {NgClass, NgIf} from "@angular/common";
 import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {UserServiceService} from "../../services/user-service.service";
@@ -17,7 +17,8 @@ import {UserServiceService} from "../../services/user-service.service";
     InputTextModule,
     MessageModule,
     NgIf,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgClass
   ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
@@ -25,7 +26,7 @@ import {UserServiceService} from "../../services/user-service.service";
 export class RegisterComponent implements OnInit{
 
   constructor(private formBuilder: FormBuilder,
-              private router: Router,
+              protected router: Router,
               private userService: UserServiceService) {}
 
   registerForm: FormGroup =  new FormGroup({

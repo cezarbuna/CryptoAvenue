@@ -22,6 +22,6 @@ export class UserServiceService {
   }
 
   registerUser(user: User): Observable<User> {
-    return this.httpClient.post<User>(`https://localhost:7008/api/Auth/login`, user);
+    return this.httpClient.post<User>(`https://localhost:7008/api/Users`, user);
   }
 }
