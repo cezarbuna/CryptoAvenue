@@ -374,8 +374,7 @@
               "RelativeToolTip": "CryptoAvenue.Domain\\Models\\Transaction.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T17:53:13.603Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-11T17:53:13.603Z"
             },
             {
               "$type": "Document",
@@ -385,7 +384,7 @@
               "RelativeDocumentMoniker": "CryptoAvenue.Application\\UserApp\\UserCommandHandler\\CreateUserCommandHandler.cs",
               "ToolTip": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\UserApp\\UserCommandHandler\\CreateUserCommandHandler.cs",
               "RelativeToolTip": "CryptoAvenue.Application\\UserApp\\UserCommandHandler\\CreateUserCommandHandler.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAABmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-14T11:15:44.648Z",
               "EditorCaption": ""
@@ -412,8 +411,7 @@
               "RelativeToolTip": "CryptoAvenue.Application\\WalletApp\\WalletQueryHandlers\\GetPortfolioInformationQueryHandler.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACoAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-08T16:32:19.584Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-08T16:32:19.584Z"
             },
             {
               "$type": "Document",
