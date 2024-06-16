@@ -1,4 +1,8 @@
 <div class="login-container">
+  <!-- Toast for notifications -->
+  <p-toast></p-toast>
+
+  <!-- Login Card -->
   <div class="login-card">
     <div class="login-header">
       <i class="pi pi-bitcoin login-icon"></i>
@@ -18,6 +22,6 @@
       <button pButton type="button" label="Next" (click)="validateEmail()" *ngIf="!isEmailCorrect"></button>
       <button pButton type="submit" label="Login" *ngIf="isEmailCorrect"></button>
     </form>
-    <button pButton label="Create an Account" (click)="router.navigate(['/register'])" class="create-account-button"></button>
+    <button pButton label="Create an Account" (click)="this.router.navigate(['/register'])" class="create-account-button"></button>
   </div>
 </div>
