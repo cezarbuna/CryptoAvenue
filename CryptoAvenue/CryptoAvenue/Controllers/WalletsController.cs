@@ -114,5 +114,13 @@ namespace CryptoAvenue.Controllers
                 return NotFound();
             return Ok(result);
         }
+        [HttpGet]
+        [Route("get-portfolio-change-24h/{walletId}")]
+        public async Task<IActionResult> GetPortfolioChange24h(Guid walletId)
+        {
+            var query = new GetPortfolioChange24hQuery { WalletId = walletId };
+            var result = await _mediator.Send(query);
+            return Ok(Math.Round(result,3));
+        }
     }
 }

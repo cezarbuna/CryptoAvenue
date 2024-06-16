@@ -8,10 +8,7 @@
       </div>
       <div class="balance-amount">
         <h1>{{ walletBalance | currency: 'USD' }}</h1>
-        <p>≈ €{{ walletBalance | currency: 'EUR': 'symbol':'1.2-2' }}</p>
-        <p>Today's PnL <span [ngClass]="{'negative': walletBalance < 0, 'positive': walletBalance >= 0}">
-          {{ walletBalance | currency: 'EUR': 'symbol':'1.2-2' }} ({{ walletBalance | percent }})
-        </span></p>
+        <p>≈ {{ walletBalance * 1.08 | currency: 'EUR': 'symbol':'1.2-2' }}</p>
       </div>
     </p-card>
   </div>
