@@ -1,23 +1,21 @@
-/* General container styling */
 .transactions-container {
-  background-color: #181a20; /* Dark background */
+  background-color: #181a20;
   padding: 2rem;
   border-radius: 10px;
   max-width: 800px;
-  margin: 100px auto; /* Center horizontally and add some top margin */
-  color: white; /* White text color */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  margin: 100px auto;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .transactions-container h2 {
-  color: #4CAF50; /* Green color for heading */
-  text-align: center; /* Center align heading */
-  margin-bottom: 1.5rem; /* Space below heading */
-  font-size: 1.75rem; /* Larger font size */
-  text-transform: uppercase; /* Uppercase heading */
+  color: #4CAF50;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  text-transform: uppercase;
 }
 
-/* Filter container styling */
 .filter-container {
   display: flex;
   justify-content: center;
@@ -39,22 +37,22 @@
   outline: none;
 }
 
-/* Transaction card styling */
+
 .transaction-card {
-  background-color: #2c2c2c; /* Darker card background */
+  background-color: #2c2c2c;
   padding: 1.5rem;
   border-radius: 10px;
-  margin-bottom: 1.5rem; /* Space between cards */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
 }
 
 .transaction-card:hover {
-  background-color: #333; /* Slightly lighter background on hover */
+  background-color: #333;
 }
 
-/* Header styling */
+
 .transaction-header {
   display: flex;
   justify-content: space-between;
@@ -63,7 +61,7 @@
 
 .transaction-date {
   font-size: 0.875rem;
-  color: #b3b3b3; /* Light grey */
+  color: #b3b3b3;
 }
 
 .transaction-type {
@@ -73,23 +71,21 @@
   text-transform: uppercase;
 }
 
-/* Transaction type severity styling */
 .transaction-type.success {
-  background-color: #4CAF50; /* Green for BUY */
+  background-color: #4CAF50;
   color: white;
 }
 
 .transaction-type.warning {
-  background-color: #FF9800; /* Orange for SELL */
+  background-color: #FF9800;
   color: white;
 }
 
 .transaction-type.info {
-  background-color: #2196F3; /* Blue for TRADE */
+  background-color: #2196F3;
   color: white;
 }
 
-/* Coin details styling */
 .transaction-details {
   display: flex;
   justify-content: space-between;
@@ -107,7 +103,7 @@
   height: 40px;
   margin-right: 1rem;
   border-radius: 50%;
-  background-color: white; /* White background for image */
+  background-color: white;
 }
 
 .coin-info {
@@ -122,10 +118,9 @@
 
 .coin-price {
   font-size: 0.875rem;
-  color: #b3b3b3; /* Light grey */
+  color: #b3b3b3;
 }
 
-/* Action buttons styling */
 .transaction-actions {
   display: flex;
   justify-content: flex-end;
@@ -150,11 +145,11 @@
 }
 
 .transaction-actions .revert-button {
-  background-color: #4CAF50; /* Green for revert */
+  background-color: #4CAF50;
   color: white;
 }
 
 .transaction-actions .delete-button {
-  background-color: #f44336; /* Red for delete */
+  background-color: #f44336;
   color: white;
 }

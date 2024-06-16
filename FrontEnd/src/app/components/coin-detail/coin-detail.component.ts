@@ -95,10 +95,8 @@ export class CoinDetailComponent implements OnInit {
                 const ci = legend.chart;
                 const meta = ci.getDatasetMeta(index);
 
-                // Toggle the visibility
                 meta.hidden = meta.hidden === null ? !ci.data.datasets[index].hidden : null;
 
-                // Update the chart
                 ci.update();
                 this.updateScales(ci);
               }

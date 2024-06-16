@@ -1,9 +1,8 @@
-/* Base navbar styling */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #181a20; /* Dark background color */
+  background-color: #181a20;
   padding: 10px 20px;
   color: white;
 }
@@ -19,18 +18,15 @@
   gap: 15px;
 }
 
-/* Align items in the left container */
 .navbar .nav-links.left {
-  flex-grow: 1; /* Take available space to push other items to the far end */
+  flex-grow: 1;
   margin-left: 15px;
 }
 
-/* Right-aligned links */
 .navbar .nav-links.right {
-  margin-left: auto; /* Push the logout button to the far right */
+  margin-left: auto;
 }
 
-/* Styling for each navigation item */
 .navbar .nav-item {
   color: white;
   text-decoration: none;
@@ -43,7 +39,6 @@
   color: green;
 }
 
-/* Hide the link container if there are no items (for alignment) */
 .navbar .nav-links:empty {
   display: none;
 }

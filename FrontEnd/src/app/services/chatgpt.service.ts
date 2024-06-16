@@ -7,15 +7,13 @@ import {HttpClient} from "@angular/common/http";
 })
 export class ChatgptService {
 
-  // private chatgpt = new ChatGPT()
-  private apiUrl = 'https://api.openai.com/v1/chat/completions'; // Example API endpoint
+
+  private apiUrl = 'https://api.openai.com/v1/chat/completions';
 
   constructor(private http: HttpClient) { }
 
   getChatResponse(prompt: string): Observable<any> {
     const headers = {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer sk-proj-P5QyRSd3M39b3tn39shiT3BlbkFJHrCUm0T8kjq7XLk8sQDO' // Replace YOUR_API_KEY with your actual API key
     };
 
     const body = {

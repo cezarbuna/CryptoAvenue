@@ -1,11 +1,12 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { WalletService } from '../../services/wallet.service';
 import { Router } from '@angular/router';
+import { WalletService } from '../../services/wallet.service';
 import { NgClass, NgForOf, NgIf } from "@angular/common";
-import { ToastModule } from 'primeng/toast';
-import { MessageService } from 'primeng/api';
+import { MessageService } from "primeng/api";
+import { loadStripe, Stripe } from '@stripe/stripe-js';
+import { MessageModule } from "primeng/message";
+import { ToastModule } from "primeng/toast";
 
 @Component({
   selector: 'app-deposit',
@@ -16,12 +17,14 @@ import { MessageService } from 'primeng/api';
     NgClass,
     NgIf,
     NgForOf,
-    ToastModule // Import PrimeNG ToastModule
+    MessageModule,
+    ToastModule,
   ],
-  providers: [MessageService], // Register the MessageService
+  providers: [MessageService],
   styleUrls: ['./deposit.component.css']
 })
 export class DepositComponent implements OnInit {
+
   depositForm: FormGroup = new FormGroup({
     quantity: new FormControl('', [Validators.required, Validators.min(200)]),
     currency: new FormControl('', [Validators.required]),
@@ -29,23 +32,20 @@ export class DepositComponent implements OnInit {
   });
 
   currencies = [
-    { name: 'Euro', icon: 'pi pi-euro' },
-    { name: 'US Dollar', icon: 'pi pi-dollar' }
+    { name: 'Euro', icon: 'pi pi-euro', priceId: '' },
+    { name: 'US Dollar', icon: 'pi pi-dollar', priceId: '' }
   ];
 
   selectedCurrency: any;
   dropdownOpen = false;
+  stripe: Stripe | null = null;
 
-  constructor(
-    private http: HttpClient,
-    private walletService: WalletService,
-    private router: Router,
-    private messageService: MessageService  // Inject the MessageService
-  ) {}
+  constructor(private walletService: WalletService, private router: Router, private messageService: MessageService) {}
 
-  ngOnInit(): void {
-    // Pre-select the first currency if needed
-    this.selectedCurrency = this.currencies[1];
+  async ngOnInit(): Promise<void> {
+    this.stripe = await loadStripe('');
+
+    this.selectedCurrency = this.currencies[0];
   }
 
   toggleDropdown(): void {
@@ -53,13 +53,12 @@ export class DepositComponent implements OnInit {
   }
 
   selectCurrency(currency: any, event: Event): void {
-    event.stopPropagation(); // Prevent the dropdown from closing immediately
+    event.stopPropagation();
     this.selectedCurrency = currency;
     this.depositForm.patchValue({ currency: currency.name });
-    this.dropdownOpen = false;  // Close dropdown after selection
+    this.dropdownOpen = false;
   }
 
-  // Listen for clicks outside the dropdown to close it
   @HostListener('document:click', ['$event'])
   onClickOutside(event: MouseEvent): void {
     if (this.dropdownOpen && !(event.target as HTMLElement).closest('.custom-dropdown')) {
@@ -82,32 +81,40 @@ export class DepositComponent implements OnInit {
 
   onSubmit(): void {
     if (this.depositForm.valid) {
-      this.walletService.deposit(this.depositForm.value).subscribe({
-        next: () => {
-          this.showSuccess('Deposit done successfully');
+      const userId = this.depositForm.get('userId')?.value;
+      const amount = this.depositForm.get('quantity')?.value;
+      const currency = this.selectedCurrency?.name;
 
-          // Add a delay to allow the toast message to display
-          setTimeout(() => {
-            this.router.navigate(['portfolio']);
-          }, 2000); // 2000 milliseconds = 2 seconds delay
+
+      this.walletService.deposit(this.depositForm.value).subscribe({
+        next: async (response) => {
+
+          // this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Deposit registered successfully' });
+
+          const priceId = this.selectedCurrency?.priceId;
+          if (priceId && this.stripe) {
+            const { error } = await this.stripe.redirectToCheckout({
+              lineItems: [{ price: priceId, quantity: 1 }],
+              mode: 'payment',
+              successUrl: `http://localhost:4200/portfolio`,
+              cancelUrl: `http://localhost:4200/portfolio`
+            });
+
+            if (error) {
+              this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message });
+            }
+          } else {
+            this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Currency not selected or Stripe not initialized' });
+          }
         },
         error: (err) => {
-          this.showError('Deposit failed. Please try again.');
+
+          this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Failed to perform deposit. Please try again.' });
           console.error('Deposit error:', err);
         }
       });
     } else {
-      this.depositForm.markAllAsTouched(); // Mark all controls as touched to display validation messages
+      this.depositForm.markAllAsTouched();
     }
-  }
-
-  // Function to show success messages
-  showSuccess(message: string) {
-    this.messageService.add({ severity: 'success', summary: 'Success', detail: message });
-  }
-
-  // Function to show error messages
-  showError(message: string) {
-    this.messageService.add({ severity: 'error', summary: 'Error', detail: message });
   }
 }

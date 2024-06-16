@@ -19,7 +19,11 @@ namespace CryptoAvenue.Application.TransactionApp.TransactionCommandHandlers
         private readonly CryptoAvenueDbContext _dbContext;
         private readonly ITransactionRepository _transactionRepository;
 
-        public RevertTransactionCommandHandler(IWalletRepository walletRepository, IWalletCoinRepository walletCoinRepository, CryptoAvenueDbContext dbContext, ITransactionRepository transactionRepository)
+        public RevertTransactionCommandHandler(
+            IWalletRepository walletRepository,
+            IWalletCoinRepository walletCoinRepository,
+            CryptoAvenueDbContext dbContext,
+            ITransactionRepository transactionRepository)
         {
             _walletRepository = walletRepository;
             _walletCoinRepository = walletCoinRepository;
@@ -33,42 +37,66 @@ namespace CryptoAvenue.Application.TransactionApp.TransactionCommandHandlers
             var sourceCoin = await _dbContext.Coins.SingleOrDefaultAsync(x => x.Id == transaction.SourceCoinId);
             var targetCoin = await _dbContext.Coins.SingleOrDefaultAsync(x => x.Id == transaction.TargetCoinId);
 
-            var wallet = await _walletRepository.GetEntityByID(transaction.WalletId);
-            var targetCoinWallet = await _walletCoinRepository.GetEntityBy(x => x.WalletId == wallet.Id && x.CoinId == targetCoin.Id);
-            if(targetCoinWallet.Quantity < request.TargetAmount || targetCoinWallet == null)
+            if (transaction == null || sourceCoin == null || targetCoin == null)
             {
-                return null;
+                return null; 
             }
+
+            var wallet = await _walletRepository.GetEntityByID(transaction.WalletId);
+            if (wallet == null)
+            {
+                return null; 
+            }
+
+            double currentSourceCoinPrice = sourceCoin.CurrentPrice;
+            double currentTargetCoinPrice = targetCoin.CurrentPrice;
+
+            var targetCoinWallet = await _walletCoinRepository.GetEntityBy(x => x.WalletId == wallet.Id && x.CoinId == targetCoin.Id);
+            if (targetCoinWallet == null || targetCoinWallet.Quantity < request.TargetAmount)
+            {
+                return null; 
+            }
+
+            double sourceQuantityToRevert = transaction.TargetQuantity * currentTargetCoinPrice / currentSourceCoinPrice;
+
             targetCoinWallet.Quantity -= transaction.TargetQuantity;
             if (targetCoinWallet.Quantity <= 0)
+            {
                 _walletCoinRepository.Delete(targetCoinWallet);
+            }
             else
+            {
                 await _walletCoinRepository.Update(targetCoinWallet);
+            }
             await _walletCoinRepository.SaveChanges();
 
             var sourceCoinWallet = await _walletCoinRepository.GetEntityBy(x => x.WalletId == wallet.Id && x.CoinId == sourceCoin.Id);
-            if(sourceCoinWallet == null)
+            if (sourceCoinWallet == null)
             {
                 var newSourceCoinWallet = new WalletCoin
                 {
                     CoinId = sourceCoin.Id,
                     WalletId = wallet.Id,
-                    Quantity = transaction.SourceQuantity
+                    Quantity = sourceQuantityToRevert
                 };
                 await _walletCoinRepository.Insert(newSourceCoinWallet);
             }
             else
             {
-                sourceCoinWallet.Quantity += transaction.SourceQuantity;
+                sourceCoinWallet.Quantity += sourceQuantityToRevert;
                 await _walletCoinRepository.Update(sourceCoinWallet);
-                
             }
             await _walletCoinRepository.SaveChanges();
-            var newTransaction = await CreateTransaction(wallet, targetCoin, sourceCoin, transaction.TargetQuantity, transaction.SourceQuantity);
+
+            var newTransaction = await CreateTransaction(wallet, targetCoin, sourceCoin, transaction.TargetQuantity, sourceQuantityToRevert);
+
+            // Delete the old transaction
             _transactionRepository.Delete(transaction);
             await _transactionRepository.SaveChanges();
+
             return newTransaction;
         }
+
         public async Task<Transaction> CreateTransaction(Wallet wallet, Coin sourceCoin, Coin targetCoin, double sourceQuantity, double targetQuantity)
         {
             var transaction = new Transaction

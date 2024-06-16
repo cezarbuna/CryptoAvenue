@@ -16,7 +16,7 @@ import { MessageService } from 'primeng/api';
     NgClass,
     NgIf,
     NgForOf,
-    ToastModule  // Import PrimeNG ToastModule
+    ToastModule
   ],
   providers: [MessageService], // Register the MessageService
   styleUrls: ['./withdraw.component.css']
@@ -41,7 +41,7 @@ export class WithdrawComponent implements OnInit {
     private http: HttpClient,
     private walletService: WalletService,
     private router: Router,
-    private messageService: MessageService  // Inject the MessageService
+    private messageService: MessageService
   ) {}
 
   ngOnInit(): void {
@@ -63,7 +63,7 @@ export class WithdrawComponent implements OnInit {
     this.withdrawForm.patchValue({ currency: currency.name });
     setTimeout(() => {
       this.dropdownOpen = false;
-    }, 100);  // Ensure the dropdown closes after the selection
+    }, 100);
   }
 
   getErrorMessage(controlName: string): string | null {
@@ -88,10 +88,9 @@ export class WithdrawComponent implements OnInit {
         next: () => {
           this.showSuccess('Withdrawal done successfully');
 
-          // Add a delay to allow the toast message to display
           setTimeout(() => {
             this.router.navigate(['home']);
-          }, 2000); // 2000 milliseconds = 2 seconds delay
+          }, 2000);
         },
         error: (err) => {
           this.showError('Withdrawal failed. Please try again.');
@@ -99,16 +98,14 @@ export class WithdrawComponent implements OnInit {
         }
       });
     } else {
-      this.withdrawForm.markAllAsTouched(); // Mark all controls as touched to display validation messages
+      this.withdrawForm.markAllAsTouched();
     }
   }
 
-  // Function to show success messages
   showSuccess(message: string) {
     this.messageService.add({ severity: 'success', summary: 'Success', detail: message });
   }
 
-  // Function to show error messages
   showError(message: string) {
     this.messageService.add({ severity: 'error', summary: 'Error', detail: message });
   }

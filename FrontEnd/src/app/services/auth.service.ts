@@ -20,13 +20,13 @@ export class AuthService {
   login(userId: string, token: string): void {
     localStorage.setItem('token', token);
     localStorage.setItem('userId', userId);
-    this.loggedInSubject.next(true);  // Notify subscribers about the login status change
+    this.loggedInSubject.next(true);
   }
 
   logout(): void {
     localStorage.removeItem('token');
     localStorage.removeItem('userId');
-    this.loggedInSubject.next(false); // Notify subscribers about the logout status change
+    this.loggedInSubject.next(false);
   }
 
   isLoggedIn(): boolean {

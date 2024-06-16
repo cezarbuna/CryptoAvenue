@@ -3,11 +3,11 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #181a20; /* Dark background */
+  background-color: #181a20;
 }
 
 .login-card {
-  background-color: #212529; /* Darker card background */
+  background-color: #212529;
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -24,7 +24,7 @@
 
 .login-icon {
   font-size: 2.5rem;
-  color: #4CAF50; /* Use the same green as in the navbar */
+  color: #4CAF50;
   margin-right: 0.5rem;
 }
 
@@ -40,7 +40,7 @@ h2 {
 }
 
 .form-group label {
-  color: #b0b0b0; /* Lighter text color for labels */
+  color: #b0b0b0;
   font-size: 0.9rem;
   display: block;
   margin-bottom: 0.5rem;
@@ -49,13 +49,13 @@ h2 {
 .p-button {
   width: 100%;
   margin-top: 1rem;
-  background-color: #4CAF50 !important; /* Green button color */
+  background-color: #4CAF50 !important;
   border: none;
   font-weight: bold;
 }
 
 .p-button:disabled {
-  background-color: #6c757d !important; /* Gray out the button if disabled */
+  background-color: #6c757d !important;
 }
 
 .create-account-button {
@@ -66,13 +66,13 @@ h2 {
 }
 
 .p-error {
-  color: #ff6f61; /* Slightly softer red for error messages */
+  color: #ff6f61;
   font-size: 0.8rem;
   margin-top: 0.5rem;
 }
 
 input.p-invalid {
-  border-color: #ff6f61 !important; /* Red border for invalid inputs */
+  border-color: #ff6f61 !important;
 }
 
 input, .p-inputtext {

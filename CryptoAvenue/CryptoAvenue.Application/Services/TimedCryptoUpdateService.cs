@@ -31,7 +31,7 @@ namespace CryptoAvenue.Application.Services
             _logger.LogInformation("TimedCryptoUpdateService is running..");
 
             //run every 2 minutes
-            _timer = new Timer(DoWork, null, TimeSpan.Zero, TimeSpan.FromSeconds(10000));
+            _timer = new Timer(DoWork, null, TimeSpan.Zero, TimeSpan.FromSeconds(600));
             return Task.CompletedTask;
         }
 

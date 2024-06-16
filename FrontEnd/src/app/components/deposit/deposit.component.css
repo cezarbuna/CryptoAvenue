@@ -1,11 +1,10 @@
-/* General container styling */
 .card-container {
-  background-color: #181a20; /* Dark background */
+  background-color: #181a20;
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   max-width: 360px;
-  margin: 100px auto; /* Center horizontally and add some top margin */
+  margin: 100px auto;
 }
 
 .card-header {
@@ -18,7 +17,7 @@
 .card-header i {
   font-size: 2rem;
   margin-right: 0.5rem;
-  color: #4CAF50; /* Green color for the icon */
+  color: #4CAF50;
 }
 
 .card-header h2 {
@@ -30,16 +29,14 @@
 .card-header h3 {
   margin: 0;
   font-size: 1rem;
-  color: #4CAF50; /* Green color for the subheader */
+  color: #4CAF50;
 }
 
-/* Form group styling */
 .form-group {
   margin-bottom: 1.5rem;
   position: relative;
 }
 
-/* Custom dropdown styling */
 .custom-dropdown {
   position: relative;
   background-color: #2c2c2c;
@@ -61,7 +58,6 @@
   margin-right: 0.5rem;
 }
 
-/* Dropdown list styling */
 .dropdown-list {
   position: absolute;
   top: 100%;
@@ -90,30 +86,28 @@
   margin-right: 0.5rem;
 }
 
-/* Input styling */
 input {
   width: 100%;
   padding: 0.5rem;
   border-radius: 5px;
   border: 1px solid #ccc;
-  color: white; /* Change text color to white to match the dropdown */
-  background-color: #2c2c2c; /* Change background to match the dropdown */
+  color: white;
+  background-color: #2c2c2c;
 }
 
 .p-float-label input:focus {
-  border-color: #4CAF50; /* Green border on focus */
+  border-color: #4CAF50;
   outline: none;
 }
 
 .p-float-label label {
-  color: white; /* Label color for consistency */
+  color: white;
 }
 
-/* Error message styling */
 .error-message {
   margin: 0.5rem 0 0 0;
-  color: #f44336; /* Red color for the error message */
-  font-size: 0.875rem; /* Slightly smaller font size for the error message */
+  color: #f44336;
+  font-size: 0.875rem;
   display: flex;
   align-items: center;
 }
@@ -127,7 +121,6 @@ input {
   align-items: center;
 }
 
-/* Submit button styling */
 .submit-button {
   width: 100%;
   padding: 0.75rem;
@@ -144,8 +137,7 @@ input {
   background-color: #45a049;
 }
 
-/* Additional styling for form elements */
 .input-error {
   border-color: #f44336 !important;
-  background-color: #3c3c3c !important; /* Slightly darker background on error */
+  background-color: #3c3c3c !important;
 }

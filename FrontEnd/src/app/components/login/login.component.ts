@@ -25,7 +25,7 @@ import { MessageService } from 'primeng/api';
     ReactiveFormsModule,
     NgClass,
   ],
-  providers: [MessageService], // Register the MessageService
+  providers: [MessageService],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     protected router: Router,
     private cdr: ChangeDetectorRef,
-    private messageService: MessageService // Inject the MessageService
+    private messageService: MessageService
   ) {}
 
   invalidCredentials: boolean = false;
@@ -96,12 +96,10 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  // Function to show success messages
   showSuccess(message: string) {
     this.messageService.add({ severity: 'success', summary: 'Success', detail: message });
   }
 
-  // Function to show error messages
   showError(message: string) {
     this.messageService.add({ severity: 'error', summary: 'Error', detail: message });
   }

@@ -56,12 +56,6 @@ namespace CryptoAvenue.Application.TransactionApp.TransactionCommandHandlers
             }
             return null;
         }
-        //public class CreateTransactionCommand : IRequest<Transaction>
-        //{
-        //    public Guid WalletId { get; set; }
-        //    public string CoinId { get; set; }
-        //    public string TransactionType { get; set; }
-        //    public double Quantity { get; set; }
-        //}
+
     }
 }
