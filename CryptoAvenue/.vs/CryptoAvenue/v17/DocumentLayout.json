@@ -370,34 +370,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GetPortfolioChange24hQueryHandler.cs",
-              "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\WalletApp\\WalletQueryHandlers\\GetPortfolioChange24hQueryHandler.cs",
-              "RelativeDocumentMoniker": "CryptoAvenue.Application\\WalletApp\\WalletQueryHandlers\\GetPortfolioChange24hQueryHandler.cs",
-              "ToolTip": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\WalletApp\\WalletQueryHandlers\\GetPortfolioChange24hQueryHandler.cs",
-              "RelativeToolTip": "CryptoAvenue.Application\\WalletApp\\WalletQueryHandlers\\GetPortfolioChange24hQueryHandler.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAxwCMAAABLAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T12:24:19.057Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GetPortfolioChange24hQuery.cs",
-              "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\WalletApp\\WalletQueries\\GetPortfolioChange24hQuery.cs",
-              "RelativeDocumentMoniker": "CryptoAvenue.Application\\WalletApp\\WalletQueries\\GetPortfolioChange24hQuery.cs",
-              "ToolTip": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\WalletApp\\WalletQueries\\GetPortfolioChange24hQuery.cs",
-              "RelativeToolTip": "CryptoAvenue.Application\\WalletApp\\WalletQueries\\GetPortfolioChange24hQuery.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T12:23:24.345Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 5,
@@ -422,6 +396,32 @@
               "ViewState": "AQIAAAgAAAAAAAAAAAAiwC0AAABsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-05T15:50:53.8Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WalletsController.cs",
+              "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue\\Controllers\\WalletsController.cs",
+              "RelativeDocumentMoniker": "CryptoAvenue\\Controllers\\WalletsController.cs",
+              "ToolTip": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue\\Controllers\\WalletsController.cs",
+              "RelativeToolTip": "CryptoAvenue\\Controllers\\WalletsController.cs",
+              "ViewState": "AQIAAGYAAAAAAAAAAAAIwHsAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T10:40:03.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GetPortfolioChange24hQuery.cs",
+              "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\WalletApp\\WalletQueries\\GetPortfolioChange24hQuery.cs",
+              "RelativeDocumentMoniker": "CryptoAvenue.Application\\WalletApp\\WalletQueries\\GetPortfolioChange24hQuery.cs",
+              "ToolTip": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\WalletApp\\WalletQueries\\GetPortfolioChange24hQuery.cs",
+              "RelativeToolTip": "CryptoAvenue.Application\\WalletApp\\WalletQueries\\GetPortfolioChange24hQuery.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T12:23:24.345Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -473,15 +473,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "WalletsController.cs",
-              "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue\\Controllers\\WalletsController.cs",
-              "RelativeDocumentMoniker": "CryptoAvenue\\Controllers\\WalletsController.cs",
-              "ToolTip": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue\\Controllers\\WalletsController.cs*",
-              "RelativeToolTip": "CryptoAvenue\\Controllers\\WalletsController.cs*",
-              "ViewState": "AQIAAF4AAAAAAAAAAADgv3oAAAAqAAAA",
+              "DocumentIndex": 1,
+              "Title": "GetPortfolioChange24hQueryHandler.cs",
+              "DocumentMoniker": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\WalletApp\\WalletQueryHandlers\\GetPortfolioChange24hQueryHandler.cs",
+              "RelativeDocumentMoniker": "CryptoAvenue.Application\\WalletApp\\WalletQueryHandlers\\GetPortfolioChange24hQueryHandler.cs",
+              "ToolTip": "D:\\Desktop\\LicenseProject\\CryptoAvenue\\CryptoAvenue.Application\\WalletApp\\WalletQueryHandlers\\GetPortfolioChange24hQueryHandler.cs",
+              "RelativeToolTip": "CryptoAvenue.Application\\WalletApp\\WalletQueryHandlers\\GetPortfolioChange24hQueryHandler.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAxwCMAAABLAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T10:40:03.544Z",
+              "WhenOpened": "2024-06-12T12:24:19.057Z",
               "EditorCaption": ""
             },
             {

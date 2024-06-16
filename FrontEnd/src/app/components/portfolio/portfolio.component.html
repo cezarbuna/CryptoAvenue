@@ -1,51 +1,67 @@
+<!-- Portfolio Container -->
 <div class="portfolio-container">
 
+  <!-- Balance Section -->
   <div class="balance-card">
-    <p-card>
-      <div class="balance-header">
-        <h2>Estimated Balance</h2>
-        <i class="pi pi-eye"></i>
+    <div class="balance-header">
+      <div class="balance-info">
+        <div class="estimated-balance">
+          <h2>Estimated Balance <button class="eye-button" (click)="toggleBalanceVisibility()"><i class="pi pi-eye"></i></button> </h2>
+
+        </div>
+
+        <div class="balance-amount" [ngClass]="{'hidden': !balanceVisible, 'positive-balance': portfolioChange24h >= 0, 'negative-balance': portfolioChange24h < 0}">
+          <h1>{{ balanceVisible ? (walletBalance | currency: 'USD') : '*****' }}</h1>
+          <p>≈ {{ balanceVisible ? (walletBalance * 1.08 | currency: 'EUR': 'symbol':'1.2-2') : '*****' }}</p>
+          <p>{{ balanceVisible ? '24h Change: ' + (portfolioChange24h * 100 | number: '1.2-2') + '%' : '24h Change: *****' }}</p>
+        </div>
       </div>
-      <div class="balance-amount">
-        <h1>{{ walletBalance | currency: 'USD' }}</h1>
-        <p>≈ {{ walletBalance * 1.08 | currency: 'EUR': 'symbol':'1.2-2' }}</p>
+      <div class="balance-actions">
+
+        <button class="action-button" (click)="navigateTo('trade')">Trade</button>
+        <button class="action-button" (click)="navigateTo('deposit')">Deposit</button>
+        <button class="action-button" (click)="navigateTo('withdraw')">Withdraw</button>
       </div>
-    </p-card>
+    </div>
   </div>
 
-  <div class="coins-table">
-    <p-table [value]="portfolioInfo" [paginator]="true" [rows]="10" [responsiveLayout]="'scroll'" [rowHover]="true">
-      <ng-template pTemplate="header">
-        <tr>
-          <th pSortableColumn="name">Coin <p-sortIcon field="name"></p-sortIcon></th>
-          <th pSortableColumn="amount">Amount <p-sortIcon field="amount"></p-sortIcon></th>
-          <th pSortableColumn="currentPrice">Current Price <p-sortIcon field="currentPrice"></p-sortIcon></th>
-          <th pSortableColumn="marketCap">Market Cap <p-sortIcon field="marketCap"></p-sortIcon></th>
-          <th pSortableColumn="priceChangePercentage24h">24h Change <p-sortIcon field="priceChangePercentage24h"></p-sortIcon></th>
-        </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-coin>
-        <tr (click)="onRowSelect(coin.id)">
-          <td>
-            <img [src]="coin.imageUrl" alt="{{coin.name}}" width="30" height="30" class="coin-icon">
-            <span class="coin-name">{{ coin.name }}</span>
-          </td>
-          <td>{{ coin.amount }}</td>
-          <td>{{ coin.currentPrice | currency: 'USD' }}</td>
-          <td>{{ coin.marketCap | number: '1.0-0' }}</td>
-          <td [ngClass]="{'negative': coin.priceChangePercentage24h < 0, 'positive': coin.priceChangePercentage24h >= 0}">
-            {{ coin.priceChangePercentage24h | percent }}
-          </td>
-        </tr>
-      </ng-template>
-    </p-table>
+  <!-- Your Currencies Section -->
+  <div class="currencies-card">
+    <h3>Your Currencies</h3>
+    <table class="currencies-table">
+      <thead>
+      <tr>
+        <th>Coin</th>
+        <th>Symbol</th>
+        <th>Current Price</th>
+        <th>Amount</th>
+        <th>Total Value</th>
+        <th>24h Change</th>
+        <th>Trade</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let coin of portfolioInfo">
+        <td>
+          <img [src]="coin.imageUrl" alt="{{ coin.name }}" class="coin-icon"> {{ coin.name }}
+        </td>
+        <td>{{ coin.symbol }}</td>
+        <td>{{ coin.currentPrice | currency: 'USD' }}</td>
+        <td>{{ coin.amount | number: '1.0-3' }}</td>
+        <td>{{ (coin.amount * coin.currentPrice) | currency: 'USD' }}</td>
+        <td [ngClass]="{'positive': coin.priceChangePercentage24h >= 0, 'negative': coin.priceChangePercentage24h < 0}">
+          {{ (coin.priceChangePercentage24h / 100) | percent: '1.2-2' }}
+        </td>
+        <td><button class="trade-button" (click)="navigateToTrade()">Trade</button></td>
+      </tr>
+      </tbody>
+    </table>
   </div>
-
-  <p-button *ngIf="!isChartVisible" (click)="isChartVisible = true">Show Chart</p-button>
-  <p-button *ngIf="isChartVisible" (click)="isChartVisible = false">Hide Chart</p-button>
-  <div class="portfolio-history-chart" *ngIf="isChartVisible">
-    <p-chart type="line" [data]="chartData" [options]="chartOptions" style="width:100%; height:400px;"></p-chart>
+  <div class="currencies-card">
+    <p-button *ngIf="!isChartVisible" (click)="isChartVisible = true">Show Chart</p-button>
+    <p-button *ngIf="isChartVisible" (click)="isChartVisible = false">Hide Chart</p-button>
+    <div class="portfolio-history-chart" *ngIf="isChartVisible">
+      <p-chart type="line" [data]="chartData" [options]="chartOptions" style="width:100%; height:400px;"></p-chart>
+    </div>
   </div>
-
-
 </div>

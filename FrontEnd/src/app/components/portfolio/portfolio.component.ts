@@ -1,34 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { WalletService } from "../../services/wallet.service";
 import { Router } from "@angular/router";
-import { CardModule } from "primeng/card";
-import { TableModule } from "primeng/table";
-import { CurrencyPipe, DecimalPipe, NgClass, NgIf, PercentPipe } from "@angular/common";
-import { ChartModule } from "primeng/chart";
+import { CurrencyPipe, DecimalPipe, NgClass, NgForOf, NgIf, PercentPipe } from "@angular/common";
 import {ButtonModule} from "primeng/button";
+import {ChartModule} from "primeng/chart";
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
   imports: [
-    CardModule,
-    TableModule,
     NgClass,
     CurrencyPipe,
     PercentPipe,
     DecimalPipe,
     NgIf,
+    NgForOf,
+    ButtonModule,
     ChartModule,
-    ButtonModule
   ],
   templateUrl: './portfolio.component.html',
-  styleUrl: './portfolio.component.css'
+  styleUrls: ['./portfolio.component.css']
 })
 export class PortfolioComponent implements OnInit {
   constructor(private walletService: WalletService,
               private router: Router) {}
 
   userId: string | null = null;
+  userEmail: string | null = null;
   wallet: any;
   walletBalance: number = 0;
   portfolioInfo: any[] = [];
@@ -36,9 +34,12 @@ export class PortfolioComponent implements OnInit {
   chartData: any;
   chartOptions: any;
   isChartVisible: boolean = true;
+  portfolioChange24h: number = 0;
+  balanceVisible: boolean = true; // To track balance visibility
 
   ngOnInit(): void {
     this.userId = localStorage.getItem('userId');
+    this.userEmail = localStorage.getItem('userEmail'); // Assuming the email is stored in localStorage
     if (this.userId != null) {
       this.walletService.getWalletByUserId(this.userId).subscribe(wallet => {
         this.wallet = wallet;
@@ -46,7 +47,8 @@ export class PortfolioComponent implements OnInit {
         this.walletService.getPortfolioInformation(this.wallet.id).subscribe(res => {
           this.portfolioInfo = res;
         });
-        this.fetchPortfolioHistory(1); // Default to 24 hours
+        this.fetchPortfolioHistory(1);
+        this.fetchPortfolioChangePercentage24h(this.wallet.id);
       });
     }
   }
@@ -57,6 +59,23 @@ export class PortfolioComponent implements OnInit {
         this.portfolioHistory = history;
         this.updateChartData();
       });
+    }
+  }
+
+  navigateTo(page: string): void {
+    this.router.navigate([`/${page}`]);
+  }
+
+  navigateToTrade(): void {
+    this.router.navigate(['/trade']);
+  }
+
+  fetchPortfolioChangePercentage24h(walletId: string): void {
+    if (this.wallet) {
+      this.walletService.getPortfolioChange24h(walletId).subscribe(res => {
+        this.portfolioChange24h = res;
+        console.log(this.portfolioChange24h);
+      })
     }
   }
 
@@ -101,7 +120,7 @@ export class PortfolioComponent implements OnInit {
     };
   }
 
-  onRowSelect(coinId: string): void {
-    this.router.navigate(['/coin-detail', coinId]);
+  toggleBalanceVisibility(): void {
+    this.balanceVisible = !this.balanceVisible;
   }
 }

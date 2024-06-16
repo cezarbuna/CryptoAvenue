@@ -34,5 +34,8 @@ export class WalletService {
         map(response => response.$values)
       );
   }
+  getPortfolioChange24h(walletId: string): Observable<number> {
+    return this.httpClient.get<number>(`https://localhost:7008/api/Wallets/get-portfolio-change-24h/${walletId}`);
+  }
 
 }
