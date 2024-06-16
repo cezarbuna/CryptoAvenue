@@ -1,4 +1,7 @@
 <div class="card-container">
+  <!-- Toast for notifications -->
+  <p-toast></p-toast>
+
   <div class="card-header">
     <i class="pi pi-wallet card-icon"></i>
     <div>
@@ -8,7 +11,7 @@
   </div>
   <form [formGroup]="withdrawForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label >Currency</label>
+      <label>Currency</label>
       <div class="custom-dropdown" (click)="toggleDropdown()">
         <span class="selected-value">
           <i class="pi" [ngClass]="selectedCurrency?.icon"></i> {{ selectedCurrency?.name || 'Select a Currency' }}
@@ -27,7 +30,6 @@
       <label for="quantity">Amount</label>
       <span class="p-float-label">
         <input pInputText id="quantity" formControlName="quantity" />
-<!--        <label for="quantity">Amount</label>-->
       </span>
       <div *ngIf="getErrorMessage('quantity')" class="p-error">
         {{ getErrorMessage('quantity') }}

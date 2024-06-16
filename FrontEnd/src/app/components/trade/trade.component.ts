@@ -10,6 +10,8 @@ import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
 import { MessageModule } from 'primeng/message';
 import { NgOptimizedImage } from '@angular/common';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-trade',
@@ -23,8 +25,10 @@ import { NgOptimizedImage } from '@angular/common';
     ReactiveFormsModule,
     NgClass,
     NgForOf,
-    NgOptimizedImage
+    NgOptimizedImage,
+    ToastModule // Import PrimeNG ToastModule
   ],
+  providers: [MessageService], // Register the MessageService
   templateUrl: './trade.component.html',
   styleUrls: ['./trade.component.css']
 })
@@ -51,7 +55,8 @@ export class TradeComponent implements OnInit {
   constructor(
     private coinsService: CoinsService,
     private walletService: WalletService,
-    private router: Router
+    private router: Router,
+    private messageService: MessageService // Inject the MessageService
   ) {}
 
   ngOnInit(): void {
@@ -199,14 +204,14 @@ export class TradeComponent implements OnInit {
     const targetQuantity = this.tradeForm.get('targetQuantity')?.value;
 
     // Validate source and target quantities
-    if(this.availableQuantity)
-    if (sourceQuantity > this.availableQuantity) {
-      this.tradeForm.get('sourceQuantity')?.setErrors({ max: true });
-    }
-    if(this.maximumQuantity)
-    if (targetQuantity > this.maximumQuantity) {
-      this.tradeForm.get('targetQuantity')?.setErrors({ max: true });
-    }
+    if (this.availableQuantity)
+      if (sourceQuantity > this.availableQuantity) {
+        this.tradeForm.get('sourceQuantity')?.setErrors({ max: true });
+      }
+    if (this.maximumQuantity)
+      if (targetQuantity > this.maximumQuantity) {
+        this.tradeForm.get('targetQuantity')?.setErrors({ max: true });
+      }
 
     if (this.tradeForm.valid) {
       this.walletService.trade(
@@ -217,14 +222,30 @@ export class TradeComponent implements OnInit {
         targetQuantity
       ).subscribe(
         res => {
-          console.log(res);
-          window.alert('Trade executed successfully!');
-          this.router.navigate(['portfolio']);
+          this.showSuccess('Trade executed successfully!');
+
+          // Add a delay to allow the toast message to display
+          setTimeout(() => {
+            this.router.navigate(['portfolio']);
+          }, 2000); // 2000 milliseconds = 2 seconds delay
         },
-        err => console.error('Trade execution error:', err)
+        err => {
+          this.showError('Trade execution error. Please try again.');
+          console.error('Trade execution error:', err);
+        }
       );
     } else {
       this.tradeForm.markAllAsTouched(); // Mark all fields as touched to show validation errors
     }
+  }
+
+  // Function to show success messages
+  showSuccess(message: string) {
+    this.messageService.add({ severity: 'success', summary: 'Success', detail: message });
+  }
+
+  // Function to show error messages
+  showError(message: string) {
+    this.messageService.add({ severity: 'error', summary: 'Error', detail: message });
   }
 }

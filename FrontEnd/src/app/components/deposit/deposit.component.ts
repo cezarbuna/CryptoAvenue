@@ -4,7 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { WalletService } from '../../services/wallet.service';
 import { Router } from '@angular/router';
 import { NgClass, NgForOf, NgIf } from "@angular/common";
-import { MessageModule } from "primeng/message";
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-deposit',
@@ -13,14 +14,14 @@ import { MessageModule } from "primeng/message";
   imports: [
     ReactiveFormsModule,
     NgClass,
-    MessageModule,
     NgIf,
-    NgForOf
+    NgForOf,
+    ToastModule // Import PrimeNG ToastModule
   ],
+  providers: [MessageService], // Register the MessageService
   styleUrls: ['./deposit.component.css']
 })
 export class DepositComponent implements OnInit {
-
   depositForm: FormGroup = new FormGroup({
     quantity: new FormControl('', [Validators.required, Validators.min(200)]),
     currency: new FormControl('', [Validators.required]),
@@ -35,7 +36,12 @@ export class DepositComponent implements OnInit {
   selectedCurrency: any;
   dropdownOpen = false;
 
-  constructor(private http: HttpClient, private walletService: WalletService, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private walletService: WalletService,
+    private router: Router,
+    private messageService: MessageService  // Inject the MessageService
+  ) {}
 
   ngOnInit(): void {
     // Pre-select the first currency if needed
@@ -78,15 +84,30 @@ export class DepositComponent implements OnInit {
     if (this.depositForm.valid) {
       this.walletService.deposit(this.depositForm.value).subscribe({
         next: () => {
-          window.alert('Deposit done successfully');
-          this.router.navigate(['portfolio']);
+          this.showSuccess('Deposit done successfully');
+
+          // Add a delay to allow the toast message to display
+          setTimeout(() => {
+            this.router.navigate(['portfolio']);
+          }, 2000); // 2000 milliseconds = 2 seconds delay
         },
         error: (err) => {
+          this.showError('Deposit failed. Please try again.');
           console.error('Deposit error:', err);
         }
       });
     } else {
-      this.depositForm.markAsTouched();
+      this.depositForm.markAllAsTouched(); // Mark all controls as touched to display validation messages
     }
+  }
+
+  // Function to show success messages
+  showSuccess(message: string) {
+    this.messageService.add({ severity: 'success', summary: 'Success', detail: message });
+  }
+
+  // Function to show error messages
+  showError(message: string) {
+    this.messageService.add({ severity: 'error', summary: 'Error', detail: message });
   }
 }

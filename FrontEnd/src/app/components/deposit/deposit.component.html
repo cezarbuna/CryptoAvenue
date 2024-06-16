@@ -1,4 +1,7 @@
 <div class="card-container">
+  <!-- Toast for notifications -->
+  <p-toast></p-toast>
+
   <div class="card-header">
     <i class="pi pi-wallet card-icon"></i>
     <div>
@@ -25,7 +28,6 @@
       <label for="quantity">Amount</label>
       <span class="p-float-label">
         <input pInputText id="quantity" formControlName="quantity" [ngClass]="{'input-error': depositForm.controls['quantity'].invalid && depositForm.controls['quantity'].touched}" />
-<!--        <label for="quantity">Amount</label>-->
       </span>
       <div *ngIf="getErrorMessage('quantity')" class="p-error">{{ getErrorMessage('quantity') }}</div>
     </div>

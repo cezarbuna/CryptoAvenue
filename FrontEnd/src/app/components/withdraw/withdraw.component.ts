@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { WalletService } from '../../services/wallet.service';
 import { Router } from '@angular/router';
 import { NgClass, NgForOf, NgIf } from '@angular/common';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-withdraw',
@@ -13,8 +15,10 @@ import { NgClass, NgForOf, NgIf } from '@angular/common';
     ReactiveFormsModule,
     NgClass,
     NgIf,
-    NgForOf
+    NgForOf,
+    ToastModule  // Import PrimeNG ToastModule
   ],
+  providers: [MessageService], // Register the MessageService
   styleUrls: ['./withdraw.component.css']
 })
 export class WithdrawComponent implements OnInit {
@@ -33,7 +37,12 @@ export class WithdrawComponent implements OnInit {
   dropdownOpen = false;
   private wallet: any;
 
-  constructor(private http: HttpClient, private walletService: WalletService, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private walletService: WalletService,
+    private router: Router,
+    private messageService: MessageService  // Inject the MessageService
+  ) {}
 
   ngOnInit(): void {
     const userId = localStorage.getItem('userId');
@@ -77,15 +86,30 @@ export class WithdrawComponent implements OnInit {
     if (this.withdrawForm.valid) {
       this.walletService.withdraw(this.withdrawForm.value.userId, this.withdrawForm.value.quantity).subscribe({
         next: () => {
-          window.alert('Withdrawal done successfully');
-          this.router.navigate(['home']);
+          this.showSuccess('Withdrawal done successfully');
+
+          // Add a delay to allow the toast message to display
+          setTimeout(() => {
+            this.router.navigate(['home']);
+          }, 2000); // 2000 milliseconds = 2 seconds delay
         },
         error: (err) => {
+          this.showError('Withdrawal failed. Please try again.');
           console.error('Withdrawal error:', err);
         }
       });
     } else {
       this.withdrawForm.markAllAsTouched(); // Mark all controls as touched to display validation messages
     }
+  }
+
+  // Function to show success messages
+  showSuccess(message: string) {
+    this.messageService.add({ severity: 'success', summary: 'Success', detail: message });
+  }
+
+  // Function to show error messages
+  showError(message: string) {
+    this.messageService.add({ severity: 'error', summary: 'Error', detail: message });
   }
 }
