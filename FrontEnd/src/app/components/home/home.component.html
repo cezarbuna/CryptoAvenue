@@ -1,2 +1,68 @@
+<div class="home-container">
 
+  <!-- Welcome Section -->
+  <div class="welcome-section">
+    <h1>Welcome to Crypto Avenue !</h1>
+    <p>Experience the future of cryptocurrency trading with us.</p>
+    <button pButton type="button" label="Get Started" class="cta-button" (click)="navigateToRegister()"></button>
+  </div>
 
+  <!-- Key Features Section -->
+  <div class="features-section">
+    <div class="feature">
+      <i class="pi pi-lock"></i>
+      <h3>Secure & Reliable</h3>
+      <p>State-of-the-art security to keep your assets safe.</p>
+    </div>
+    <div class="feature">
+      <i class="pi pi-chart-line"></i>
+      <h3>Real-Time Market Data</h3>
+      <p>Get the latest market trends at your fingertips.</p>
+    </div>
+    <div class="feature">
+      <i class="pi pi-wallet"></i>
+      <h3>User-Friendly Interface</h3>
+      <p>Easy to navigate, even for beginners.</p>
+    </div>
+  </div>
+
+  <!-- Trending Coins Section -->
+  <div class="trending-coins-section">
+    <h2>Trending Coins</h2>
+    <table class="coins-table">
+      <thead>
+      <tr>
+        <th>Coin</th>
+        <th>Symbol</th>
+        <th>Current Price</th>
+        <th>Market Cap</th>
+        <th>Market Cap Rank</th>
+        <th>High 24h</th>
+        <th>Low 24h</th>
+        <th>Price Change % 24h</th>
+        <th>Trade</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let coin of trendingCoins">
+        <td>
+          <img [src]="coin.imageUrl" alt="{{ coin.name }}" class="coin-icon">
+          {{ coin.name }}
+        </td>
+        <td>{{ coin.symbol }}</td>
+        <td>{{ coin.currentPrice | currency: 'USD' }}</td>
+        <td>{{ coin.marketCap | number }}</td>
+        <td>{{ coin.marketCapRank }}</td>
+        <td>{{ coin.high24h | currency: 'USD' }}</td>
+        <td>{{ coin.low24h | currency: 'USD' }}</td>
+        <td [ngClass]="{'positive-change': coin.priceChangePercentage24h >= 0, 'negative-change': coin.priceChangePercentage24h < 0}">
+          {{ coin.priceChangePercentage24h | number: '1.2-2' }}%
+        </td>
+        <td>
+          <button class="trade-button" (click)="navigateToTrade()">Trade</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
